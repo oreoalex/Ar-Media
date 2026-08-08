@@ -58,7 +58,7 @@ export function CtaSection() {
         </Reveal>
 
         <Reveal delay={0.25} className="mt-20 lg:mt-24">
-          <p className="font-serif text-lg text-off-white/50 italic">
+          <p className="font-serif text-lg text-off-white/60 italic">
             „Let me show you how good you look.“
           </p>
         </Reveal>

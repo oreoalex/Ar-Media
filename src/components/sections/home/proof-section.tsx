@@ -75,9 +75,9 @@ export function ProofSection() {
     <section aria-label="Case Studies" className="bg-off-white px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-[1400px]">
         <Reveal variant="fade">
-          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Ausgewählte Referenzen
-          </p>
+          </h2>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
         </Reveal>
 
@@ -111,15 +111,15 @@ export function ProofSection() {
                 <div className="mt-4 flex items-start justify-between gap-3 transition-transform duration-300 ease-out group-hover:-translate-y-0.5">
                   <div>
                     <p className="text-[15px] tracking-wide text-charcoal">
-                      <span className="text-charcoal/35">{project.label}</span> {project.name}
+                      <span className="text-charcoal/70">{project.label}</span> {project.name}
                     </p>
-                    <p className="mt-1.5 text-[13px] tracking-wide text-charcoal/50">
+                    <p className="mt-1.5 text-[13px] tracking-wide text-charcoal/70">
                       {project.tags.join(" · ")}
                     </p>
                   </div>
                   <ArrowRight
                     aria-hidden
-                    className="mt-1 size-3.5 shrink-0 -translate-x-1 text-charcoal/40 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100"
+                    className="mt-1 size-3.5 shrink-0 -translate-x-1 text-charcoal/70 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100"
                   />
                 </div>
               </Link>

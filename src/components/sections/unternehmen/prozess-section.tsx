@@ -35,7 +35,7 @@ export function ProzessSection() {
     <section aria-label="Wie wir arbeiten" className="bg-off-white px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-5xl">
         <Reveal className="max-w-xl">
-          <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Wie wir arbeiten
           </h2>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
@@ -44,9 +44,9 @@ export function ProzessSection() {
         <div className="mt-14 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {schritte.map((schritt, i) => (
             <Reveal key={schritt.label} delay={i * 0.06}>
-              <p className="text-[13px] tracking-wide text-charcoal/35">{schritt.label}</p>
+              <p className="text-[13px] tracking-wide text-charcoal/70">{schritt.label}</p>
               <h3 className="mt-3 text-[19px] font-medium text-charcoal">{schritt.title}</h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-charcoal/65">{schritt.text}</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-charcoal/70">{schritt.text}</p>
             </Reveal>
           ))}
         </div>

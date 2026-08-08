@@ -13,9 +13,9 @@ export function UrsprungSection() {
     <section aria-label="Wie es begann" className="bg-off-white px-6 py-24 lg:py-32">
       <div className="mx-auto grid max-w-4xl items-center gap-10 lg:grid-cols-[1fr_280px] lg:gap-16">
         <Reveal>
-          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Der Ursprung
-          </p>
+          </h2>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
           <p className="mt-6 max-w-lg text-[18px] leading-relaxed text-charcoal/80 lg:text-[19px]">
             Es begann nicht mit einer Kamera. Es begann damit, dass jemand schwanger wurde.{" "}

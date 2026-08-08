@@ -22,7 +22,7 @@ export function SchlussSection() {
       <div className="mx-auto max-w-2xl text-center">
         <Reveal variant="fade">
           <p className="font-serif text-[clamp(1.5rem,3.2vw,2rem)] leading-[1.3] text-charcoal italic">
-            Marketing, Fotografie, Kitafotografie: drei Wege, dieselbe Überzeugung.
+            Unternehmen, Fotografie, Kita & Schule: drei Wege, dieselbe Überzeugung.
           </p>
         </Reveal>
 

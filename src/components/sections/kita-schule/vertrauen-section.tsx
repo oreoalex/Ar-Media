@@ -72,7 +72,7 @@ export function VertrauenSection() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="text-[11px] font-medium tracking-[0.14em] text-off-white/45 uppercase">
+            <p className="text-[11px] font-medium tracking-[0.14em] text-off-white/60 uppercase">
               Wer kommt zu euch
             </p>
             <h2 className="mt-4 max-w-lg text-[20px] leading-relaxed text-off-white/85 lg:text-[22px]">
@@ -93,7 +93,7 @@ export function VertrauenSection() {
                   <Star key={i} className="size-3 fill-sand text-sand" />
                 ))}
               </span>
-              <span className="text-[12px] tracking-wide text-off-white/45">
+              <span className="text-[12px] tracking-wide text-off-white/60">
                 {siteConfig.rating.value.toFixed(1).replace(".", ",")} · {siteConfig.rating.count}{" "}
                 Google-Bewertungen
               </span>
@@ -102,18 +102,18 @@ export function VertrauenSection() {
         </div>
 
         <Reveal delay={0.15} className="mt-16 lg:mt-20">
-          <h3 className="text-[11px] font-medium tracking-[0.14em] text-off-white/45 uppercase">
+          <h3 className="text-[11px] font-medium tracking-[0.14em] text-off-white/60 uppercase">
             Kurz beantwortet
           </h3>
           <AccordionPrimitive.Root className="mt-4 border-t border-off-white/10">
             {faqs.map((faq) => (
               <AccordionPrimitive.Item key={faq.q} className="border-b border-off-white/10">
                 <AccordionPrimitive.Header>
-                  <AccordionPrimitive.Trigger className="group flex w-full items-center justify-between gap-6 py-6 text-left outline-none">
+                  <AccordionPrimitive.Trigger className="group flex w-full items-center justify-between gap-6 py-6 text-left outline-none rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-forest/50">
                     <span className="text-[16px] font-medium text-off-white lg:text-[17px]">{faq.q}</span>
                     <ChevronDown
                       aria-hidden
-                      className="size-4 shrink-0 text-off-white/40 transition-transform duration-300 group-aria-expanded:rotate-180"
+                      className="size-4 shrink-0 text-off-white/60 transition-transform duration-300 group-aria-expanded:rotate-180"
                     />
                   </AccordionPrimitive.Trigger>
                 </AccordionPrimitive.Header>

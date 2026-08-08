@@ -29,14 +29,14 @@ export function HaltungSection() {
 
       <div className="relative mx-auto max-w-3xl">
         <Reveal>
-          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Unsere Haltung
           </p>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
           <h2 className="mt-6 max-w-xl text-[22px] leading-relaxed text-charcoal/80 lg:text-[24px]">
             Wir arbeiten nicht besser. Wir arbeiten anders.
           </h2>
-          <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-charcoal/65">
+          <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-charcoal/70">
             Kinder lassen sich nicht auf Kommando in Pose stellen, das wissen wir. Deshalb
             versuchen wir es gar nicht erst.
           </p>
@@ -46,7 +46,7 @@ export function HaltungSection() {
           {kontraste.map((item, i) => (
             <Reveal key={item.ohne} delay={i * 0.04}>
               <li className="flex flex-col gap-1.5 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-                <span className="text-[15px] text-charcoal/45 line-through decoration-charcoal/25 sm:max-w-[45%]">
+                <span className="text-[15px] text-charcoal/75 line-through decoration-charcoal/25 sm:max-w-[45%]">
                   {item.ohne}
                 </span>
                 <span className="text-[16px] font-medium text-charcoal sm:max-w-[50%] sm:text-right">

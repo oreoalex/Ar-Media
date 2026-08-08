@@ -14,9 +14,9 @@ export function RoterFadenSection() {
 
       <div className="relative mx-auto max-w-2xl">
         <Reveal>
-          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Der rote Faden
-          </p>
+          </h2>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
           <p className="mt-6 text-[18px] leading-relaxed text-charcoal/80 lg:text-[19px]">
             Parallel dazu arbeitete er im Marketing. Dort fiel ihm etwas auf, das sich mit der

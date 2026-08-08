@@ -46,7 +46,7 @@ export function ProzessSection() {
     <section aria-label="So entstehen echte Bilder" className="bg-deep-forest px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-[1400px]">
         <Reveal className="max-w-xl">
-          <h2 className="text-[11px] font-medium tracking-[0.14em] text-off-white/45 uppercase">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] text-off-white/60 uppercase">
             So entstehen echte Bilder
           </h2>
           <span aria-hidden className="mt-4 block h-px w-8 bg-off-white/20" />
@@ -64,7 +64,7 @@ export function ProzessSection() {
                   className="object-cover"
                 />
               </div>
-              <p className="mt-4 text-[13px] tracking-wide text-off-white/35">{schritt.label}</p>
+              <p className="mt-4 text-[13px] tracking-wide text-off-white/60">{schritt.label}</p>
               <h3 className="mt-1 text-[17px] font-medium text-off-white">{schritt.title}</h3>
               <p className="mt-2 text-[14px] leading-relaxed text-off-white/65">{schritt.text}</p>
             </Reveal>

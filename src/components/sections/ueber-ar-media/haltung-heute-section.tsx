@@ -14,9 +14,9 @@ export function HaltungHeuteSection() {
 
       <div className="relative mx-auto max-w-xl text-center">
         <Reveal variant="fade">
-          <p className="text-[11px] font-medium tracking-[0.14em] text-off-white/45 uppercase">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] text-off-white/60 uppercase">
             Die Haltung heute
-          </p>
+          </h2>
           <p className="mx-auto mt-6 max-w-md text-[16px] leading-relaxed text-off-white/70">
             Deshalb inszeniert AR Media nicht. Deshalb wird nicht behauptet, was fehlt, sondern
             gezeigt, was schon da ist, bei einer Marke genauso wie bei einem Kind auf dem

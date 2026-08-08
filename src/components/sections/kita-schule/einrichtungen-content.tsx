@@ -55,7 +55,7 @@ export function EinrichtungenContent() {
       <section className="bg-off-white px-6 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
-            <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+            <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
               Kita & Schule · Für Einrichtungen
             </p>
             <h1 className="mx-auto mt-5 max-w-xl font-serif text-[clamp(1.75rem,4.2vw,2.75rem)] leading-[1.2] text-charcoal italic">
@@ -67,7 +67,7 @@ export function EinrichtungenContent() {
             </p>
             <Link
               href="/kita-schule"
-              className="group mx-auto mt-8 inline-flex items-center gap-2 text-[13px] font-medium tracking-wide text-charcoal/50 transition-colors hover:text-deep-forest"
+              className="group mx-auto mt-8 inline-flex items-center gap-2 text-[13px] font-medium tracking-wide text-charcoal/70 transition-colors hover:text-deep-forest"
             >
               <ArrowLeft aria-hidden className="size-3.5 transition-transform group-hover:-translate-x-1" />
               Kita & Schule
@@ -79,7 +79,7 @@ export function EinrichtungenContent() {
       <section aria-label="Was bei euch bleibt" className="bg-off-white px-6 pb-24 lg:pb-32">
         <div className="mx-auto max-w-2xl border-t border-charcoal/10 pt-16">
           <Reveal>
-            <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+            <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
               Was bei euch bleibt
             </h2>
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-charcoal/75">
@@ -89,7 +89,7 @@ export function EinrichtungenContent() {
           <ul className="mt-8 space-y-3">
             {entlastung.map((item, i) => (
               <Reveal key={item} delay={i * 0.04}>
-                <li className="text-[15px] leading-relaxed text-charcoal/65">
+                <li className="text-[15px] leading-relaxed text-charcoal/70">
                   <span className="mr-2 text-charcoal/30" aria-hidden>–</span>
                   {item}
                 </li>
@@ -102,16 +102,16 @@ export function EinrichtungenContent() {
       <section aria-label="Der Ablauf im Detail" className="bg-sand/25 px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-3xl">
           <Reveal>
-            <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+            <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
               Der Ablauf im Detail
             </h2>
           </Reveal>
           <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2">
             {schritte.map((schritt, i) => (
               <Reveal key={schritt.label} delay={i * 0.06}>
-                <p className="text-[13px] tracking-wide text-charcoal/35">{schritt.label}</p>
+                <p className="text-[13px] tracking-wide text-charcoal/70">{schritt.label}</p>
                 <h3 className="mt-2 text-[17px] font-medium text-charcoal">{schritt.title}</h3>
-                <p className="mt-2 text-[14px] leading-relaxed text-charcoal/65">{schritt.text}</p>
+                <p className="mt-2 text-[14px] leading-relaxed text-charcoal/70">{schritt.text}</p>
               </Reveal>
             ))}
           </div>
@@ -121,7 +121,7 @@ export function EinrichtungenContent() {
       <section aria-label="Häufige Fragen" className="bg-off-white px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-2xl">
           <Reveal>
-            <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+            <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
               Häufige Fragen
             </h2>
             <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
@@ -131,16 +131,16 @@ export function EinrichtungenContent() {
               {faqs.map((faq) => (
                 <AccordionPrimitive.Item key={faq.q} className="border-b border-charcoal/10">
                   <AccordionPrimitive.Header>
-                    <AccordionPrimitive.Trigger className="group flex w-full items-center justify-between gap-6 py-6 text-left outline-none">
+                    <AccordionPrimitive.Trigger className="group flex w-full items-center justify-between gap-6 py-6 text-left outline-none rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-forest/50">
                       <span className="text-[16px] font-medium text-charcoal lg:text-[17px]">{faq.q}</span>
                       <ChevronDown
                         aria-hidden
-                        className="size-4 shrink-0 text-charcoal/40 transition-transform duration-300 group-aria-expanded:rotate-180"
+                        className="size-4 shrink-0 text-charcoal/70 transition-transform duration-300 group-aria-expanded:rotate-180"
                       />
                     </AccordionPrimitive.Trigger>
                   </AccordionPrimitive.Header>
                   <AccordionPrimitive.Panel className="overflow-hidden data-open:animate-accordion-down data-closed:animate-accordion-up">
-                    <p className="pb-6 text-[15px] leading-relaxed text-charcoal/65">{faq.a}</p>
+                    <p className="pb-6 text-[15px] leading-relaxed text-charcoal/70">{faq.a}</p>
                   </AccordionPrimitive.Panel>
                 </AccordionPrimitive.Item>
               ))}

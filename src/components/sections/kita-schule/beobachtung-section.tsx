@@ -11,7 +11,7 @@ export function BeobachtungSection() {
     <section aria-label="Eine Beobachtung" className="bg-off-white px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-3xl text-center">
         <Reveal>
-          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Eine Beobachtung
           </p>
         </Reveal>

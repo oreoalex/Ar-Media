@@ -3,17 +3,20 @@ import { Reveal } from "@/components/shared/reveal";
 import { BrandMarkR } from "@/components/shared/brand-mark-r";
 
 const paths = [
-  { href: "/unternehmen", label: "Marketing" },
+  { href: "/unternehmen", label: "Unternehmen" },
   { href: "/fotografie", label: "Fotografie" },
-  { href: "/kita-schule", label: "Kitafotografie" },
+  { href: "/kita-schule", label: "Kita & Schule" },
 ];
 
 /**
  * S07 · Abschluss — Final Creative Direction. Vollständig neu gedacht:
  * keine Buttons, keine Boxen mehr — drei editoriale Textlinks wie
  * Kapitelüberschriften, identisch inszeniert wie die drei Links im Hero
- * (bewusst gleiche Wortwahl und gleiche Ziele — Hero und Abschluss rahmen
- * dieselbe Entscheidung, einmal am Anfang, einmal am Ende der Reise).
+ * (gleiche Ziele — Hero und Abschluss rahmen dieselbe Entscheidung, einmal
+ * am Anfang, einmal am Ende der Reise). Labels bewusst identisch mit der
+ * Hauptnavigation und der Fork-Section ("Unternehmen" / "Kita & Schule"
+ * statt "Marketing" / "Kitafotografie"): dieselbe Zieladresse sollte auf
+ * derselben Seite nicht unter zwei verschiedenen Namen auftauchen.
  *
  * Direkt darunter, mit viel Weißraum abgesetzt: der finale Markenclaim
  * "Let me show you what's already there." — die Signatur der gesamten

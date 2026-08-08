@@ -60,7 +60,7 @@ export function LeistungenSection() {
     <section aria-label="Unsere Leistungen" className="bg-off-white px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-3xl">
         <Reveal>
-          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Unsere Leistungen
           </p>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
@@ -75,12 +75,12 @@ export function LeistungenSection() {
               <li>
                 <Link href={item.href} className="group flex items-center justify-between gap-6 py-6">
                   <span className="flex items-baseline gap-5">
-                    <span className="text-[13px] text-charcoal/35">{item.label}</span>
+                    <span className="text-[13px] text-charcoal/70">{item.label}</span>
                     <span>
                       <span className="block text-[17px] font-medium text-charcoal transition-colors group-hover:text-deep-forest lg:text-[19px]">
                         {item.name}
                       </span>
-                      <span className="mt-1 block text-[14px] text-charcoal/55 lg:text-[15px]">
+                      <span className="mt-1 block text-[14px] text-charcoal/70 lg:text-[15px]">
                         {item.outcome}
                       </span>
                     </span>
@@ -96,7 +96,7 @@ export function LeistungenSection() {
         </ul>
 
         <Reveal delay={0.3} className="mt-14 text-center">
-          <p className="text-[15px] text-charcoal/60">
+          <p className="text-[15px] text-charcoal/70">
             Passt das zu deinem Unternehmen?{" "}
             <Link
               href="/kontakt/projekt-besprechen"

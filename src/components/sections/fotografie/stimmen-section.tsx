@@ -23,7 +23,7 @@ export function StimmenSection() {
     <section aria-label="Warum Menschen wiederkommen" className="bg-deep-forest px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-2xl text-center">
         <Reveal>
-          <h2 className="text-[11px] font-medium tracking-[0.14em] text-off-white/45 uppercase">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] text-off-white/60 uppercase">
             Warum Menschen wiederkommen
           </h2>
         </Reveal>
@@ -45,7 +45,7 @@ export function StimmenSection() {
                 <Star key={i} className="size-3.5 fill-sand text-sand" />
               ))}
             </span>
-            <span className="text-[12px] tracking-wide text-off-white/50">
+            <span className="text-[12px] tracking-wide text-off-white/60">
               {siteConfig.rating.value.toFixed(1).replace(".", ",")} · {siteConfig.rating.count}{" "}
               Google-Bewertungen
             </span>

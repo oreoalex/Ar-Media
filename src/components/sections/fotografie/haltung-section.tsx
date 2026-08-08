@@ -14,7 +14,7 @@ export function HaltungSection() {
 
       <div className="relative mx-auto grid max-w-5xl items-center gap-12 lg:grid-cols-[1fr_minmax(0,320px)] lg:gap-20">
         <Reveal delay={0.1} className="lg:order-1">
-          <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Unsere Haltung
           </h2>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />

@@ -53,7 +53,7 @@ export function ArbeitenSection() {
     <section aria-label="Ausgewählte Arbeiten" className="bg-off-white px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-[1400px]">
         <Reveal className="max-w-xl">
-          <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Ausgewählte Arbeiten
           </h2>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />

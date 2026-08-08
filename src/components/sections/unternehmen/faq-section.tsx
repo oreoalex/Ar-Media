@@ -43,7 +43,7 @@ export function FaqSection() {
     <section aria-label="Häufige Fragen" className="bg-off-white px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-2xl">
         <Reveal>
-          <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Häufige Fragen
           </h2>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
@@ -54,16 +54,16 @@ export function FaqSection() {
             {faqs.map((faq) => (
               <AccordionPrimitive.Item key={faq.q} className="border-b border-charcoal/10">
                 <AccordionPrimitive.Header>
-                  <AccordionPrimitive.Trigger className="group flex w-full items-center justify-between gap-6 py-6 text-left outline-none">
+                  <AccordionPrimitive.Trigger className="group flex w-full items-center justify-between gap-6 py-6 text-left outline-none rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-forest/50">
                     <span className="text-[17px] font-medium text-charcoal lg:text-[18px]">{faq.q}</span>
                     <ChevronDown
                       aria-hidden
-                      className="size-4 shrink-0 text-charcoal/40 transition-transform duration-300 group-aria-expanded:rotate-180"
+                      className="size-4 shrink-0 text-charcoal/70 transition-transform duration-300 group-aria-expanded:rotate-180"
                     />
                   </AccordionPrimitive.Trigger>
                 </AccordionPrimitive.Header>
                 <AccordionPrimitive.Panel className="overflow-hidden data-open:animate-accordion-down data-closed:animate-accordion-up">
-                  <p className="pb-6 text-[15px] leading-relaxed text-charcoal/65 lg:text-[16px]">
+                  <p className="pb-6 text-[15px] leading-relaxed text-charcoal/70 lg:text-[16px]">
                     {faq.a}
                   </p>
                 </AccordionPrimitive.Panel>

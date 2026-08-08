@@ -7,9 +7,9 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { ChevronDown } from "lucide-react";
 
 const quickLinks = [
-  { href: "/unternehmen", label: "Marketing" },
+  { href: "/unternehmen", label: "Unternehmen" },
   { href: "/fotografie", label: "Fotografie" },
-  { href: "/kita-schule", label: "Kitafotografie" },
+  { href: "/kita-schule", label: "Kita & Schule" },
 ];
 
 /**
@@ -71,9 +71,9 @@ export function HeroSection() {
         transition={{ duration: reduceMotion ? 0 : 1.1, delay: 0.35 }}
         className="absolute bottom-28 left-1/2 w-[calc(100%-3rem)] max-w-2xl -translate-x-1/2 rounded-4xl border border-off-white/15 bg-off-white/10 px-8 py-10 text-center shadow-[0_8px_40px_rgba(13,43,36,0.25)] backdrop-blur-xl sm:bottom-32 sm:px-16 sm:py-14"
       >
-        <p className="font-serif text-[clamp(1.375rem,4.2vw,2.5rem)] leading-[1.25] text-off-white italic">
+        <h1 className="font-serif text-[clamp(1.375rem,4.2vw,2.5rem)] leading-[1.25] text-off-white italic">
           Manche Dinge muss man nur noch sichtbar machen.
-        </p>
+        </h1>
 
         <span aria-hidden className="mx-auto mt-7 block h-px w-8 bg-off-white/20 sm:mt-8" />
 

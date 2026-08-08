@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 export function SiteFooter() {
   return (
     <footer className="border-t border-off-white/10 bg-deep-forest text-off-white">
-      <div className="mx-auto max-w-[1400px] px-6 py-16 lg:px-10 lg:py-20">
+      <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-24">
         <div className="flex flex-col gap-16 lg:flex-row lg:justify-between">
           <div className="max-w-xs">
             <Logo dark variant="full" className="w-44" />
@@ -36,7 +36,7 @@ export function SiteFooter() {
           >
             {footerNav.map((group) => (
               <div key={group.label}>
-                <p className="mb-4 text-[11px] font-medium tracking-[0.14em] text-off-white/45 uppercase">
+                <p className="mb-4 text-[11px] font-medium tracking-[0.14em] text-off-white/60 uppercase">
                   {group.label}
                 </p>
                 <ul className="space-y-2.5">
@@ -56,7 +56,7 @@ export function SiteFooter() {
           </nav>
         </div>
 
-        <p className="mt-16 text-[12px] tracking-[0.1em] text-off-white/45 uppercase">
+        <p className="mt-16 text-[12px] tracking-[0.1em] text-off-white/60 uppercase">
           {siteConfig.location.city} · {siteConfig.location.country} · Est. {siteConfig.founded}
         </p>
       </div>

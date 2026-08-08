@@ -53,7 +53,7 @@ export function LeistungenSection() {
     <section aria-label="Fünf Anlässe, eine Haltung" className="bg-off-white px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-3xl">
         <Reveal>
-          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Leistungen
           </p>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
@@ -67,12 +67,12 @@ export function LeistungenSection() {
             const row = (
               <>
                 <span className="flex items-baseline gap-5">
-                  <span className="text-[13px] text-charcoal/35">{item.label}</span>
+                  <span className="text-[13px] text-charcoal/70">{item.label}</span>
                   <span>
                     <span className="block text-[17px] font-medium text-charcoal transition-colors group-hover:text-deep-forest lg:text-[19px]">
                       {item.name}
                     </span>
-                    <span className="mt-1 block max-w-md text-[14px] leading-relaxed text-charcoal/55 lg:text-[15px]">
+                    <span className="mt-1 block max-w-md text-[14px] leading-relaxed text-charcoal/70 lg:text-[15px]">
                       {item.outcome}
                     </span>
                   </span>

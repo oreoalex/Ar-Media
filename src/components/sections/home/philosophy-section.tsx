@@ -48,9 +48,9 @@ export function PhilosophySection() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Unsere Haltung
-          </p>
+          </h2>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
           <p className="mt-6 max-w-xl text-[21px] leading-relaxed text-charcoal/80 lg:text-[24px] lg:leading-[1.5]">
             Wir erschaffen keine künstlichen Bilder oder Markenwelten. Wir suchen, was

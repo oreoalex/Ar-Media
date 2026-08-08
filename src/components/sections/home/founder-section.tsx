@@ -35,9 +35,9 @@ export function FounderSection() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Warum es AR Media gibt
-          </p>
+          </h2>
           <span aria-hidden className="mt-3 block h-px w-8 bg-charcoal/20" />
           <p className="mt-5 max-w-md text-[19px] leading-relaxed text-charcoal/80">
             AR Media ist nicht aus einem Businessplan entstanden, sondern aus einer
@@ -56,10 +56,10 @@ export function FounderSection() {
           </Link>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-charcoal/10 pt-6">
-            <p className="font-serif text-[15px] text-charcoal/50 italic">
+            <p className="font-serif text-[15px] text-charcoal/70 italic">
               „Let me show you how good you look.“
             </p>
-            <span className="flex items-center gap-2 text-charcoal/40">
+            <span className="flex items-center gap-2 text-charcoal/70">
               <span className="flex items-center gap-0.5" aria-hidden>
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="size-3 fill-sand text-sand" />

@@ -54,7 +54,7 @@ export function HeroSection() {
             <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
           </Link>
 
-          <span className="flex items-center gap-2 text-off-white/50">
+          <span className="flex items-center gap-2 text-off-white/60">
             <span className="flex items-center gap-0.5" aria-hidden>
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="size-3 fill-sand text-sand" />

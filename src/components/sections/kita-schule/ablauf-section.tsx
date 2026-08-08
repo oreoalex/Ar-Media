@@ -19,7 +19,7 @@ export function AblaufSection() {
     <section aria-label="Wie es abläuft" className="bg-sand/25 px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-3xl">
         <Reveal>
-          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Wie es abläuft
           </p>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
@@ -31,9 +31,9 @@ export function AblaufSection() {
         <div className="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-3">
           {schritte.map((schritt, i) => (
             <Reveal key={schritt.label} delay={i * 0.06}>
-              <p className="text-[13px] tracking-wide text-charcoal/35">{schritt.label}</p>
+              <p className="text-[13px] tracking-wide text-charcoal/70">{schritt.label}</p>
               <h3 className="mt-2 text-[17px] font-medium text-charcoal">{schritt.title}</h3>
-              <p className="mt-2 text-[14px] leading-relaxed text-charcoal/65">{schritt.text}</p>
+              <p className="mt-2 text-[14px] leading-relaxed text-charcoal/70">{schritt.text}</p>
             </Reveal>
           ))}
         </div>
@@ -45,7 +45,7 @@ export function AblaufSection() {
                 <span className="block text-[16px] font-medium text-charcoal transition-colors group-hover:text-deep-forest">
                   Für Einrichtungen
                 </span>
-                <span className="mt-1 block text-[14px] text-charcoal/55">
+                <span className="mt-1 block text-[14px] text-charcoal/70">
                   Ablauf im Detail, für Kitaleitung und Träger.
                 </span>
               </span>
@@ -56,7 +56,7 @@ export function AblaufSection() {
                 <span className="block text-[16px] font-medium text-charcoal transition-colors group-hover:text-deep-forest">
                   Für Eltern
                 </span>
-                <span className="mt-1 block text-[14px] text-charcoal/55">
+                <span className="mt-1 block text-[14px] text-charcoal/70">
                   Bildbeispiele ansehen und den Bestellweg verstehen.
                 </span>
               </span>
@@ -65,7 +65,7 @@ export function AblaufSection() {
           </div>
           <Link
             href="/kita-schule/ablauf-datenschutz"
-            className="group mt-8 inline-flex items-center gap-2 text-[14px] font-medium tracking-wide text-charcoal/60 transition-colors hover:text-deep-forest"
+            className="group mt-8 inline-flex items-center gap-2 text-[14px] font-medium tracking-wide text-charcoal/70 transition-colors hover:text-deep-forest"
           >
             Mehr zu Ablauf & Datenschutz
             <ArrowRight aria-hidden className="size-3.5 transition-transform group-hover:translate-x-1" />

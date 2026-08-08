@@ -67,7 +67,7 @@ export function FotografieCategoryPage({
           className={`mx-auto max-w-5xl ${heroImage ? "grid items-center gap-12 lg:grid-cols-[1fr_360px] lg:gap-16" : "max-w-2xl text-center"}`}
         >
           <Reveal className={heroImage ? "" : undefined}>
-            <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+            <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
               {kicker}
             </p>
             <h1
@@ -82,7 +82,7 @@ export function FotografieCategoryPage({
             </p>
             <Link
               href="/fotografie"
-              className={`group mt-8 inline-flex items-center gap-2 text-[13px] font-medium tracking-wide text-charcoal/50 transition-colors hover:text-deep-forest ${heroImage ? "" : "mx-auto"}`}
+              className={`group mt-8 inline-flex items-center gap-2 text-[13px] font-medium tracking-wide text-charcoal/70 transition-colors hover:text-deep-forest ${heroImage ? "" : "mx-auto"}`}
             >
               <ArrowLeft aria-hidden className="size-3.5 transition-transform group-hover:-translate-x-1" />
               Alle Leistungen
@@ -95,6 +95,7 @@ export function FotografieCategoryPage({
                   src={heroImage.src}
                   alt={heroImage.alt}
                   fill
+                  priority
                   sizes="(min-width: 1024px) 360px, 80vw"
                   className="object-cover"
                 />
@@ -107,7 +108,7 @@ export function FotografieCategoryPage({
       <section aria-label={ablaufTitle} className="bg-off-white px-6 pb-24 lg:pb-32">
         <div className="mx-auto max-w-2xl border-t border-charcoal/10 pt-16">
           <Reveal>
-            <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+            <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
               {ablaufTitle}
             </h2>
             <p className="mt-6 text-[17px] leading-relaxed text-charcoal/75">{ablauf}</p>
@@ -131,13 +132,13 @@ export function FotografieCategoryPage({
       <section aria-label="Preis" className="bg-sand/25 px-6 py-20 lg:py-24">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
-            <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+            <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
               Investition
             </h2>
             <p className="mt-5 font-serif text-[clamp(1.75rem,3.6vw,2.25rem)] text-charcoal">
               ab {preisAb} €
             </p>
-            <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-charcoal/65">
+            <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-charcoal/70">
               {preisHinweis}
             </p>
             <Link
@@ -160,7 +161,7 @@ export function FotografieCategoryPage({
       <section aria-label="Häufige Fragen" className="bg-off-white px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-2xl">
           <Reveal>
-            <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+            <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
               Häufige Fragen
             </h2>
             <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
@@ -171,16 +172,16 @@ export function FotografieCategoryPage({
               {faqs.map((faq) => (
                 <AccordionPrimitive.Item key={faq.q} className="border-b border-charcoal/10">
                   <AccordionPrimitive.Header>
-                    <AccordionPrimitive.Trigger className="group flex w-full items-center justify-between gap-6 py-6 text-left outline-none">
+                    <AccordionPrimitive.Trigger className="group flex w-full items-center justify-between gap-6 py-6 text-left outline-none rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-forest/50">
                       <span className="text-[16px] font-medium text-charcoal lg:text-[17px]">{faq.q}</span>
                       <ChevronDown
                         aria-hidden
-                        className="size-4 shrink-0 text-charcoal/40 transition-transform duration-300 group-aria-expanded:rotate-180"
+                        className="size-4 shrink-0 text-charcoal/70 transition-transform duration-300 group-aria-expanded:rotate-180"
                       />
                     </AccordionPrimitive.Trigger>
                   </AccordionPrimitive.Header>
                   <AccordionPrimitive.Panel className="overflow-hidden data-open:animate-accordion-down data-closed:animate-accordion-up">
-                    <p className="pb-6 text-[15px] leading-relaxed text-charcoal/65">{faq.a}</p>
+                    <p className="pb-6 text-[15px] leading-relaxed text-charcoal/70">{faq.a}</p>
                   </AccordionPrimitive.Panel>
                 </AccordionPrimitive.Item>
               ))}

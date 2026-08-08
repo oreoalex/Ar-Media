@@ -172,7 +172,7 @@ function DesktopPanel({
           <div className="grid grid-cols-[1fr_1fr_1fr_280px] gap-10">
             {item.groups.map((group) => (
               <div key={group.label}>
-                <p className="mb-4 text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+                <p className="mb-4 text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
                   {group.label}
                 </p>
                 <ul className="space-y-3">

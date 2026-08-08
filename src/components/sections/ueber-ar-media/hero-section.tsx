@@ -12,7 +12,7 @@ export function HeroSection() {
     <section aria-label="Manche Dinge muss man nicht verändern" className="bg-off-white px-6 pt-32 pb-24 lg:pt-40 lg:pb-32">
       <div className="mx-auto max-w-2xl text-center">
         <Reveal>
-          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Über AR Media
           </p>
           <h1 className="mx-auto mt-5 max-w-xl font-serif text-[clamp(1.9rem,4.6vw,3rem)] leading-[1.2] text-charcoal italic">

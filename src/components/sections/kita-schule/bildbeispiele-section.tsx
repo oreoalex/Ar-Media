@@ -35,7 +35,7 @@ export function BildbeispieleSection() {
     <section aria-label="Bildbeispiele" className="bg-off-white px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-[1400px]">
         <Reveal className="max-w-xl">
-          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/45 uppercase">
+          <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Bildbeispiele
           </p>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
