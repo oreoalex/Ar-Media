@@ -29,6 +29,21 @@ const sections: LegalSection[] = [
       </p>
     ),
   },
+  {
+    id: "analyse",
+    title: "Analyse-Tools",
+    content: (
+      <p>
+        Diese Website nutzt Google Analytics 4 (Google Ireland Limited) zur Erfassung
+        technischer Nutzungsstatistiken. Das Tool wird erst aktiv, nachdem im Cookie-Banner
+        ausdrücklich zugestimmt wurde (Google Consent Mode v2); ohne Einwilligung werden keine
+        Analyse-Daten gespeichert. Die Entscheidung lässt sich jederzeit über den Link
+        „Cookie-Einstellungen“ im Footer ändern. Die rechtlich vollständige Beschreibung
+        (Rechtsgrundlage, Speicherdauer, Datenübermittlung) folgt an dieser Stelle, sobald der
+        endgültige Text vorliegt.
+      </p>
+    ),
+  },
 ];
 
 export default function DatenschutzPage() {

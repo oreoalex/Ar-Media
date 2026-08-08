@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ar-media-github-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "-lc",
+        "export PATH=/Users/alex/.node-env/bin:$PATH && cd /Users/alex/Documents/GitHub/Ar-Media && npm run dev"
+      ],
+      "port": 3000
+    }
+  ]
+}

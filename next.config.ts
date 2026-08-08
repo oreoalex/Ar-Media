@@ -12,15 +12,21 @@ import type { NextConfig } from "next";
  * vorher (keine CSP), aber ein echter Fortschritt: verhindert weiterhin das
  * Nachladen fremder Skripte/Styles/Frames, nur eben ohne die für diese
  * konkrete, rein statische Seite unnötige Komplexität von Nonces.
+ *
+ * script-src/connect-src/img-src um Google Analytics 4 erweitert
+ * (googletagmanager.com liefert gtag.js aus, google-analytics.com/
+ * analytics.google.com empfangen die Messdaten) — ohne diese Freigabe
+ * würde die CSP GA4 stillschweigend blockieren, siehe Consent-Mode-
+ * Implementierung in components/shared/google-analytics.tsx.
  */
 const isDev = process.env.NODE_ENV === "development";
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""};
+  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com${isDev ? " 'unsafe-eval'" : ""};
   style-src 'self' 'unsafe-inline';
-  img-src 'self' data: blob:;
+  img-src 'self' data: blob: https://www.google-analytics.com;
   font-src 'self';
-  connect-src 'self';
+  connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com;
   object-src 'none';
   base-uri 'self';
   form-action 'self';

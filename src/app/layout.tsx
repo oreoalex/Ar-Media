@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Manrope, Fraunces } from "next/font/google";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { GoogleAnalytics } from "@/components/shared/google-analytics";
+import { ConsentBanner } from "@/components/shared/consent-banner";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -100,6 +102,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-off-white text-charcoal">
+        <GoogleAnalytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
@@ -115,6 +118,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <SiteFooter />
+        <ConsentBanner />
       </body>
     </html>
   );

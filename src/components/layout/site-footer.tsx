@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/shared/logo";
+import { CookieSettingsButton } from "@/components/shared/cookie-settings-button";
 import { footerNav, legalNav } from "@/lib/navigation";
 import { siteConfig } from "@/lib/site-config";
 
@@ -70,6 +71,7 @@ export function SiteFooter() {
                 {link.label}
               </Link>
             ))}
+            <CookieSettingsButton />
           </nav>
         </div>
       </div>
