@@ -9,6 +9,7 @@ import { BrandMarkR } from "@/components/shared/brand-mark-r";
 import { siteConfig } from "@/lib/site-config";
 
 type Faq = { q: string; a: string };
+type RelatedLink = { name: string; text: string; href: string };
 
 type FotografieCategoryPageProps = {
   kicker: string;
@@ -21,6 +22,8 @@ type FotografieCategoryPageProps = {
   preisHinweis: string;
   faqs: Faq[];
   ctaText: string;
+  /** Optionaler Cross-Säulen-Verweis, z. B. Business-Portraits → Unternehmen/Foto & Video. */
+  relatedLink?: RelatedLink;
 };
 
 /**
@@ -42,6 +45,7 @@ export function FotografieCategoryPage({
   preisHinweis,
   faqs,
   ctaText,
+  relatedLink,
 }: FotografieCategoryPageProps) {
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -189,6 +193,25 @@ export function FotografieCategoryPage({
           </Reveal>
         </div>
       </section>
+
+      {relatedLink && (
+        <section aria-label="Auch interessant" className="bg-off-white px-6 pb-24 lg:pb-32">
+          <div className="mx-auto max-w-2xl border-t border-charcoal/10 pt-10">
+            <Link href={relatedLink.href} className="group flex items-center justify-between gap-6">
+              <span>
+                <span className="block text-[16px] font-medium text-charcoal transition-colors group-hover:text-deep-forest">
+                  {relatedLink.name}
+                </span>
+                <span className="mt-1 block text-[14px] text-charcoal/70">{relatedLink.text}</span>
+              </span>
+              <ArrowRight
+                aria-hidden
+                className="size-4 shrink-0 text-charcoal/30 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-deep-forest"
+              />
+            </Link>
+          </div>
+        </section>
+      )}
 
       <section aria-label="Anfragen" className="relative overflow-hidden bg-deep-forest px-6 py-24 lg:py-32">
         <BrandMarkR className="pointer-events-none absolute -right-[8vw] -bottom-[14%] h-[60%] w-auto text-off-white opacity-[0.06] sm:-right-[5vw]" />

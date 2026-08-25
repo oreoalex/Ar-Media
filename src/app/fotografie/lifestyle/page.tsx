@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   description:
     "Lifestyle-Fotografie in Kiel und Schleswig-Holstein für Familien und echte Alltagsmomente, ohne gestellte Szenen. Ab 299 €.",
   keywords: ["Familienfotograf Kiel", "Lifestyle-Fotografie Schleswig-Holstein", "Familienshooting Kiel"],
+  openGraph: {
+    title: "Lifestyle · AR Media",
+    description:
+      "Lifestyle-Fotografie in Kiel und Schleswig-Holstein für Familien und echte Alltagsmomente, ohne gestellte Szenen. Ab 299 €.",
+  },
+  twitter: {
+    title: "Lifestyle · AR Media",
+    description:
+      "Lifestyle-Fotografie in Kiel und Schleswig-Holstein für Familien und echte Alltagsmomente, ohne gestellte Szenen. Ab 299 €.",
+  },
   alternates: { canonical: "/fotografie/lifestyle" },
 };
 
@@ -33,7 +43,7 @@ export default function Page() {
     <FotografieCategoryPage
       kicker="Fotografie · Lifestyle"
       title="Momente, keine Inszenierung."
-      intro="Für echte Augenblicke statt gestellter Szenen. Familien, Zuhause, der ganz normale Tag in Kiel, festgehalten, ohne ihn zu verändern."
+      intro="Für echte Augenblicke statt gestellter Szenen. Als Familienfotograf in Kiel begleiten wir Familien, Zuhause, den ganz normalen Tag, festgehalten, ohne ihn zu verändern."
       heroImage={{
         src: "/images/fotografie/arbeit-lifestyle.jpg",
         alt: "Echter Lachmoment, unbeobachtet",

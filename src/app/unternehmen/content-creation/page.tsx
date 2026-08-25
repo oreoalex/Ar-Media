@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   description:
     "Laufende Content-Produktion für Unternehmen in Kiel und Schleswig-Holstein: Fotografie, Video und Text, die aus einem System heraus entstehen statt zufällig.",
   keywords: ["Content Creation Kiel", "Content Produktion Unternehmen", "Social-Media-Content Schleswig-Holstein"],
+  openGraph: {
+    title: "Content Creation · AR Media",
+    description:
+      "Laufende Content-Produktion für Unternehmen in Kiel und Schleswig-Holstein: Fotografie, Video und Text, die aus einem System heraus entstehen statt zufällig.",
+  },
+  twitter: {
+    title: "Content Creation · AR Media",
+    description:
+      "Laufende Content-Produktion für Unternehmen in Kiel und Schleswig-Holstein: Fotografie, Video und Text, die aus einem System heraus entstehen statt zufällig.",
+  },
   alternates: { canonical: "/unternehmen/content-creation" },
 };
 
@@ -14,7 +24,7 @@ export default function Page() {
     <UnternehmenLeistungPage
       kicker="Unternehmen · Content Creation"
       title="Content, der zur Marke passt statt sie zu verwässern."
-      heroText="Laufender Content, der aussieht, klingt und sich anfühlt wie ein und dasselbe Unternehmen, nicht wie eine Reihe zufälliger Einzelposts."
+      heroText="Laufender Content, der aussieht, klingt und sich anfühlt wie ein und dasselbe Unternehmen, nicht wie eine Reihe zufälliger Einzelposts. Content Creation und Content Marketing aus einer Hand, für Unternehmen in Kiel und Schleswig-Holstein."
       problemTitle="Content, der zufällig aussieht."
       problemText="Mal ein Handyfoto, mal ein Canva-Template, mal ein aufwendig produziertes Video, ohne roten Faden dazwischen. Jede Woche entsteht neuer Content, aber kaum jemand erkennt ihn auf den ersten Blick als das eigene Unternehmen wieder."
       denkansatzTitle="Unser Denkansatz"

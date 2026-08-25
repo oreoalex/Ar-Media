@@ -58,6 +58,7 @@ export function SiteFooter() {
         </div>
 
         <p className="mt-16 text-[12px] tracking-[0.1em] text-off-white/60 uppercase">
+          {siteConfig.location.street} · {siteConfig.location.postalCode}{" "}
           {siteConfig.location.city} · {siteConfig.location.country} · Est. {siteConfig.founded}
         </p>
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/sections/kita-schule/hero-section";
 import { BeobachtungSection } from "@/components/sections/kita-schule/beobachtung-section";
+import { LeistungenSection } from "@/components/sections/kita-schule/leistungen-section";
 import { HaltungSection } from "@/components/sections/kita-schule/haltung-section";
 import { AblaufSection } from "@/components/sections/kita-schule/ablauf-section";
 import { BildbeispieleSection } from "@/components/sections/kita-schule/bildbeispiele-section";
@@ -18,6 +19,16 @@ export const metadata: Metadata = {
     "Kitafotograf Schleswig-Holstein",
     "Schulfotograf Schleswig-Holstein",
   ],
+  openGraph: {
+    title: "Kita & Schule · AR Media",
+    description:
+      "Kitafotografie und Schulfotografie in Kiel und Schleswig-Holstein, Kindergartenfotograf und Schulfotograf ohne Kaufdruck und künstliche Kulissen.",
+  },
+  twitter: {
+    title: "Kita & Schule · AR Media",
+    description:
+      "Kitafotografie und Schulfotografie in Kiel und Schleswig-Holstein, Kindergartenfotograf und Schulfotograf ohne Kaufdruck und künstliche Kulissen.",
+  },
   alternates: { canonical: "/kita-schule" },
 };
 
@@ -35,6 +46,7 @@ export default function KitaSchulePage() {
     <>
       <HeroSection />
       <BeobachtungSection />
+      <LeistungenSection />
       <HaltungSection />
       <AblaufSection />
       <BildbeispieleSection />

@@ -34,7 +34,8 @@ export function HeroSection() {
         </h1>
         <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-off-white/75">
           Fotografie beginnt nicht mit einer Kamera. Sie beginnt mit dem
-          Moment, in dem du vergisst, dass jemand hinsieht.
+          Moment, in dem du vergisst, dass jemand hinsieht. Als Fotograf in
+          Kiel und Schleswig-Holstein.
         </p>
         <Link
           href="/kontakt/shooting-anfragen"

@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   description:
     "Social-Media-Strategie und -Betreuung für Unternehmen in Kiel und Schleswig-Holstein: Sichtbarkeit durch Kontinuität statt einzelner Posts.",
   keywords: ["Social Media Kiel", "Social-Media-Betreuung Unternehmen", "Instagram Marketing Schleswig-Holstein"],
+  openGraph: {
+    title: "Social Media · AR Media",
+    description:
+      "Social-Media-Strategie und -Betreuung für Unternehmen in Kiel und Schleswig-Holstein: Sichtbarkeit durch Kontinuität statt einzelner Posts.",
+  },
+  twitter: {
+    title: "Social Media · AR Media",
+    description:
+      "Social-Media-Strategie und -Betreuung für Unternehmen in Kiel und Schleswig-Holstein: Sichtbarkeit durch Kontinuität statt einzelner Posts.",
+  },
   alternates: { canonical: "/unternehmen/social-media" },
 };
 
@@ -14,7 +24,7 @@ export default function Page() {
     <UnternehmenLeistungPage
       kicker="Unternehmen · Social Media"
       title="Von planlosem Posten zu konsistenter Präsenz."
-      heroText="Sichtbarkeit entsteht durch Kontinuität, nicht durch einzelne Posts."
+      heroText="Sichtbarkeit entsteht durch Kontinuität, nicht durch einzelne Posts. Als Social-Media-Agentur in Kiel übernehmen wir Betreuung und Management eures Kanals."
       problemTitle="Ein Kanal, der seit Monaten stillsteht."
       problemText="Ein Instagram-Profil mit dem letzten Beitrag vor drei Monaten. Eine Story-Funktion, die niemand nutzt, weil die Zeit fehlt. Dabei passiert im Unternehmen längst genug, das sich zu zeigen lohnt, es fehlt nur die Regelmäßigkeit, es auch zu tun."
       denkansatzTitle="Unser Denkansatz"
@@ -29,7 +39,7 @@ export default function Page() {
         { name: "Royal Charming", text: "Alle 9 Welpen innerhalb von 8 Wochen erfolgreich vermittelt, allein über Website und Social Media, vor allem Instagram.", href: "/case-studies#royal-charming" },
         { name: "Zeltlager Adlerhorst", text: "Laufende Social-Media-Betreuung, von der Helfersuche bis zum Jubiläum.", href: "/case-studies#adlerhorst" },
       ]}
-      leistungenTitle="Was zu Social-Media-Betreuung gehört"
+      leistungenTitle="Was zu Social-Media-Betreuung und -Management gehört"
       leistungen={[
         { title: "Strategie", text: "Welche Kanäle für dein Unternehmen wirklich zählen, statt auf allen gleichzeitig präsent sein zu wollen." },
         { title: "Redaktionsplan", text: "Ein verlässlicher Rhythmus statt spontaner Einzelposts." },

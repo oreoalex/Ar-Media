@@ -50,8 +50,22 @@ const faqs = [
 ];
 
 export function EinrichtungenContent() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <section className="bg-off-white px-6 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
@@ -62,8 +76,9 @@ export function EinrichtungenContent() {
               Ein reibungsloser Ablauf, dem ihr vertrauen könnt.
             </h1>
             <p className="mx-auto mt-6 max-w-lg text-[17px] leading-relaxed text-charcoal/70">
-              Für Kitaleitung, Schulleitung und Träger, die einen Fototag wollen, der sich von
-              allein organisiert, nicht einen weiteren Punkt auf der eigenen To-do-Liste.
+              Für Kitaleitung, Schulleitung und Träger, die einen Fotografen für Kita,
+              Kindergarten oder Schule suchen: ein Fototag, der sich von allein organisiert,
+              nicht einen weiteren Punkt auf der eigenen To-do-Liste.
             </p>
             <Link
               href="/kita-schule"

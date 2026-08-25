@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: "Für Eltern",
   description:
     "Bildbeispiele und Bestellprozess für Eltern, deren Kinder von AR Media in Kita oder Schule fotografiert wurden.",
+  openGraph: {
+    title: "Für Eltern · AR Media",
+    description:
+      "Bildbeispiele und Bestellprozess für Eltern, deren Kinder von AR Media in Kita oder Schule fotografiert wurden.",
+  },
+  twitter: {
+    title: "Für Eltern · AR Media",
+    description:
+      "Bildbeispiele und Bestellprozess für Eltern, deren Kinder von AR Media in Kita oder Schule fotografiert wurden.",
+  },
   alternates: { canonical: "/kita-schule/eltern" },
 };
 

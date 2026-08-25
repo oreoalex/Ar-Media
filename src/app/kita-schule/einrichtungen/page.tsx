@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   description:
     "Kitafotografie und Schulfotografie für Einrichtungen in Kiel und Schleswig-Holstein, ohne Organisationsaufwand für Kitaleitung und Träger.",
   keywords: ["Kitafotograf für Einrichtungen", "Schulfotografie Organisation Kiel"],
+  openGraph: {
+    title: "Für Einrichtungen · AR Media",
+    description:
+      "Kitafotografie und Schulfotografie für Einrichtungen in Kiel und Schleswig-Holstein, ohne Organisationsaufwand für Kitaleitung und Träger.",
+  },
+  twitter: {
+    title: "Für Einrichtungen · AR Media",
+    description:
+      "Kitafotografie und Schulfotografie für Einrichtungen in Kiel und Schleswig-Holstein, ohne Organisationsaufwand für Kitaleitung und Träger.",
+  },
   alternates: { canonical: "/kita-schule/einrichtungen" },
 };
 

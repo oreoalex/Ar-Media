@@ -13,6 +13,16 @@ export const metadata: Metadata = {
   title: "Marketing für Unternehmen",
   description:
     "Strategie, Markenidentität, Corporate Design, Fotografie, Video, Content und Social Media aus einer Hand für Unternehmen in Kiel und Schleswig-Holstein, die bereits mehr können, als sie zeigen.",
+  openGraph: {
+    title: "Marketing für Unternehmen · AR Media",
+    description:
+      "Strategie, Markenidentität, Corporate Design, Fotografie, Video, Content und Social Media aus einer Hand für Unternehmen in Kiel und Schleswig-Holstein, die bereits mehr können, als sie zeigen.",
+  },
+  twitter: {
+    title: "Marketing für Unternehmen · AR Media",
+    description:
+      "Strategie, Markenidentität, Corporate Design, Fotografie, Video, Content und Social Media aus einer Hand für Unternehmen in Kiel und Schleswig-Holstein, die bereits mehr können, als sie zeigen.",
+  },
   alternates: { canonical: "/unternehmen" },
 };
 

@@ -35,8 +35,9 @@ export function HeroSection() {
           Kinder dürfen Kinder sein.
         </h1>
         <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-off-white/75">
-          Kitafotografie und Schulfotografie in Kiel und Schleswig-Holstein, die den Alltag
-          eurer Einrichtung nicht stört und keinem Kind vorschreibt, wie es zu lächeln hat.
+          Als Kindergartenfotograf und Schulfotograf bieten wir Kitafotografie und
+          Schulfotografie in Kiel und Schleswig-Holstein, die den Alltag eurer Einrichtung
+          nicht stört und keinem Kind vorschreibt, wie es zu lächeln hat.
         </p>
 
         <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">

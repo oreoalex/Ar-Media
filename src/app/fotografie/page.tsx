@@ -12,15 +12,24 @@ import { CtaSection } from "@/components/sections/fotografie/cta-section";
 export const metadata: Metadata = {
   title: "Fotografie",
   description:
-    "Natürliche Portrait-, Paar-, Lifestyle-, Business- und Hochzeitsfotografie in Kiel und Schleswig-Holstein, ohne Posen, ohne künstliche Inszenierung.",
+    "Natürliche Portrait-, Paar-, Lifestyle- und Businessfotografie in Kiel und Schleswig-Holstein, ohne Posen, ohne künstliche Inszenierung.",
   keywords: [
     "Fotograf Kiel",
     "Portraitfotograf Kiel",
     "Paarshooting Kiel",
     "Familienfotograf Schleswig-Holstein",
     "Business Portrait Kiel",
-    "Hochzeitsfotograf Kiel",
   ],
+  openGraph: {
+    title: "Fotografie · AR Media",
+    description:
+      "Natürliche Portrait-, Paar-, Lifestyle- und Businessfotografie in Kiel und Schleswig-Holstein, ohne Posen, ohne künstliche Inszenierung.",
+  },
+  twitter: {
+    title: "Fotografie · AR Media",
+    description:
+      "Natürliche Portrait-, Paar-, Lifestyle- und Businessfotografie in Kiel und Schleswig-Holstein, ohne Posen, ohne künstliche Inszenierung.",
+  },
   alternates: { canonical: "/fotografie" },
 };
 

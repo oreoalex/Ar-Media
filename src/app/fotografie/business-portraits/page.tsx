@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   description:
     "Business-Portraits und Bewerbungsfotos in Kiel und Schleswig-Holstein, seriös und trotzdem echt. Ab 399 € pro Person, inklusive gewerblicher Nutzungsrechte.",
   keywords: ["Business Portrait Kiel", "Bewerbungsfoto Kiel", "Corporate Fotograf Schleswig-Holstein"],
+  openGraph: {
+    title: "Business-Portraits · AR Media",
+    description:
+      "Business-Portraits und Bewerbungsfotos in Kiel und Schleswig-Holstein, seriös und trotzdem echt. Ab 399 € pro Person, inklusive gewerblicher Nutzungsrechte.",
+  },
+  twitter: {
+    title: "Business-Portraits · AR Media",
+    description:
+      "Business-Portraits und Bewerbungsfotos in Kiel und Schleswig-Holstein, seriös und trotzdem echt. Ab 399 € pro Person, inklusive gewerblicher Nutzungsrechte.",
+  },
   alternates: { canonical: "/fotografie/business-portraits" },
 };
 
@@ -44,6 +54,11 @@ export default function Page() {
       preisHinweis="Preis pro Person, inklusive Nutzungsrechten für den geschäftlichen Einsatz. Bei mehreren Personen oder ganzen Teams sprechen wir Zeit und Umfang gemeinsam ab, transparent und ohne versteckte Zusatzkosten."
       faqs={faqs}
       ctaText="Ein Bild, das aussieht wie du an einem guten Arbeitstag."
+      relatedLink={{
+        name: "Foto & Video für Unternehmen",
+        text: "Braucht ihr Bildmaterial für ein ganzes Team oder Unternehmen statt für eine einzelne Person?",
+        href: "/unternehmen/foto-video",
+      }}
     />
   );
 }

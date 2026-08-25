@@ -16,7 +16,7 @@ import { siteConfig } from "@/lib/site-config";
 const schritte = [
   { label: "01", title: "Zugang erhalten", text: "Nach dem Fototag bekommt ihr einen persönlichen Link zur Online-Galerie eures Kindes." },
   { label: "02", title: "Bilder ansehen", text: "In Ruhe, ohne Zeitdruck, nur ihr seht die Bilder eures Kindes." },
-  { label: "03", title: "Bestellen oder nicht", text: "Ihr wählt aus, was euch gefällt. Keine Mappe, kein Format ist Pflicht." },
+  { label: "03", title: "Bestellen oder nicht", text: "Ihr wählt aus, was euch gefällt, und bestellt eure Kinderfotos direkt online. Keine Mappe, kein Format ist Pflicht." },
 ];
 
 const faqs = [
@@ -39,8 +39,22 @@ const faqs = [
 ];
 
 export function ElternContent() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <section className="bg-off-white px-6 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
@@ -51,8 +65,8 @@ export function ElternContent() {
               Echte Bilder von echten Momenten.
             </h1>
             <p className="mx-auto mt-6 max-w-lg text-[17px] leading-relaxed text-charcoal/70">
-              Wurde in eurer Kita oder Schule fotografiert? Hier erfahrt ihr, wie ihr die
-              Bilder eures Kindes anseht und bestellt.
+              Wurde in eurer Kita oder Schule fotografiert? Hier erfahrt ihr, wie ihr eure
+              Kita-Fotos oder Schulfotos anseht und online bestellt.
             </p>
             <Link
               href="/kita-schule"

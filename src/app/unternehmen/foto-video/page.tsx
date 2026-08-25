@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   description:
     "Unternehmensfotografie und Businessvideo in Kiel und Schleswig-Holstein: echte Menschen und echte Situationen statt Stockfotos.",
   keywords: ["Unternehmensfotografie Kiel", "Business Video Schleswig-Holstein", "Teamfotos Firma"],
+  openGraph: {
+    title: "Foto & Video für Unternehmen · AR Media",
+    description:
+      "Unternehmensfotografie und Businessvideo in Kiel und Schleswig-Holstein: echte Menschen und echte Situationen statt Stockfotos.",
+  },
+  twitter: {
+    title: "Foto & Video für Unternehmen · AR Media",
+    description:
+      "Unternehmensfotografie und Businessvideo in Kiel und Schleswig-Holstein: echte Menschen und echte Situationen statt Stockfotos.",
+  },
   alternates: { canonical: "/unternehmen/foto-video" },
 };
 
@@ -28,6 +38,7 @@ export default function Page() {
       caseStudies={[
         { name: "Zeltlager Adlerhorst", text: "Von Luftaufnahmen des Geländes bis zu laufender Eventfotografie.", href: "/case-studies#adlerhorst" },
         { name: "Royal Charming", text: "Echte Aufnahmen der Zuchthündin und der Welpen statt Symbolbildern.", href: "/case-studies#royal-charming" },
+        { name: "Business-Portraits", text: "Für einzelne Mitarbeitende statt eines ganzen Teams: Business-Portraits auf unserer Fotografie-Seite.", href: "/fotografie/business-portraits" },
       ]}
       leistungenTitle="Was zu Foto & Video gehört"
       leistungen={[

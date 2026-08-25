@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   description:
     "Corporate Design und visuelle Systeme für Unternehmen in Kiel und Schleswig-Holstein: Signet, Farbwelt, Typografie und Website als ein durchgängiges System.",
   keywords: ["Corporate Design Kiel", "Logo Redesign Schleswig-Holstein", "Visuelles System Unternehmen"],
+  openGraph: {
+    title: "Corporate Design · AR Media",
+    description:
+      "Corporate Design und visuelle Systeme für Unternehmen in Kiel und Schleswig-Holstein: Signet, Farbwelt, Typografie und Website als ein durchgängiges System.",
+  },
+  twitter: {
+    title: "Corporate Design · AR Media",
+    description:
+      "Corporate Design und visuelle Systeme für Unternehmen in Kiel und Schleswig-Holstein: Signet, Farbwelt, Typografie und Website als ein durchgängiges System.",
+  },
   alternates: { canonical: "/unternehmen/corporate-design" },
 };
 
@@ -14,7 +24,7 @@ export default function Page() {
     <UnternehmenLeistungPage
       kicker="Unternehmen · Corporate Design"
       title="Ein System statt nur ein Logo."
-      heroText="Ein Signet allein macht eine Marke nicht wiedererkennbar. Das gelingt erst durch das System dahinter, konsequent angewendet, auf jedem Kanal."
+      heroText="Ein Signet allein macht eine Marke nicht wiedererkennbar. Das gelingt erst durch das System dahinter, konsequent angewendet, auf jedem Kanal. Corporate Design aus Kiel, für Unternehmen in ganz Schleswig-Holstein."
       problemTitle="Ein Logo, das überall anders aussieht."
       problemText="Auf der Website ein anderes Grün als auf der Visitenkarte. Der Fahrzeugaufkleber sieht aus wie von einer anderen Firma als der Social-Media-Auftritt. Niemand im Team weiß genau, welche Schrift eigentlich die richtige ist. Am Ende wirkt das zufällig, obwohl das Zeichen selbst oft völlig in Ordnung ist."
       denkansatzTitle="Unser Denkansatz"

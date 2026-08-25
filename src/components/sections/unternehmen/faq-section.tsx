@@ -39,8 +39,23 @@ const faqs = [
 ];
 
 export function FaqSection() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+
   return (
-    <section aria-label="Häufige Fragen" className="bg-off-white px-6 py-24 lg:py-32">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <section aria-label="Häufige Fragen" className="bg-off-white px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-2xl">
         <Reveal>
           <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
@@ -73,5 +88,6 @@ export function FaqSection() {
         </Reveal>
       </div>
     </section>
+    </>
   );
 }
