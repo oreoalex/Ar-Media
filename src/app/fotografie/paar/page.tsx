@@ -31,6 +31,7 @@ const faqs = [
 export default function Page() {
   return (
     <FotografieCategoryPage
+      slug="/fotografie/paar"
       kicker="Fotografie · Paar"
       title="Eure Geschichte, echt festgehalten."
       intro="Für zwei Menschen, die zusammen entspannter sind als einzeln. Ein Paarshooting in Kiel, das sich wie ein gemeinsamer Nachmittag anfühlt, nicht wie ein Termin."

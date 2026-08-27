@@ -12,11 +12,18 @@ import { BrandMarkA } from "@/components/shared/brand-mark-a";
  * verstehen Kinder" explizit, nicht nur implizit über die Bildsprache: der
  * Master-Prompt fordert diesen Gedankenschritt ausdrücklich, vorher stand er
  * nirgends klar ausformuliert auf der Seite.
+ *
+ * Die "Leinwand"-Zeile ersetzt die vorherige, abstraktere Formulierung
+ * ("Echte Situationen, echtes Licht") durch eine konkrete, vom Betreiber
+ * bestätigte Tatsache (Content-Audit: E-E-A-T braucht konkrete, prüfbare
+ * Aussagen statt austauschbarer Marketing-Sprache) — draußen, natürliches
+ * Licht bevorzugt, explizit keine Studio-/Leinwand-Portraits, siehe auch
+ * die FAQ in vertrauen-section.tsx.
  */
 const kontraste = [
   { ohne: "Keine Mappen, die verkauft werden müssen", dafuer: "Digitale Bestellung, bei der Eltern selbst entscheiden" },
   { ohne: "Kein Kaufdruck im Kita-Alltag", dafuer: "Die Einrichtung verwaltet nichts" },
-  { ohne: "Keine künstlichen Hintergründe", dafuer: "Echte Situationen, echtes Licht" },
+  { ohne: "Keine Portraits vor der Leinwand", dafuer: "Am liebsten draußen, bei natürlichem Licht" },
   { ohne: "Keine gestellten Standardportraits", dafuer: "Natürliche Emotionen, kuratiert statt einstudiert" },
   { ohne: "Keine Fließbandfotografie", dafuer: "Zeit für jedes Kind, so viel wie es braucht" },
   { ohne: "Kein Filter, der alle Kinder gleich aussehen lässt", dafuer: "Ruhige Farbgebung, echte Hauttöne, erkennbar bleibt jedes Kind es selbst" },

@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
 import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
 import { Reveal } from "@/components/shared/reveal";
 import { siteConfig } from "@/lib/site-config";
+import { buildBreadcrumbJsonLd, buildServiceJsonLd } from "@/lib/schema";
 
 /**
  * Kita & Schule · Für Einrichtungen. Zielgruppe: Kitaleitung, Schulleitung,
@@ -60,12 +61,26 @@ export function EinrichtungenContent() {
     })),
   };
 
+  const serviceJsonLd = buildServiceJsonLd({
+    name: "Kita- und Schulfotografie für Einrichtungen",
+    description:
+      "Ein Fototag für Kita, Kindergarten und Schule, der sich von allein organisiert: Erstgespräch, Abstimmung mit dem Team, Fototag, digitaler Elternzugang.",
+    path: "/kita-schule/einrichtungen",
+  });
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Start", path: "/" },
+    { name: "Kita & Schule", path: "/kita-schule" },
+    { name: "Für Einrichtungen", path: "/kita-schule/einrichtungen" },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <section className="bg-off-white px-6 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>

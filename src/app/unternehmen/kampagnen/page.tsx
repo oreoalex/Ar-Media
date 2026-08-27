@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <UnternehmenLeistungPage
+      slug="/unternehmen/kampagnen"
       kicker="Unternehmen · Kampagnen"
       title="Mehrere Leistungen, eine gemeinsame Klammer."
       heroText="Eine Kampagne funktioniert nur, wenn jedes einzelne Teil aus derselben Idee kommt, nicht aus mehreren zufällig kombinierten."

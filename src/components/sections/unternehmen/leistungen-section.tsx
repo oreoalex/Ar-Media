@@ -25,30 +25,36 @@ const leistungen = [
   },
   {
     label: "03",
+    name: "Brandkit für Neugründungen",
+    outcome: "Von der Idee zur ersten sichtbaren Marke.",
+    href: "/unternehmen/brandkit",
+  },
+  {
+    label: "04",
     name: "Content Creation",
     outcome: "Aus einem Projekt wird sichtbare Substanz, nicht nur ein einzelner Post.",
     href: "/unternehmen/content-creation",
   },
   {
-    label: "04",
+    label: "05",
     name: "Social Media",
     outcome: "Sichtbarkeit entsteht durch Kontinuität, nicht durch einzelne Posts.",
     href: "/unternehmen/social-media",
   },
   {
-    label: "05",
+    label: "06",
     name: "Employer Branding",
     outcome: "Gute Mitarbeiter bewerben sich lieber.",
     href: "/unternehmen/employer-branding",
   },
   {
-    label: "06",
+    label: "07",
     name: "Foto & Video",
     outcome: "Menschen vertrauen Gesichtern, nicht Stockfotos.",
     href: "/unternehmen/foto-video",
   },
   {
-    label: "07",
+    label: "08",
     name: "Kampagnen",
     outcome: "Mehrere Kanäle, eine Botschaft, ein Ergebnis.",
     href: "/unternehmen/kampagnen",
@@ -65,7 +71,7 @@ export function LeistungenSection() {
           </p>
           <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
           <h2 className="mt-6 max-w-xl text-[22px] leading-relaxed text-charcoal/80 lg:text-[24px]">
-            Sieben Leistungsfelder, eine Idee: Sichtbarkeit.
+            Acht Leistungsfelder, eine Idee: Sichtbarkeit.
           </h2>
         </Reveal>
 

@@ -282,7 +282,7 @@ export function FaelleSection() {
           stages={[
             { label: "Ausgangssituation", text: "Ein kreisförmiges Namensmonogramm, danach eine Ein-Personen-Website: Alexander Rieck, Social Media Manager, Fotograf. Ein Foto, ein Name, eine Berufsbezeichnung." },
             { label: "Beobachtung", text: "Es gab noch kein ausgereiftes Konzept, keine eigene Idee, die alles zusammenhielt. Nur einzelne Versuche ohne gemeinsames System." },
-            { label: "Strategie", text: "Aus einer Ich-Marke eine eigenständige Marke machen: ein Zeichen statt eines Namens, zwei gleichwertige Säulen statt eines Berufstitels." },
+            { label: "Strategie", text: "Aus einer Ich-Marke eine eigenständige Marke machen: ein Zeichen statt eines Namens, drei gleichwertige Säulen statt eines Berufstitels." },
             { label: "Umsetzung", text: "Neues Signet aus A und R, eine ruhigere Farbwelt, ein eigenes Lookbook, das die Identität über die Website hinaus durchspielt, und eine vollständige, mehrseitige Website mit klarer Struktur statt einer einzelnen Seite." },
             { label: "Ergebnis", text: "Diese Website selbst ist das Ergebnis, vom Signet bis zur Struktur, mit der sie gebaut ist." },
             { label: "Learnings", text: "Manche Dinge muss man nicht verändern. Man muss sie nur sichtbar machen, auch bei der eigenen Marke." },

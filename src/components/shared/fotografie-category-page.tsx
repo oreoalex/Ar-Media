@@ -7,11 +7,14 @@ import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
 import { Reveal } from "@/components/shared/reveal";
 import { BrandMarkR } from "@/components/shared/brand-mark-r";
 import { siteConfig } from "@/lib/site-config";
+import { buildBreadcrumbJsonLd, buildServiceJsonLd } from "@/lib/schema";
 
 type Faq = { q: string; a: string };
 type RelatedLink = { name: string; text: string; href: string };
 
 type FotografieCategoryPageProps = {
+  /** URL-Pfad dieser Seite, z. B. "/fotografie/portrait" — für Breadcrumb- und Service-JSON-LD. */
+  slug: string;
   kicker: string;
   title: string;
   intro: string;
@@ -35,6 +38,7 @@ type FotografieCategoryPageProps = {
  * zu 90% gleichen und nur Inhalt und Bild variieren.
  */
 export function FotografieCategoryPage({
+  slug,
   kicker,
   title,
   intro,
@@ -60,12 +64,22 @@ export function FotografieCategoryPage({
     })),
   };
 
+  const serviceName = kicker.split("·").pop()?.trim() ?? title;
+  const serviceJsonLd = buildServiceJsonLd({ name: serviceName, description: intro, path: slug, priceFrom: preisAb });
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Start", path: "/" },
+    { name: "Fotografie", path: "/fotografie" },
+    { name: serviceName, path: slug },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <section className="bg-off-white px-6 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div
           className={`mx-auto max-w-5xl ${heroImage ? "grid items-center gap-12 lg:grid-cols-[1fr_360px] lg:gap-16" : "max-w-2xl text-center"}`}

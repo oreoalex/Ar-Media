@@ -7,6 +7,7 @@ import { Reveal } from "@/components/shared/reveal";
 import { BrandMarkA } from "@/components/shared/brand-mark-a";
 import { BrandMarkR } from "@/components/shared/brand-mark-r";
 import { siteConfig } from "@/lib/site-config";
+import { buildBreadcrumbJsonLd, buildServiceJsonLd } from "@/lib/schema";
 
 type ProzessSchritt = { title: string; text: string };
 type Faq = { q: string; a: string };
@@ -14,6 +15,8 @@ type CaseStudyRef = { name: string; text: string; href: string };
 type LeistungDetail = { title: string; text: string };
 
 type UnternehmenLeistungPageProps = {
+  /** URL-Pfad dieser Seite, z. B. "/unternehmen/branding" — für Breadcrumb- und Service-JSON-LD. */
+  slug: string;
   kicker: string;
   title: string;
   heroText: string;
@@ -27,6 +30,8 @@ type UnternehmenLeistungPageProps = {
   leistungen: LeistungDetail[];
   faqs: Faq[];
   ctaText: string;
+  /** Optionaler Override für den zweiten CTA-Link (Standard: "Unverbindlich austauschen") */
+  ctaSecondaryLabel?: string;
 };
 
 /**
@@ -53,6 +58,7 @@ type UnternehmenLeistungPageProps = {
  * Unterschied-Section) — das wäre auf einer engeren Einzelseite zu viel.
  */
 export function UnternehmenLeistungPage({
+  slug,
   kicker,
   title,
   heroText,
@@ -66,6 +72,7 @@ export function UnternehmenLeistungPage({
   leistungen,
   faqs,
   ctaText,
+  ctaSecondaryLabel = "Unverbindlich austauschen",
 }: UnternehmenLeistungPageProps) {
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -77,9 +84,19 @@ export function UnternehmenLeistungPage({
     })),
   };
 
+  const serviceName = kicker.split("·").pop()?.trim() ?? title;
+  const serviceJsonLd = buildServiceJsonLd({ name: serviceName, description: heroText, path: slug });
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Start", path: "/" },
+    { name: "Unternehmen", path: "/unternehmen" },
+    { name: serviceName, path: slug },
+  ]);
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       <section aria-label={kicker} className="bg-off-white px-6 pt-32 pb-20 lg:pt-40 lg:pb-24">
         <div className="mx-auto max-w-2xl text-center">
@@ -270,7 +287,7 @@ export function UnternehmenLeistungPage({
             </a>
             <Link href="/kontakt/projekt-besprechen" className="group text-center sm:text-left">
               <span className="flex items-center justify-center gap-2 text-[17px] font-medium tracking-wide text-off-white sm:justify-start">
-                Unverbindlich austauschen
+                {ctaSecondaryLabel}
                 <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
               </span>
               <span className="mt-1.5 block text-[13px] text-off-white/55">Kein Verkaufsgespräch</span>

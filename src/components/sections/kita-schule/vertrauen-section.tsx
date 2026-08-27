@@ -36,6 +36,10 @@ const faqs = [
     q: "Was passiert mit den Bildern, wer sieht sie?",
     a: "Nur die eigenen Eltern, über einen geschützten Zugang. Mehr dazu unter Ablauf & Datenschutz.",
   },
+  {
+    q: "Fotografiert ihr auch drinnen, wenn das Wetter nicht mitspielt?",
+    a: "Ja. Am liebsten sind wir draußen bei natürlichem Licht, aber bei schlechtem Wetter geht es auch drinnen, mit denselben echten Hintergründen statt einer Leinwand.",
+  },
 ];
 
 export function VertrauenSection() {

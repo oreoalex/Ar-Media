@@ -7,11 +7,13 @@ export const metadata: Metadata = {
     "Unternehmensfotografie und Businessvideo in Kiel und Schleswig-Holstein: echte Menschen und echte Situationen statt Stockfotos.",
   keywords: ["Unternehmensfotografie Kiel", "Business Video Schleswig-Holstein", "Teamfotos Firma"],
   openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
     title: "Foto & Video für Unternehmen · AR Media",
     description:
       "Unternehmensfotografie und Businessvideo in Kiel und Schleswig-Holstein: echte Menschen und echte Situationen statt Stockfotos.",
   },
   twitter: {
+    images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
     title: "Foto & Video für Unternehmen · AR Media",
     description:
       "Unternehmensfotografie und Businessvideo in Kiel und Schleswig-Holstein: echte Menschen und echte Situationen statt Stockfotos.",
@@ -22,6 +24,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <UnternehmenLeistungPage
+      slug="/unternehmen/foto-video"
       kicker="Unternehmen · Foto & Video"
       title="Bildmaterial mit derselben Handschrift wie die private Fotografie."
       heroText="Menschen vertrauen Gesichtern, nicht Stockfotos."

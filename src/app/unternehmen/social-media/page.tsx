@@ -7,11 +7,13 @@ export const metadata: Metadata = {
     "Social-Media-Strategie und -Betreuung für Unternehmen in Kiel und Schleswig-Holstein: Sichtbarkeit durch Kontinuität statt einzelner Posts.",
   keywords: ["Social Media Kiel", "Social-Media-Betreuung Unternehmen", "Instagram Marketing Schleswig-Holstein"],
   openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
     title: "Social Media · AR Media",
     description:
       "Social-Media-Strategie und -Betreuung für Unternehmen in Kiel und Schleswig-Holstein: Sichtbarkeit durch Kontinuität statt einzelner Posts.",
   },
   twitter: {
+    images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
     title: "Social Media · AR Media",
     description:
       "Social-Media-Strategie und -Betreuung für Unternehmen in Kiel und Schleswig-Holstein: Sichtbarkeit durch Kontinuität statt einzelner Posts.",
@@ -22,6 +24,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <UnternehmenLeistungPage
+      slug="/unternehmen/social-media"
       kicker="Unternehmen · Social Media"
       title="Von planlosem Posten zu konsistenter Präsenz."
       heroText="Sichtbarkeit entsteht durch Kontinuität, nicht durch einzelne Posts. Als Social-Media-Agentur in Kiel übernehmen wir Betreuung und Management eures Kanals."

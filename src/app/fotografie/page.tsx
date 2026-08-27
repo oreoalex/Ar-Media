@@ -21,11 +21,13 @@ export const metadata: Metadata = {
     "Business Portrait Kiel",
   ],
   openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
     title: "Fotografie · AR Media",
     description:
       "Natürliche Portrait-, Paar-, Lifestyle- und Businessfotografie in Kiel und Schleswig-Holstein, ohne Posen, ohne künstliche Inszenierung.",
   },
   twitter: {
+    images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
     title: "Fotografie · AR Media",
     description:
       "Natürliche Portrait-, Paar-, Lifestyle- und Businessfotografie in Kiel und Schleswig-Holstein, ohne Posen, ohne künstliche Inszenierung.",

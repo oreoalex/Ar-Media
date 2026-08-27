@@ -40,6 +40,7 @@ export const mainNav: NavItem[] = [
         links: [
           { label: "Branding", href: "/unternehmen/branding" },
           { label: "Corporate Design", href: "/unternehmen/corporate-design" },
+          { label: "Brandkit für Neugründungen", href: "/unternehmen/brandkit" },
         ],
       },
       {
@@ -101,6 +102,7 @@ export const footerNav: NavGroup[] = [
     links: [
       { label: "Branding", href: "/unternehmen/branding" },
       { label: "Corporate Design", href: "/unternehmen/corporate-design" },
+      { label: "Brandkit für Neugründungen", href: "/unternehmen/brandkit" },
       { label: "Content Creation", href: "/unternehmen/content-creation" },
       { label: "Social Media", href: "/unternehmen/social-media" },
       { label: "Employer Branding", href: "/unternehmen/employer-branding" },

@@ -59,19 +59,25 @@ export function ConsentBanner() {
       role="dialog"
       aria-labelledby="consent-banner-title"
       aria-describedby="consent-banner-text"
-      className="fixed inset-x-0 bottom-0 z-[90] border-t border-charcoal/10 bg-off-white/95 px-6 py-6 shadow-[0_-8px_30px_rgba(13,43,36,0.12)] backdrop-blur-xl lg:px-10"
+      className="fixed inset-x-0 bottom-0 z-[90] border-t border-charcoal/10 bg-off-white/95 px-5 py-4 shadow-[0_-8px_30px_rgba(13,43,36,0.12)] backdrop-blur-xl sm:px-6 sm:py-5 lg:px-10 lg:py-6"
     >
-      <div className="mx-auto flex max-w-[1400px] flex-col items-start gap-5 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+      {/*
+        Stapelt Text+Buttons bis sm (640px) statt bis lg: das mobile Viewport-
+        Budget (375–428px breit, 600–900px hoch) ist knapp, ein Consent-Modal
+        das bis lg gestapelt bleibt verdeckt dort H1/CTA fast vollständig
+        (siehe Visual-Audit: 35–40% der Viewporthöhe). Ab sm passen Text und
+        die zwei kurzen Buttons nebeneinander.
+      */}
+      <div className="mx-auto flex max-w-[1400px] flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6 lg:gap-10">
         <div className="max-w-2xl">
           <p
             id="consent-banner-title"
-            className="text-[13px] font-medium tracking-[0.1em] text-charcoal uppercase"
+            className="text-[12px] font-medium tracking-[0.1em] text-charcoal uppercase sm:text-[13px]"
           >
             Cookies & Statistik
           </p>
-          <p id="consent-banner-text" className="mt-2 text-[14px] leading-relaxed text-charcoal/75">
-            Wir nutzen Google Analytics, um zu verstehen, wie die Website genutzt wird — nur mit
-            deiner Einwilligung. Mehr dazu in der{" "}
+          <p id="consent-banner-text" className="mt-1.5 text-[13px] leading-snug text-charcoal/75 sm:mt-2 sm:text-[14px] sm:leading-relaxed">
+            Nur mit deiner Einwilligung: Google Analytics.{" "}
             <Link
               href="/datenschutz"
               className="underline decoration-charcoal/30 underline-offset-4 transition-colors hover:text-deep-forest hover:decoration-deep-forest"
@@ -81,18 +87,21 @@ export function ConsentBanner() {
             .
           </p>
         </div>
+        {/* min-h-11 (44px) hält den Touch-Target-Mindestwert unabhängig vom
+            kompakteren Padding ein (Visual-Audit: Buttons lagen zuvor bei
+            39,5px, knapp unter der 44px-Empfehlung). */}
         <div className="flex shrink-0 items-center gap-3">
           <button
             type="button"
             onClick={() => handleDecision("denied")}
-            className="rounded-sm px-5 py-2.5 text-[13px] font-medium tracking-wide text-charcoal/70 underline decoration-charcoal/25 underline-offset-4 transition-colors hover:text-deep-forest hover:decoration-deep-forest focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-forest/50"
+            className="inline-flex min-h-11 items-center rounded-sm px-4 text-[13px] font-medium tracking-wide text-charcoal/70 underline decoration-charcoal/25 underline-offset-4 transition-colors hover:text-deep-forest hover:decoration-deep-forest focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-forest/50 sm:px-5"
           >
             Ablehnen
           </button>
           <button
             type="button"
             onClick={() => handleDecision("granted")}
-            className="rounded-sm bg-deep-forest px-6 py-2.5 text-[13px] font-medium tracking-wide text-off-white transition-colors hover:bg-deep-forest/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-forest/50"
+            className="inline-flex min-h-11 items-center rounded-sm bg-deep-forest px-5 text-[13px] font-medium tracking-wide text-off-white transition-colors hover:bg-deep-forest/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-forest/50 sm:px-6"
           >
             Akzeptieren
           </button>

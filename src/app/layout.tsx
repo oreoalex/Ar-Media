@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { GoogleAnalytics } from "@/components/shared/google-analytics";
 import { ConsentBanner } from "@/components/shared/consent-banner";
+import { SmoothScroll } from "@/components/shared/smooth-scroll";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -62,13 +63,21 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   const organizationJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    // ProfessionalService (LocalBusiness-Subtyp) zusätzlich zu Organization:
+    // nur mit einem LocalBusiness-Subtyp zählt aggregateRating für
+    // Google-Sterne-Snippets, auf reinem Organization nicht (Schema-Audit).
+    // AR Media hat eine reale Geschäftsadresse und bedient primär die
+    // Region Kiel/Schleswig-Holstein, ProfessionalService passt fachlich
+    // (Kreativ-/Beratungsdienstleistung, kein Einzelhandel/Ladengeschäft).
+    "@type": ["Organization", "ProfessionalService"],
     "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     url: siteConfig.url,
     slogan: siteConfig.claim,
     description: siteConfig.description,
     foundingDate: siteConfig.founded,
+    logo: `${siteConfig.url}/logo-full.png`,
+    image: `${siteConfig.url}/logo-full.png`,
     founder: {
       "@type": "Person",
       name: siteConfig.founder.name,
@@ -81,6 +90,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       addressRegion: siteConfig.location.region,
       addressCountry: siteConfig.location.countryCode,
     },
+    // Reale Koordinaten, per OpenStreetMap-Nominatim für die tatsächliche
+    // Adresse geokodiert (keyless, kein erfundener Wert), Local-SEO-Audit
+    // bemängelte fehlende geo-Angabe auf dem LocalBusiness-Typ.
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 54.3567900,
+      longitude: 10.0800947,
+    },
     telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,
     areaServed: {
@@ -92,7 +109,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       ratingValue: siteConfig.rating.value,
       reviewCount: siteConfig.rating.count,
     },
-    sameAs: [siteConfig.social.instagram, siteConfig.social.linkedin],
+    sameAs: [siteConfig.social.instagram, siteConfig.social.linkedin, siteConfig.social.googleBusiness],
   };
 
   return (
@@ -102,6 +119,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-off-white text-charcoal">
+        <SmoothScroll />
         <GoogleAnalytics />
         <script
           type="application/ld+json"

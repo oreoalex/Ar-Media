@@ -109,11 +109,13 @@ export function SiteHeader() {
           </AnimatePresence>
         </nav>
 
-        {/* Mobile Trigger */}
+        {/* Mobile Trigger — size-11 (44px) statt size-9 (36px): Touch-Target-
+            Mindestmaß, das Icon selbst bleibt bei size-5 für die gewohnte
+            optische Größe, nur die klickbare Fläche wächst. */}
         <button
           type="button"
           onClick={() => setMobileOpen(true)}
-          className="flex size-9 items-center justify-center text-charcoal lg:hidden"
+          className="flex size-11 items-center justify-center text-charcoal lg:hidden"
           aria-label="Menü öffnen"
         >
           <Menu aria-hidden className="size-5" />
@@ -131,7 +133,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setMobileOpen(false)}
-              className="flex size-9 items-center justify-center text-charcoal"
+              className="flex size-11 items-center justify-center text-charcoal"
               aria-label="Menü schließen"
             >
               <X aria-hidden className="size-5" />

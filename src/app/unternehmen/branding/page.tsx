@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <UnternehmenLeistungPage
+      slug="/unternehmen/branding"
       kicker="Unternehmen · Branding"
       title="Aus vorhandenem Potenzial eine Marke entwickeln."
       heroText="Eine Marke ist keine Behauptung. Sie ist die klarste, ehrlichste Version dessen, was ein Unternehmen bereits ist, nur noch niemand in Worte gefasst hat."
@@ -27,7 +28,11 @@ export default function Page() {
       ]}
       caseStudies={[
         { name: "Saat für den Norden", text: "Eine bestehende Symbolik neu gelesen, statt ein neues Zeichen zu erfinden.", href: "/case-studies#saat" },
-        { name: "AR Media", text: "Auch die eigene Marke von AR Media entstand aus genau diesem Denkansatz.", href: "/case-studies#ar-media" },
+        {
+          name: "AR Media",
+          text: "Auch die eigene Marke entstand aus genau diesem Denkansatz: aus einer Ich-Marke, einem Namensmonogramm und einer Ein-Personen-Website, wurde ein eigenständiges Zeichen mit klarer Struktur.",
+          href: "/case-studies#ar-media",
+        },
       ]}
       leistungenTitle="Was zu einem Branding-Projekt gehört"
       leistungen={[
@@ -41,6 +46,7 @@ export default function Page() {
         { q: "Ich habe schon ein Logo, brauche ich trotzdem Branding?", a: "Ein Logo ist kein Branding. Viele Unternehmen haben ein Zeichen, aber keine Position dahinter, genau da setzen wir an, unabhängig davon, wie das bestehende Design aussieht." },
         { q: "Wie lange dauert ein Branding-Projekt?", a: "Das hängt vom Unternehmen ab, nicht von einem Paket. Deshalb beginnt jedes Projekt mit einem Gespräch, in dem wir das gemeinsam einschätzen." },
         { q: "Was, wenn im Team unterschiedliche Vorstellungen bestehen?", a: "Das ist eher die Regel als die Ausnahme, und einer der Gründe, warum Branding ein eigener Schritt ist statt einer Nebenbei-Entscheidung." },
+        { q: "Ich habe noch kein Unternehmen, nur eine Idee, ist das trotzdem etwas für mich?", a: "Eher unser Brandkit für Neugründungen, ein kompakteres Angebot genau für diesen Moment. Branding setzt meist bei einem bereits laufenden Unternehmen an, das schon Substanz hat, aber noch keine Position." },
       ]}
       ctaText="Bevor wir gestalten, wollen wir verstehen, was dein Unternehmen bereits ausmacht."
     />

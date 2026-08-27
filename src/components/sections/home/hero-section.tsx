@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
 
 const quickLinks = [
   { href: "/unternehmen", label: "Unternehmen" },
@@ -21,15 +23,43 @@ const quickLinks = [
  * Die drei editorialen Textlinks darunter sind der schnelle Einstieg in die
  * Hauptbereiche — bewusst ohne Buttons/Flächen, um das ruhige Erscheinungsbild
  * des Panels nicht zu stören.
+ *
+ * Die Headline selbst löst sich per GSAP SplitText wortweise aus einer
+ * maskierten Zeile heraus (statt nur mit dem Panel zu faden), das ist die
+ * erste sichtbare "mehr Bewegung"-Geste der neuen Lenis/GSAP-Basis. Bei
+ * reduced motion bleibt der Text unangetastet und wird nie gesplittet.
  */
 export function HeroSection() {
   const reduceMotion = useReducedMotion();
   const sectionRef = React.useRef<HTMLElement>(null);
+  const headlineRef = React.useRef<HTMLHeadingElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
   });
   const imageY = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 90]);
+
+  React.useEffect(() => {
+    if (reduceMotion || !headlineRef.current) return;
+
+    gsap.registerPlugin(SplitText);
+    const ctx = gsap.context(() => {
+      const split = SplitText.create(headlineRef.current, {
+        type: "words",
+        mask: "words",
+      });
+      gsap.from(split.words, {
+        yPercent: 120,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.06,
+        delay: 0.75,
+        ease: "expo.out",
+      });
+    }, headlineRef);
+
+    return () => ctx.revert();
+  }, [reduceMotion]);
 
   return (
     <section
@@ -40,7 +70,7 @@ export function HeroSection() {
       <motion.div style={{ y: imageY }} className="absolute inset-0">
         <Image
           src="/images/home/eroeffnung-detail.jpg"
-          alt=""
+          alt="Porträt eines lächelnden Mädchens mit Sommersprossen im warmen Abendlicht"
           fill
           priority
           sizes="100vw"
@@ -71,7 +101,10 @@ export function HeroSection() {
         transition={{ duration: reduceMotion ? 0 : 1.1, delay: 0.35 }}
         className="absolute bottom-28 left-1/2 w-[calc(100%-3rem)] max-w-2xl -translate-x-1/2 rounded-4xl border border-off-white/15 bg-off-white/10 px-8 py-10 text-center shadow-[0_8px_40px_rgba(13,43,36,0.25)] backdrop-blur-xl sm:bottom-32 sm:px-16 sm:py-14"
       >
-        <h1 className="font-serif text-[clamp(1.375rem,4.2vw,2.5rem)] leading-[1.25] text-off-white italic">
+        <h1
+          ref={headlineRef}
+          className="font-serif text-[clamp(1.375rem,4.2vw,2.5rem)] leading-[1.25] text-off-white italic"
+        >
           Manche Dinge muss man nur noch sichtbar machen.
         </h1>
 

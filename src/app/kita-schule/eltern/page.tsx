@@ -6,11 +6,13 @@ export const metadata: Metadata = {
   description:
     "Bildbeispiele und Bestellprozess für Eltern, deren Kinder von AR Media in Kita oder Schule fotografiert wurden.",
   openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
     title: "Für Eltern · AR Media",
     description:
       "Bildbeispiele und Bestellprozess für Eltern, deren Kinder von AR Media in Kita oder Schule fotografiert wurden.",
   },
   twitter: {
+    images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
     title: "Für Eltern · AR Media",
     description:
       "Bildbeispiele und Bestellprozess für Eltern, deren Kinder von AR Media in Kita oder Schule fotografiert wurden.",

@@ -31,6 +31,7 @@ const faqs = [
 export default function Page() {
   return (
     <FotografieCategoryPage
+      slug="/fotografie/portrait"
       kicker="Fotografie · Portrait"
       title="Ein ehrliches Bild von dir."
       intro="Für Menschen, die sich selbst lange nicht mehr wirklich gesehen haben. Ein Portraittermin in Kiel, ohne Anweisungen, wie du zu stehen oder zu lächeln hast."

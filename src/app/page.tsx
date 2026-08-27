@@ -8,7 +8,13 @@ import { InvitationSection } from "@/components/sections/home/invitation-section
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: siteConfig.claim,
+  // Kein eigener title-Override: Next.js' Title-Template greift für die
+  // Root-Route nicht (page.tsx liegt im selben Segment wie das layout.tsx,
+  // das das Template definiert — verifiziert per curl gegen die Live-Seite:
+  // andere Seiten bekommen korrekt "· AR Media" angehängt, die Startseite
+  // bekam mit einem eigenen title-String bislang gar keinen Marken-Suffix).
+  // Der geerbte layout.tsx-Default ("AR Media · {claim}") liefert bereits
+  // den gewünschten, markenhaltigen Titel.
   description: siteConfig.description,
   alternates: { canonical: "/" },
 };

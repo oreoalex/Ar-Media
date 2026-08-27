@@ -5,6 +5,7 @@ import { ArrowLeft, ChevronDown } from "lucide-react";
 import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
 import { Reveal } from "@/components/shared/reveal";
 import { siteConfig } from "@/lib/site-config";
+import { buildBreadcrumbJsonLd } from "@/lib/schema";
 
 /**
  * Kita & Schule · Für Eltern. Zielgruppe: Eltern, nicht die Einrichtung.
@@ -49,12 +50,22 @@ export function ElternContent() {
     })),
   };
 
+  // Kein Service-Schema hier bewusst: das ist eine Zugriffs-/Anleitungsseite
+  // für bereits fotografierte Familien, kein separat buchbares Angebot —
+  // Service-Markup wäre hier fachlich falsch, nur Breadcrumb.
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Start", path: "/" },
+    { name: "Kita & Schule", path: "/kita-schule" },
+    { name: "Für Eltern", path: "/kita-schule/eltern" },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <section className="bg-off-white px-6 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>

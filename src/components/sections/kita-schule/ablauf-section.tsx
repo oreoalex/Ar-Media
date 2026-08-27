@@ -7,10 +7,15 @@ import { Reveal } from "@/components/shared/reveal";
  * Wireframe vorgesehene "Gabelung Einrichtungen/Eltern" als leichtgewichtiges
  * Fork-Element innerhalb derselben Section statt als eigene Phase, damit die
  * Seite bei den vom Prompt vorgegebenen sieben Sections bleibt.
+ *
+ * Vorlaufzeit, Kapazität (rund 50 Kinder/Termin) und die Präferenz für
+ * draußen/natürliches Licht sind vom Betreiber bestätigte, reale Betriebs-
+ * fakten (Content-Audit: die Seite war strukturell vollständig, aber ohne
+ * konkrete, prüfbare Details) — bewusst nicht selbst geschätzt oder erfunden.
  */
 const schritte = [
-  { label: "01", title: "Termin vereinbaren", text: "Ein kurzes Gespräch klärt Zeitpunkt und Ablauf, abgestimmt auf euren Kita- oder Schulalltag." },
-  { label: "02", title: "Wir fotografieren vor Ort", text: "Ohne den Tagesablauf zu unterbrechen, mit Zeit für jedes Kind." },
+  { label: "01", title: "Termin vereinbaren", text: "Am besten mit etwa drei Monaten Vorlauf, das erleichtert die Planung auf beiden Seiten. Kurzfristiger geht es auch, spätestens zwei Wochen vor dem Wunschtermin solltet ihr anfragen." },
+  { label: "02", title: "Wir fotografieren vor Ort", text: "Am liebsten draußen bei natürlichem Licht, bei schlechtem Wetter drinnen mit denselben echten statt gestellten Hintergründen. Rund 50 Kinder schaffen wir an einem Termin, ohne Fließbandgefühl." },
   { label: "03", title: "Eltern bestellen selbst", text: "Über ein datenschutzkonformes Onlinesystem, ohne dass die Einrichtung etwas verwaltet." },
 ];
 

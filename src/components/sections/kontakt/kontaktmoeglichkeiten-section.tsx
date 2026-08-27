@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
 import { siteConfig } from "@/lib/site-config";
 
@@ -72,6 +72,34 @@ export function KontaktmoeglichkeitenSection() {
             <span>
               <span className="block text-[13px] tracking-wide text-charcoal/70">LinkedIn</span>
               <span className="block text-[16px] font-medium">AR Media</span>
+            </span>
+          </a>
+
+          {/*
+            Adresse als eigener Kontaktweg: Local-SEO-Audit bemängelte, dass
+            die reale Adresse nirgends sichtbar ist. Bewusst nur ein
+            externer Link zu Google Maps, kein eingebettetes iframe: ein
+            Live-Embed würde bei jedem Seitenaufruf ungefragt Daten
+            (u. a. IP-Adresse) an Google übertragen, unabhängig vom
+            Cookie-Consent, den die Seite sonst konsequent vor jeder
+            Google-Datenübertragung einholt (siehe google-analytics.tsx).
+            Ein reiner Link löst dasselbe Problem (Adresse einsehbar,
+            direkt zur Route) ohne diesen Zielkonflikt.
+          */}
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+              `${siteConfig.location.street}, ${siteConfig.location.postalCode} ${siteConfig.location.city}, ${siteConfig.location.country}`,
+            )}`}
+            target="_blank"
+            rel="noreferrer"
+            className="group flex items-center gap-4 text-charcoal transition-colors hover:text-deep-forest"
+          >
+            <MapPin aria-hidden className="size-5 shrink-0 text-charcoal/70 group-hover:text-deep-forest" />
+            <span>
+              <span className="block text-[13px] tracking-wide text-charcoal/70">Adresse</span>
+              <span className="block text-[16px] font-medium">
+                {siteConfig.location.street}, {siteConfig.location.postalCode} {siteConfig.location.city}
+              </span>
             </span>
           </a>
         </Reveal>

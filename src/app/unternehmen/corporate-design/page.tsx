@@ -7,11 +7,13 @@ export const metadata: Metadata = {
     "Corporate Design und visuelle Systeme für Unternehmen in Kiel und Schleswig-Holstein: Signet, Farbwelt, Typografie und Website als ein durchgängiges System.",
   keywords: ["Corporate Design Kiel", "Logo Redesign Schleswig-Holstein", "Visuelles System Unternehmen"],
   openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
     title: "Corporate Design · AR Media",
     description:
       "Corporate Design und visuelle Systeme für Unternehmen in Kiel und Schleswig-Holstein: Signet, Farbwelt, Typografie und Website als ein durchgängiges System.",
   },
   twitter: {
+    images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
     title: "Corporate Design · AR Media",
     description:
       "Corporate Design und visuelle Systeme für Unternehmen in Kiel und Schleswig-Holstein: Signet, Farbwelt, Typografie und Website als ein durchgängiges System.",
@@ -22,6 +24,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <UnternehmenLeistungPage
+      slug="/unternehmen/corporate-design"
       kicker="Unternehmen · Corporate Design"
       title="Ein System statt nur ein Logo."
       heroText="Ein Signet allein macht eine Marke nicht wiedererkennbar. Das gelingt erst durch das System dahinter, konsequent angewendet, auf jedem Kanal. Corporate Design aus Kiel, für Unternehmen in ganz Schleswig-Holstein."
@@ -36,8 +39,16 @@ export default function Page() {
         { title: "Sichtbar machen", text: "Anwendung auf jeden Kanal, der für dein Unternehmen zählt, von der Visitenkarte bis zur Website." },
       ]}
       caseStudies={[
-        { name: "Saat für den Norden", text: "Neues Signet, eine Farbwelt über Fahrzeug, Beschilderung und Print hinweg.", href: "/case-studies#saat" },
-        { name: "Zeltlager Adlerhorst", text: "Ein rund 50 Jahre altes Zeichen in ein zeitgemäßes System überführt, ohne es zu ersetzen.", href: "/case-studies#adlerhorst" },
+        {
+          name: "Saat für den Norden",
+          text: "Das bestehende Zeichen wirkte zart und blieb kaum im Gedächtnis, die Idee dahinter war längst richtig, nur kaum sichtbar. Neues Signet, kräftigere Wortmarke, eine Farbwelt über Fahrzeug, Beschilderung und Print hinweg.",
+          href: "/case-studies#saat",
+        },
+        {
+          name: "Zeltlager Adlerhorst",
+          text: "Ein rund 50 Jahre altes Adler-Maskottchen, dessen Auftritt drumherum kaum mehr zeitgemäß war. Statt es zu ersetzen, in Farbe, Typografie und ein durchgängiges System überführt, von der Helfersuche bis zum Jubiläum.",
+          href: "/case-studies#adlerhorst",
+        },
       ]}
       leistungenTitle="Was zu einem Corporate Design gehört"
       leistungen={[
@@ -51,6 +62,7 @@ export default function Page() {
         { q: "Bekomme ich auch eine neue Website?", a: "Website-Umsetzung kann Teil eines Corporate-Design-Projekts sein, wenn sie gebraucht wird. Wie viel davon sinnvoll ist, klären wir im Gespräch." },
         { q: "Was ist der Unterschied zu Branding?", a: "Branding legt fest, wofür deine Marke steht. Corporate Design macht das sichtbar, im Zeichen, in der Farbe, in jeder Anwendung." },
         { q: "Wie viele Anwendungen sind im Projekt enthalten?", a: "Kommt auf dein Unternehmen an. Wir legen das gemeinsam fest, statt ein festes Paket vorzugeben." },
+        { q: "Ich gründe gerade erst, habe also noch gar kein Zeichen, ist das trotzdem etwas für mich?", a: "Eher unser Brandkit für Neugründungen, ein kompakteres Angebot für genau diesen Moment. Corporate Design setzt meist ein bestehendes Zeichen oder zumindest eine gefundene Position voraus." },
       ]}
       ctaText="Ein System, das auf jede Anwendung dieselbe Antwort gibt, das ist der Unterschied."
     />

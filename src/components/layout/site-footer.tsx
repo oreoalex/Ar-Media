@@ -28,6 +28,14 @@ export function SiteFooter() {
               >
                 LinkedIn
               </a>
+              <a
+                href={siteConfig.social.googleBusiness}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-off-white"
+              >
+                Google
+              </a>
             </div>
           </div>
 

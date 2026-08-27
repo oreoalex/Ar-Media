@@ -7,6 +7,7 @@ type ForkPath = {
   label: string;
   line: string;
   image: string;
+  imageAlt: string;
 };
 
 const paths: ForkPath[] = [
@@ -15,18 +16,21 @@ const paths: ForkPath[] = [
     label: "Unternehmen",
     line: "Ich zeige dir, wie gut deine Marke aussehen kann.",
     image: "/images/home/gabelung-unternehmen.jpg",
+    imageAlt: "Fahrzeugbeschriftung der Marke „Saat für den Norden“ mit Ähren-Signet",
   },
   {
     href: "/fotografie",
     label: "Fotografie",
     line: "Ich zeige dir, wie du wirklich aussiehst.",
     image: "/images/home/gabelung-fotografie.jpg",
+    imageAlt: "Jugendlicher lacht beim Spielen mit Wasserspielzeug im Freien",
   },
   {
     href: "/kita-schule",
     label: "Kita & Schule",
     line: "Ich zeige euch, wie schön dieser Moment war.",
     image: "/images/home/gabelung-kita-schule.jpg",
+    imageAlt: "Kleines Mädchen kickt lachend einen Ball im Gegenlicht",
   },
 ];
 
@@ -35,6 +39,12 @@ const paths: ForkPath[] = [
  * Zentrale Weiche der Seite. Drei gleich große, identisch behandelte Wege —
  * kein Bereich wirkt größer oder wichtiger (Gleichwertigkeits-Guardrail).
  * Reihenfolge = Reihenfolge der Hauptnavigation, kein Ranking.
+ *
+ * imageAlt beschreibt bewusst den tatsächlichen Bildinhalt, nicht die
+ * Kartenüberschrift daneben (die stünde sonst redundant doppelt für
+ * Screenreader-Nutzer:innen) — SXO-Audit bemängelte leeren alt-Text auf
+ * allen drei Bildern, hier ist er aber kein reines Dekor-Bild, sondern
+ * zeigt echten Inhalt (u. a. das reale "Saat für den Norden"-Case-Study-Foto).
  */
 export function ForkSection() {
   return (
@@ -48,7 +58,7 @@ export function ForkSection() {
             >
               <Image
                 src={path.image}
-                alt=""
+                alt={path.imageAlt}
                 fill
                 sizes="(min-width: 1024px) 34vw, 100vw"
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <UnternehmenLeistungPage
+      slug="/unternehmen/employer-branding"
       kicker="Unternehmen · Employer Branding"
       title="Sichtbar werden als Arbeitgeber, nicht nur als Marke."
       heroText="Gute Mitarbeiter bewerben sich lieber, wenn sie vorher schon ein echtes Bild davon haben, wo sie arbeiten würden."
