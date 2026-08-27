@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { FotografieCategoryPage } from "@/components/shared/fotografie-category-page";
 
 export const metadata: Metadata = {
-  title: "Paar",
+  title: "Paarshooting Kiel",
   description:
     "Paarfotografie in Kiel und Schleswig-Holstein, ruhig und ohne gestellte Romantik-Klischees. Ab 349 €.",
   keywords: ["Paarshooting Kiel", "Paarfotograf Schleswig-Holstein", "Verlobungsshooting Kiel"],

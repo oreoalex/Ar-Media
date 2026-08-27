@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import { UnternehmenLeistungPage } from "@/components/shared/unternehmen-leistung-page";
 
 export const metadata: Metadata = {
-  title: "Corporate Design",
+  title: "Corporate Design Kiel",
   description:
     "Corporate Design und visuelle Systeme für Unternehmen in Kiel und Schleswig-Holstein: Signet, Farbwelt, Typografie und Website als ein durchgängiges System.",
   keywords: ["Corporate Design Kiel", "Logo Redesign Schleswig-Holstein", "Visuelles System Unternehmen"],
   openGraph: {
     images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Corporate Design · AR Media",
+    title: "Corporate Design Kiel · AR Media",
     description:
       "Corporate Design und visuelle Systeme für Unternehmen in Kiel und Schleswig-Holstein: Signet, Farbwelt, Typografie und Website als ein durchgängiges System.",
   },
   twitter: {
     images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Corporate Design · AR Media",
+    title: "Corporate Design Kiel · AR Media",
     description:
       "Corporate Design und visuelle Systeme für Unternehmen in Kiel und Schleswig-Holstein: Signet, Farbwelt, Typografie und Website als ein durchgängiges System.",
   },

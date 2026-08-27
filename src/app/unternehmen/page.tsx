@@ -11,18 +11,18 @@ import { FaqSection } from "@/components/sections/unternehmen/faq-section";
 import { CtaSection } from "@/components/sections/unternehmen/cta-section";
 
 export const metadata: Metadata = {
-  title: "Marketing für Unternehmen",
+  title: "Marketing für Unternehmen Kiel",
   description:
     "Strategie, Markenidentität, Corporate Design, Fotografie, Video, Content und Social Media aus einer Hand für Unternehmen in Kiel und Schleswig-Holstein, die bereits mehr können, als sie zeigen.",
   openGraph: {
     images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Marketing für Unternehmen · AR Media",
+    title: "Marketing für Unternehmen Kiel · AR Media",
     description:
       "Strategie, Markenidentität, Corporate Design, Fotografie, Video, Content und Social Media aus einer Hand für Unternehmen in Kiel und Schleswig-Holstein, die bereits mehr können, als sie zeigen.",
   },
   twitter: {
     images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Marketing für Unternehmen · AR Media",
+    title: "Marketing für Unternehmen Kiel · AR Media",
     description:
       "Strategie, Markenidentität, Corporate Design, Fotografie, Video, Content und Social Media aus einer Hand für Unternehmen in Kiel und Schleswig-Holstein, die bereits mehr können, als sie zeigen.",
   },

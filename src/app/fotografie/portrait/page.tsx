@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { FotografieCategoryPage } from "@/components/shared/fotografie-category-page";
 
 export const metadata: Metadata = {
-  title: "Portrait",
+  title: "Portraitfotograf Kiel",
   description:
     "Portraitfotografie in Kiel und Schleswig-Holstein, ohne Posen und ohne künstliche Inszenierung. Ab 249 €.",
   keywords: ["Portraitfotograf Kiel", "Portraitfotografie Schleswig-Holstein", "Fotograf Kiel"],

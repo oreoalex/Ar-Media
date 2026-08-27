@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import { FotografieCategoryPage } from "@/components/shared/fotografie-category-page";
 
 export const metadata: Metadata = {
-  title: "Lifestyle",
+  title: "Lifestyle Kiel",
   description:
     "Lifestyle-Fotografie in Kiel und Schleswig-Holstein für Familien und echte Alltagsmomente, ohne gestellte Szenen. Ab 299 €.",
   keywords: ["Familienfotograf Kiel", "Lifestyle-Fotografie Schleswig-Holstein", "Familienshooting Kiel"],
   openGraph: {
     images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Lifestyle · AR Media",
+    title: "Lifestyle Kiel · AR Media",
     description:
       "Lifestyle-Fotografie in Kiel und Schleswig-Holstein für Familien und echte Alltagsmomente, ohne gestellte Szenen. Ab 299 €.",
   },
   twitter: {
     images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Lifestyle · AR Media",
+    title: "Lifestyle Kiel · AR Media",
     description:
       "Lifestyle-Fotografie in Kiel und Schleswig-Holstein für Familien und echte Alltagsmomente, ohne gestellte Szenen. Ab 299 €.",
   },

@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import { UnternehmenLeistungPage } from "@/components/shared/unternehmen-leistung-page";
 
 export const metadata: Metadata = {
-  title: "Foto & Video für Unternehmen",
+  title: "Foto & Video für Unternehmen Kiel",
   description:
     "Unternehmensfotografie und Businessvideo in Kiel und Schleswig-Holstein: echte Menschen und echte Situationen statt Stockfotos.",
   keywords: ["Unternehmensfotografie Kiel", "Business Video Schleswig-Holstein", "Teamfotos Firma"],
   openGraph: {
     images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Foto & Video für Unternehmen · AR Media",
+    title: "Foto & Video für Unternehmen Kiel · AR Media",
     description:
       "Unternehmensfotografie und Businessvideo in Kiel und Schleswig-Holstein: echte Menschen und echte Situationen statt Stockfotos.",
   },
   twitter: {
     images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Foto & Video für Unternehmen · AR Media",
+    title: "Foto & Video für Unternehmen Kiel · AR Media",
     description:
       "Unternehmensfotografie und Businessvideo in Kiel und Schleswig-Holstein: echte Menschen und echte Situationen statt Stockfotos.",
   },

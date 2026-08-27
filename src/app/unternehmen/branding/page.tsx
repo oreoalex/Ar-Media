@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { UnternehmenLeistungPage } from "@/components/shared/unternehmen-leistung-page";
 
 export const metadata: Metadata = {
-  title: "Branding",
+  title: "Branding Kiel",
   description:
     "Markenentwicklung für kleine und mittelständische Unternehmen in Kiel und Schleswig-Holstein: Positionierung und Markenkern, bevor ein einziges Bild entsteht.",
   keywords: ["Branding Kiel", "Markenentwicklung Schleswig-Holstein", "Markenpositionierung"],

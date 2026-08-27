@@ -10,7 +10,7 @@ import { FaqSection } from "@/components/sections/fotografie/faq-section";
 import { CtaSection } from "@/components/sections/fotografie/cta-section";
 
 export const metadata: Metadata = {
-  title: "Fotografie",
+  title: "Fotograf Kiel",
   description:
     "Natürliche Portrait-, Paar-, Lifestyle- und Businessfotografie in Kiel und Schleswig-Holstein, ohne Posen, ohne künstliche Inszenierung.",
   keywords: [
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Fotografie · AR Media",
+    title: "Fotograf Kiel · AR Media",
     description:
       "Natürliche Portrait-, Paar-, Lifestyle- und Businessfotografie in Kiel und Schleswig-Holstein, ohne Posen, ohne künstliche Inszenierung.",
   },
   twitter: {
     images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Fotografie · AR Media",
+    title: "Fotograf Kiel · AR Media",
     description:
       "Natürliche Portrait-, Paar-, Lifestyle- und Businessfotografie in Kiel und Schleswig-Holstein, ohne Posen, ohne künstliche Inszenierung.",
   },

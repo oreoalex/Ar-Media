@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { UnternehmenLeistungPage } from "@/components/shared/unternehmen-leistung-page";
 
 export const metadata: Metadata = {
-  title: "Employer Branding",
+  title: "Employer Branding Kiel",
   description:
     "Employer Branding und Recruiting-Content für Unternehmen in Kiel und Schleswig-Holstein: echte Einblicke statt austauschbarer Stellenanzeigen.",
   keywords: ["Employer Branding Kiel", "Recruiting Content Schleswig-Holstein", "Mitarbeiter gewinnen"],

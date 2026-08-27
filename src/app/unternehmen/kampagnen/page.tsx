@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { UnternehmenLeistungPage } from "@/components/shared/unternehmen-leistung-page";
 
 export const metadata: Metadata = {
-  title: "Kampagnen",
+  title: "Kampagnen Kiel",
   description:
     "Marketingkampagnen für Unternehmen in Kiel und Schleswig-Holstein: mehrere Leistungen aus einer Idee, über Print, Social Media und Web hinweg.",
   keywords: ["Kampagne Kiel", "Marketingkampagne Schleswig-Holstein", "Print und Social Media Kampagne"],

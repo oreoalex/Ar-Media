@@ -9,7 +9,7 @@ import { VertrauenSection } from "@/components/sections/kita-schule/vertrauen-se
 import { CtaSection } from "@/components/sections/kita-schule/cta-section";
 
 export const metadata: Metadata = {
-  title: "Kita & Schule",
+  title: "Kita & Schule Kiel",
   description:
     "Kitafotografie und Schulfotografie in Kiel und Schleswig-Holstein, Kindergartenfotograf und Schulfotograf ohne Kaufdruck und künstliche Kulissen.",
   keywords: [
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Kita & Schule · AR Media",
+    title: "Kita & Schule Kiel · AR Media",
     description:
       "Kitafotografie und Schulfotografie in Kiel und Schleswig-Holstein, Kindergartenfotograf und Schulfotograf ohne Kaufdruck und künstliche Kulissen.",
   },
   twitter: {
     images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Kita & Schule · AR Media",
+    title: "Kita & Schule Kiel · AR Media",
     description:
       "Kitafotografie und Schulfotografie in Kiel und Schleswig-Holstein, Kindergartenfotograf und Schulfotograf ohne Kaufdruck und künstliche Kulissen.",
   },

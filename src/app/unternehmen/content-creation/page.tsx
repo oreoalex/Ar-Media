@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import { UnternehmenLeistungPage } from "@/components/shared/unternehmen-leistung-page";
 
 export const metadata: Metadata = {
-  title: "Content Creation",
+  title: "Content Creation Kiel",
   description:
     "Laufende Content-Produktion für Unternehmen in Kiel und Schleswig-Holstein: Fotografie, Video und Text, die aus einem System heraus entstehen statt zufällig.",
   keywords: ["Content Creation Kiel", "Content Produktion Unternehmen", "Social-Media-Content Schleswig-Holstein"],
   openGraph: {
     images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Content Creation · AR Media",
+    title: "Content Creation Kiel · AR Media",
     description:
       "Laufende Content-Produktion für Unternehmen in Kiel und Schleswig-Holstein: Fotografie, Video und Text, die aus einem System heraus entstehen statt zufällig.",
   },
   twitter: {
     images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Content Creation · AR Media",
+    title: "Content Creation Kiel · AR Media",
     description:
       "Laufende Content-Produktion für Unternehmen in Kiel und Schleswig-Holstein: Fotografie, Video und Text, die aus einem System heraus entstehen statt zufällig.",
   },

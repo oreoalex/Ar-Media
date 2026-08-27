@@ -6,7 +6,11 @@ import { HaltungHeuteSection } from "@/components/sections/ueber-ar-media/haltun
 import { SchlussSection } from "@/components/sections/ueber-ar-media/schluss-section";
 
 export const metadata: Metadata = {
-  title: "Über AR Media",
+  // "Über uns" statt "Über AR Media": Letzteres würde durch das Title-
+  // Template zu "Über AR Media · AR Media" verdoppelt (Technical-SEO-
+  // Re-Audit fand das als redundant) — die H1 der Seite heißt weiterhin
+  // "Über AR Media", nur der <title>-Tag ändert sich.
+  title: "Über uns",
   description:
     "Warum Marketing, Fotografie und Kitafotografie bei AR Media unter einer Marke zusammengehören, und was Alexander Rieck dazu bewegt hat.",
   alternates: { canonical: "/ueber-ar-media" },

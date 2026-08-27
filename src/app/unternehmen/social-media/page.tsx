@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import { UnternehmenLeistungPage } from "@/components/shared/unternehmen-leistung-page";
 
 export const metadata: Metadata = {
-  title: "Social Media",
+  title: "Social Media Kiel",
   description:
     "Social-Media-Strategie und -Betreuung für Unternehmen in Kiel und Schleswig-Holstein: Sichtbarkeit durch Kontinuität statt einzelner Posts.",
   keywords: ["Social Media Kiel", "Social-Media-Betreuung Unternehmen", "Instagram Marketing Schleswig-Holstein"],
   openGraph: {
     images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Social Media · AR Media",
+    title: "Social Media Kiel · AR Media",
     description:
       "Social-Media-Strategie und -Betreuung für Unternehmen in Kiel und Schleswig-Holstein: Sichtbarkeit durch Kontinuität statt einzelner Posts.",
   },
   twitter: {
     images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Social Media · AR Media",
+    title: "Social Media Kiel · AR Media",
     description:
       "Social-Media-Strategie und -Betreuung für Unternehmen in Kiel und Schleswig-Holstein: Sichtbarkeit durch Kontinuität statt einzelner Posts.",
   },

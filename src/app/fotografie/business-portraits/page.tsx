@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import { FotografieCategoryPage } from "@/components/shared/fotografie-category-page";
 
 export const metadata: Metadata = {
-  title: "Business-Portraits",
+  title: "Business-Portraits Kiel",
   description:
     "Business-Portraits und Bewerbungsfotos in Kiel und Schleswig-Holstein, seriös und trotzdem echt. Ab 399 € pro Person, inklusive gewerblicher Nutzungsrechte.",
   keywords: ["Business Portrait Kiel", "Bewerbungsfoto Kiel", "Corporate Fotograf Schleswig-Holstein"],
   openGraph: {
     images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Business-Portraits · AR Media",
+    title: "Business-Portraits Kiel · AR Media",
     description:
       "Business-Portraits und Bewerbungsfotos in Kiel und Schleswig-Holstein, seriös und trotzdem echt. Ab 399 € pro Person, inklusive gewerblicher Nutzungsrechte.",
   },
   twitter: {
     images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
-    title: "Business-Portraits · AR Media",
+    title: "Business-Portraits Kiel · AR Media",
     description:
       "Business-Portraits und Bewerbungsfotos in Kiel und Schleswig-Holstein, seriös und trotzdem echt. Ab 399 € pro Person, inklusive gewerblicher Nutzungsrechte.",
   },
