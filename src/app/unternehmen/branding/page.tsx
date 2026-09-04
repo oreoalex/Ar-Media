@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   description:
     "Markenentwicklung für kleine und mittelständische Unternehmen in Kiel und Schleswig-Holstein: Positionierung und Markenkern, bevor ein einziges Bild entsteht.",
   keywords: ["Branding Kiel", "Markenentwicklung Schleswig-Holstein", "Markenpositionierung"],
+  openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
+    title: "Branding Kiel · AR Media",
+    description:
+      "Markenentwicklung für kleine und mittelständische Unternehmen in Kiel und Schleswig-Holstein: Positionierung und Markenkern, bevor ein einziges Bild entsteht.",
+  },
+  twitter: {
+    images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
+    title: "Branding Kiel · AR Media",
+    description:
+      "Markenentwicklung für kleine und mittelständische Unternehmen in Kiel und Schleswig-Holstein: Positionierung und Markenkern, bevor ein einziges Bild entsteht.",
+  },
   alternates: { canonical: "/unternehmen/branding" },
 };
 
@@ -14,7 +26,7 @@ export default function Page() {
     <UnternehmenLeistungPage
       slug="/unternehmen/branding"
       kicker="Unternehmen · Branding"
-      title="Aus vorhandenem Potenzial eine Marke entwickeln."
+      title="Branding entwickelt eine Marke aus dem, was schon da ist."
       heroText="Eine Marke ist keine Behauptung. Sie ist die klarste, ehrlichste Version dessen, was ein Unternehmen bereits ist, nur noch niemand in Worte gefasst hat."
       problemTitle="Ein Unternehmen mit Substanz, aber ohne Position."
       problemText="Die Arbeit ist gut, die Kunden sind zufrieden, aber wenn man fragt, wofür das Unternehmen eigentlich steht, antwortet jeder im Team etwas anderes. Marketingmaterial entsteht trotzdem, wirkt aber austauschbar, weil ihm ein gemeinsamer Anker fehlt."
@@ -49,6 +61,11 @@ export default function Page() {
         { q: "Ich habe noch kein Unternehmen, nur eine Idee, ist das trotzdem etwas für mich?", a: "Eher unser Brandkit für Neugründungen, ein kompakteres Angebot genau für diesen Moment. Branding setzt meist bei einem bereits laufenden Unternehmen an, das schon Substanz hat, aber noch keine Position." },
       ]}
       ctaText="Bevor wir gestalten, wollen wir verstehen, was dein Unternehmen bereits ausmacht."
+      relatedLink={{
+        name: "Corporate Design",
+        text: "Nach der Position kommt das sichtbare System dazu.",
+        href: "/unternehmen/corporate-design",
+      }}
     />
   );
 }

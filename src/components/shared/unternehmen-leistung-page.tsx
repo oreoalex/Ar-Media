@@ -1,17 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
+import { BrandArrowLeft } from "@/components/shared/brand-arrow-left";
+import { BrandChevronDown } from "@/components/shared/brand-chevron-down";
 import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
 import { Reveal } from "@/components/shared/reveal";
 import { BrandMarkA } from "@/components/shared/brand-mark-a";
 import { BrandMarkR } from "@/components/shared/brand-mark-r";
 import { siteConfig } from "@/lib/site-config";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd } from "@/lib/schema";
+import { BrandArrow } from "@/components/shared/brand-arrow";
+import { BrandTick } from "@/components/shared/brand-tick";
+import { GhostNumeral } from "@/components/shared/ghost-numeral";
+import { CtaButton } from "@/components/shared/cta-button";
 
 type ProzessSchritt = { title: string; text: string };
 type Faq = { q: string; a: string };
 type CaseStudyRef = { name: string; text: string; href: string };
+type RelatedLink = { name: string; text: string; href: string };
 type LeistungDetail = { title: string; text: string };
 
 type UnternehmenLeistungPageProps = {
@@ -32,6 +38,8 @@ type UnternehmenLeistungPageProps = {
   ctaText: string;
   /** Optionaler Override für den zweiten CTA-Link (Standard: "Unverbindlich austauschen") */
   ctaSecondaryLabel?: string;
+  /** Optionaler Cross-Leistungs-Verweis, z. B. Branding → Corporate Design. */
+  relatedLink?: RelatedLink;
 };
 
 /**
@@ -73,6 +81,7 @@ export function UnternehmenLeistungPage({
   faqs,
   ctaText,
   ctaSecondaryLabel = "Unverbindlich austauschen",
+  relatedLink,
 }: UnternehmenLeistungPageProps) {
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -102,7 +111,7 @@ export function UnternehmenLeistungPage({
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
             <p className="text-[11px] font-medium tracking-[0.16em] text-charcoal/75 uppercase">{kicker}</p>
-            <h1 className="mt-6 font-serif text-[clamp(1.75rem,4.4vw,3rem)] leading-[1.2] text-charcoal italic">
+            <h1 className="mt-6 font-serif text-[clamp(1.75rem,4.4vw,3rem)] leading-[1.15] font-bold tracking-tight text-charcoal">
               {title}
             </h1>
             <p className="mx-auto mt-6 max-w-lg text-[17px] leading-relaxed text-charcoal/70">{heroText}</p>
@@ -117,13 +126,13 @@ export function UnternehmenLeistungPage({
                   className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-100 bg-charcoal/30 transition-colors duration-300 ease-out group-hover:bg-deep-forest"
                 />
               </span>
-              <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
+              <BrandArrow aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               href="/unternehmen"
               className="group mt-10 flex items-center justify-center gap-2 text-[13px] font-medium tracking-wide text-charcoal/70 transition-colors hover:text-deep-forest"
             >
-              <ArrowLeft aria-hidden className="size-3.5 transition-transform group-hover:-translate-x-1" />
+              <BrandArrowLeft aria-hidden className="size-3.5 transition-transform group-hover:-translate-x-1" />
               Alle Leistungen
             </Link>
           </Reveal>
@@ -136,7 +145,7 @@ export function UnternehmenLeistungPage({
             <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">Eine Beobachtung</p>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="mt-5 font-serif text-[clamp(1.5rem,3.6vw,2.25rem)] leading-[1.3] text-charcoal italic">
+            <h2 className="mt-5 font-serif text-[clamp(1.5rem,3.6vw,2.25rem)] leading-[1.2] font-bold tracking-tight text-charcoal">
               {problemTitle}
             </h2>
           </Reveal>
@@ -153,7 +162,7 @@ export function UnternehmenLeistungPage({
             <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
               {denkansatzTitle}
             </h2>
-            <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+            <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
             <p className="mt-6 text-[20px] leading-relaxed text-charcoal/80 lg:text-[22px] lg:leading-[1.55]">
               {denkansatzText}
             </p>
@@ -167,16 +176,19 @@ export function UnternehmenLeistungPage({
             <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
               Wie wir arbeiten
             </h2>
-            <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+            <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
           </Reveal>
 
           <div className="mt-14 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
             {prozessSchritte.map((schritt, i) => (
-              <Reveal key={schritt.title} delay={i * 0.06}>
-                <p className="text-[13px] tracking-wide text-charcoal/70">{`0${i + 1}`}</p>
-                <h3 className="mt-3 text-[19px] font-medium text-charcoal">{schritt.title}</h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-charcoal/70">{schritt.text}</p>
-              </Reveal>
+              <div key={schritt.title} className="relative isolate">
+                <GhostNumeral n={i + 1} className="text-deep-forest/[0.07]" />
+                <Reveal delay={i * 0.06} className="relative z-10">
+                  <p className="text-[13px] tracking-wide text-charcoal/70">{`0${i + 1}`}</p>
+                  <h3 className="mt-3 text-[19px] font-medium text-charcoal">{schritt.title}</h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-charcoal/70">{schritt.text}</p>
+                </Reveal>
+              </div>
             ))}
           </div>
         </div>
@@ -189,7 +201,7 @@ export function UnternehmenLeistungPage({
               <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
                 Wie das aussehen kann
               </h2>
-              <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+              <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
             </Reveal>
             <ul className="mt-10 divide-y divide-charcoal/10 border-t border-charcoal/10">
               {caseStudies.map((cs, i) => (
@@ -202,7 +214,7 @@ export function UnternehmenLeistungPage({
                         </span>
                         <span className="mt-1 block text-[14px] text-charcoal/70 lg:text-[15px]">{cs.text}</span>
                       </span>
-                      <ArrowRight
+                      <BrandArrow
                         aria-hidden
                         className="size-4 shrink-0 text-charcoal/30 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-deep-forest"
                       />
@@ -221,7 +233,7 @@ export function UnternehmenLeistungPage({
             <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
               {leistungenTitle}
             </h2>
-            <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+            <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
           </Reveal>
 
           <dl className="mt-14 space-y-10">
@@ -243,7 +255,7 @@ export function UnternehmenLeistungPage({
             <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
               Häufige Fragen
             </h2>
-            <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+            <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
           </Reveal>
 
           <Reveal delay={0.1} className="mt-10">
@@ -253,7 +265,7 @@ export function UnternehmenLeistungPage({
                   <AccordionPrimitive.Header>
                     <AccordionPrimitive.Trigger className="group flex w-full items-center justify-between gap-6 py-6 text-left outline-none rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-forest/50">
                       <span className="text-[16px] font-medium text-charcoal lg:text-[17px]">{faq.q}</span>
-                      <ChevronDown
+                      <BrandChevronDown
                         aria-hidden
                         className="size-4 shrink-0 text-charcoal/70 transition-transform duration-300 group-aria-expanded:rotate-180"
                       />
@@ -269,29 +281,46 @@ export function UnternehmenLeistungPage({
         </div>
       </section>
 
+      {relatedLink && (
+        <section aria-label="Auch interessant" className="bg-off-white px-6 pb-24 lg:pb-32">
+          <div className="mx-auto max-w-2xl border-t border-charcoal/10 pt-10">
+            <Link href={relatedLink.href} className="group flex items-center justify-between gap-6">
+              <span>
+                <span className="block text-[16px] font-medium text-charcoal transition-colors group-hover:text-deep-forest">
+                  {relatedLink.name}
+                </span>
+                <span className="mt-1 block text-[14px] text-charcoal/70">{relatedLink.text}</span>
+              </span>
+              <BrandArrow
+                aria-hidden
+                className="size-4 shrink-0 text-charcoal/30 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-deep-forest"
+              />
+            </Link>
+          </div>
+        </section>
+      )}
+
       <section aria-label="Projekt besprechen" className="relative overflow-hidden bg-deep-forest px-6 py-24 lg:py-32">
         <BrandMarkR className="pointer-events-none absolute -right-[6vw] -bottom-[12%] h-[70%] w-auto text-off-white opacity-[0.06] sm:-right-[4vw]" />
         <div className="relative mx-auto max-w-xl text-center">
           <Reveal variant="fade">
-            <p className="font-serif text-[clamp(1.5rem,3.6vw,2rem)] leading-[1.3] text-off-white italic">
+            <p className="font-serif text-[clamp(1.5rem,3.6vw,2rem)] leading-[1.25] font-bold tracking-tight text-off-white">
               {ctaText}
             </p>
           </Reveal>
-          <Reveal delay={0.1} className="mt-12 flex flex-col items-center gap-8 sm:flex-row sm:justify-center sm:gap-14">
-            <a href={`mailto:${siteConfig.contact.email}`} className="group text-center sm:text-left">
-              <span className="flex items-center justify-center gap-2 text-[17px] font-medium tracking-wide text-off-white sm:justify-start">
+          <Reveal delay={0.1} className="mt-12 flex flex-col items-center gap-8 sm:flex-row sm:justify-center sm:gap-6">
+            <div className="text-center">
+              <CtaButton href={`mailto:${siteConfig.contact.email}`} variant="light">
                 Nachricht schreiben
-                <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
-              </span>
-              <span className="mt-1.5 block text-[13px] text-off-white/55">{siteConfig.contact.email}</span>
-            </a>
-            <Link href="/kontakt/projekt-besprechen" className="group text-center sm:text-left">
-              <span className="flex items-center justify-center gap-2 text-[17px] font-medium tracking-wide text-off-white sm:justify-start">
+              </CtaButton>
+              <p className="mt-3 text-[13px] text-off-white/55">{siteConfig.contact.email}</p>
+            </div>
+            <div className="text-center">
+              <CtaButton href="/kontakt/projekt-besprechen" variant="light">
                 {ctaSecondaryLabel}
-                <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
-              </span>
-              <span className="mt-1.5 block text-[13px] text-off-white/55">Kein Verkaufsgespräch</span>
-            </Link>
+              </CtaButton>
+              <p className="mt-3 text-[13px] text-off-white/55">Kein Verkaufsgespräch</p>
+            </div>
           </Reveal>
         </div>
       </section>

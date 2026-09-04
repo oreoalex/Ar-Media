@@ -1,8 +1,7 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
 import { BrandMarkR } from "@/components/shared/brand-mark-r";
 import { siteConfig } from "@/lib/site-config";
+import { CtaButton } from "@/components/shared/cta-button";
 
 /**
  * Abschluss-CTA. Gleiches Muster wie Unternehmen-CTA (zwei reibungsarme
@@ -20,7 +19,7 @@ export function CtaSection() {
 
       <div className="relative mx-auto max-w-2xl text-center">
         <Reveal variant="fade">
-          <p className="font-serif text-[clamp(1.75rem,4.2vw,2.75rem)] leading-[1.2] text-off-white italic">
+          <p className="font-serif text-[clamp(1.75rem,4.2vw,2.75rem)] leading-[1.2] font-bold tracking-tight text-off-white">
             Vielleicht ist dein Lieblingsbild eins, das es noch gar nicht gibt.
           </p>
         </Reveal>
@@ -33,30 +32,26 @@ export function CtaSection() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.15} className="mt-14 flex flex-col items-center gap-8 sm:flex-row sm:justify-center sm:gap-14">
-          <a href={`mailto:${siteConfig.contact.email}`} className="group text-center sm:text-left">
-            <span className="flex items-center justify-center gap-2 text-[17px] font-medium tracking-wide text-off-white sm:justify-start">
+        <Reveal delay={0.15} className="mt-14 flex flex-col items-center gap-8 sm:flex-row sm:justify-center sm:gap-6">
+          <div className="text-center">
+            <CtaButton href={`mailto:${siteConfig.contact.email}`} variant="light">
               Nachricht schreiben
-              <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
-            </span>
-            <span className="mt-1.5 block text-[13px] text-off-white/55">
+            </CtaButton>
+            <p className="mt-3 text-[13px] text-off-white/55">
               {siteConfig.contact.email}, wir antworten persönlich
-            </span>
-          </a>
+            </p>
+          </div>
 
-          <Link href="/kontakt/shooting-anfragen" className="group text-center sm:text-left">
-            <span className="flex items-center justify-center gap-2 text-[17px] font-medium tracking-wide text-off-white sm:justify-start">
+          <div className="text-center">
+            <CtaButton href="/kontakt/shooting-anfragen" variant="light">
               Shooting anfragen
-              <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
-            </span>
-            <span className="mt-1.5 block text-[13px] text-off-white/55">
-              Wir beginnen mit einem Gespräch
-            </span>
-          </Link>
+            </CtaButton>
+            <p className="mt-3 text-[13px] text-off-white/55">Wir beginnen mit einem Gespräch</p>
+          </div>
         </Reveal>
 
         <Reveal delay={0.25} className="mt-20 lg:mt-24">
-          <p className="font-serif text-lg text-off-white/60 italic">
+          <p className="font-serif text-lg font-bold tracking-tight text-off-white/60">
             „Let me show you how good you look.“
           </p>
         </Reveal>

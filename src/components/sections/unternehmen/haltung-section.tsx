@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Reveal } from "@/components/shared/reveal";
 import { BrandMarkA } from "@/components/shared/brand-mark-a";
+import { BrandTick } from "@/components/shared/brand-tick";
 
 /**
  * Unsere Haltung — identisches Kompositionsprinzip wie auf der Startseite
@@ -19,7 +20,7 @@ export function HaltungSection() {
           <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Unsere Haltung
           </h2>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
           <p className="mt-6 max-w-xl text-[20px] leading-relaxed text-charcoal/80 lg:text-[22px] lg:leading-[1.55]">
             Unsere Arbeit beginnt nie mit Gestaltung. Sie beginnt mit
             Beobachtung. Bevor wir eine Marke, ein Bild oder eine Kampagne

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Reveal } from "@/components/shared/reveal";
 import { siteConfig } from "@/lib/site-config";
+import { BrandTick } from "@/components/shared/brand-tick";
 
 /**
  * Persönlicher Abschluss statt Formular-Ende: dasselbe dokumentarische
@@ -30,7 +31,7 @@ export function AbschlussSection() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">Wer antwortet</h2>
-          <span aria-hidden className="mt-3 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-3 h-4 w-2.5 text-charcoal/20" />
           <p className="mt-5 text-[18px] leading-relaxed text-charcoal/80 lg:text-[19px]">
             Deine Nachricht landet nicht in einer Warteschlange, sondern direkt bei{" "}
             {siteConfig.founder.name}. Er liest sie selbst, bevor er antwortet, keine

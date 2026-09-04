@@ -1,8 +1,9 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
+import { BrandChevronDown } from "@/components/shared/brand-chevron-down";
 import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
 import { Reveal } from "@/components/shared/reveal";
+import { BrandTick } from "@/components/shared/brand-tick";
 
 /**
  * Häufige Fragen speziell zum ersten Kontakt, bewusst nicht identisch mit
@@ -45,7 +46,7 @@ export function FaqSection() {
           <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Häufige Fragen
           </h2>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
         </Reveal>
 
         <Reveal delay={0.1} className="mt-10">
@@ -55,7 +56,7 @@ export function FaqSection() {
                 <AccordionPrimitive.Header>
                   <AccordionPrimitive.Trigger className="group flex w-full items-center justify-between gap-6 py-6 text-left outline-none rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-forest/50">
                     <span className="text-[16px] font-medium text-charcoal lg:text-[17px]">{faq.q}</span>
-                    <ChevronDown
+                    <BrandChevronDown
                       aria-hidden
                       className="size-4 shrink-0 text-charcoal/70 transition-transform duration-300 group-aria-expanded:rotate-180"
                     />

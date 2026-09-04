@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
+import { BrandArrow } from "@/components/shared/brand-arrow";
+import { BrandTick } from "@/components/shared/brand-tick";
+import { GhostNumeral } from "@/components/shared/ghost-numeral";
 
 /**
  * Wie es abläuft — Phase 4 (Sicherheit). Trägt zusätzlich die im alten
@@ -27,7 +29,7 @@ export function AblaufSection() {
           <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Wie es abläuft
           </p>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
           <h2 className="mt-6 max-w-xl text-[22px] leading-relaxed text-charcoal/80 lg:text-[24px]">
             Drei Schritte, keiner davon bei euch.
           </h2>
@@ -35,11 +37,14 @@ export function AblaufSection() {
 
         <div className="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-3">
           {schritte.map((schritt, i) => (
-            <Reveal key={schritt.label} delay={i * 0.06}>
-              <p className="text-[13px] tracking-wide text-charcoal/70">{schritt.label}</p>
-              <h3 className="mt-2 text-[17px] font-medium text-charcoal">{schritt.title}</h3>
-              <p className="mt-2 text-[14px] leading-relaxed text-charcoal/70">{schritt.text}</p>
-            </Reveal>
+            <div key={schritt.label} className="relative isolate">
+              <GhostNumeral n={schritt.label} className="text-deep-forest/[0.07]" />
+              <Reveal delay={i * 0.06} className="relative z-10">
+                <p className="text-[13px] tracking-wide text-charcoal/70">{schritt.label}</p>
+                <h3 className="mt-2 text-[17px] font-medium text-charcoal">{schritt.title}</h3>
+                <p className="mt-2 text-[14px] leading-relaxed text-charcoal/70">{schritt.text}</p>
+              </Reveal>
+            </div>
           ))}
         </div>
 
@@ -54,7 +59,7 @@ export function AblaufSection() {
                   Ablauf im Detail, für Kitaleitung und Träger.
                 </span>
               </span>
-              <ArrowRight aria-hidden className="size-4 shrink-0 text-charcoal/30 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-deep-forest" />
+              <BrandArrow aria-hidden className="size-4 shrink-0 text-charcoal/30 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-deep-forest" />
             </Link>
             <Link href="/kita-schule/eltern" className="group flex items-center justify-between gap-4">
               <span>
@@ -65,7 +70,7 @@ export function AblaufSection() {
                   Bildbeispiele ansehen und den Bestellweg verstehen.
                 </span>
               </span>
-              <ArrowRight aria-hidden className="size-4 shrink-0 text-charcoal/30 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-deep-forest" />
+              <BrandArrow aria-hidden className="size-4 shrink-0 text-charcoal/30 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-deep-forest" />
             </Link>
           </div>
           <Link
@@ -73,7 +78,7 @@ export function AblaufSection() {
             className="group mt-8 inline-flex items-center gap-2 text-[14px] font-medium tracking-wide text-charcoal/70 transition-colors hover:text-deep-forest"
           >
             Mehr zu Ablauf & Datenschutz
-            <ArrowRight aria-hidden className="size-3.5 transition-transform group-hover:translate-x-1" />
+            <BrandArrow aria-hidden className="size-3.5 transition-transform group-hover:translate-x-1" />
           </Link>
         </Reveal>
       </div>

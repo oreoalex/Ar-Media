@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
+import { BrandArrow } from "@/components/shared/brand-arrow";
 
 /**
  * KI-Teaser auf der Unternehmen-Hub-Seite. Ersetzt an dieser Stelle den
@@ -20,7 +20,7 @@ export function KiTeaserSection() {
           <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Eine Haltung
           </p>
-          <h2 className="mt-5 font-serif text-[clamp(1.5rem,3.6vw,2.25rem)] leading-[1.3] text-charcoal italic">
+          <h2 className="mt-5 font-serif text-[clamp(1.5rem,3.6vw,2.25rem)] leading-[1.3] font-bold tracking-tight text-charcoal">
             Warum nicht einfach mit KI?
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-[16px] leading-relaxed text-charcoal/70">
@@ -41,7 +41,7 @@ export function KiTeaserSection() {
                 className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-100 bg-charcoal/30 transition-colors duration-300 ease-out group-hover:bg-deep-forest"
               />
             </span>
-            <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
+            <BrandArrow aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </Reveal>
       </div>

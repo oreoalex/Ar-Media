@@ -26,7 +26,7 @@ export default function Page() {
     <UnternehmenLeistungPage
       slug="/unternehmen/corporate-design"
       kicker="Unternehmen · Corporate Design"
-      title="Ein System statt nur ein Logo."
+      title="Corporate Design ist ein System, nicht nur ein Logo."
       heroText="Ein Signet allein macht eine Marke nicht wiedererkennbar. Das gelingt erst durch das System dahinter, konsequent angewendet, auf jedem Kanal. Corporate Design aus Kiel, für Unternehmen in ganz Schleswig-Holstein."
       problemTitle="Ein Logo, das überall anders aussieht."
       problemText="Auf der Website ein anderes Grün als auf der Visitenkarte. Der Fahrzeugaufkleber sieht aus wie von einer anderen Firma als der Social-Media-Auftritt. Niemand im Team weiß genau, welche Schrift eigentlich die richtige ist. Am Ende wirkt das zufällig, obwohl das Zeichen selbst oft völlig in Ordnung ist."
@@ -65,6 +65,11 @@ export default function Page() {
         { q: "Ich gründe gerade erst, habe also noch gar kein Zeichen, ist das trotzdem etwas für mich?", a: "Eher unser Brandkit für Neugründungen, ein kompakteres Angebot für genau diesen Moment. Corporate Design setzt meist ein bestehendes Zeichen oder zumindest eine gefundene Position voraus." },
       ]}
       ctaText="Ein System, das auf jede Anwendung dieselbe Antwort gibt, das ist der Unterschied."
+      relatedLink={{
+        name: "Content Creation",
+        text: "Ein System lebt erst durch das, was laufend darin entsteht.",
+        href: "/unternehmen/content-creation",
+      }}
     />
   );
 }

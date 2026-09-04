@@ -12,7 +12,7 @@ export function HeroSection() {
       <div className="mx-auto max-w-2xl text-center">
         <Reveal>
           <p className="text-[11px] font-medium tracking-[0.16em] text-charcoal/75 uppercase">Kontakt</p>
-          <h1 className="mt-6 font-serif text-[clamp(1.75rem,4.4vw,3rem)] leading-[1.2] text-charcoal italic">
+          <h1 className="mt-6 font-serif text-[clamp(1.75rem,4.4vw,3rem)] leading-[1.2] font-bold tracking-tight text-charcoal">
             Lass uns herausfinden, was der richtige nächste Schritt ist.
           </h1>
           <p className="mx-auto mt-6 max-w-lg text-[17px] leading-relaxed text-charcoal/70">

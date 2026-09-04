@@ -34,7 +34,7 @@ export const siteConfig = {
   },
   social: {
     instagram: "https://instagram.com/ar_media_kiel",
-    linkedin: "https://linkedin.com/company/ar-media",
+    linkedin: "https://www.linkedin.com/in/alexander-rieck-4757721a1/",
     // Offizieller Google-Share-Link vom Inhaber, per Browser gegen die
     // echte Google-Maps-Adresse verifiziert (Koordinaten 54.35678,10.08002
     // stimmen mit der geokodierten Adresse überein) — kein selbst

@@ -1,4 +1,6 @@
 import { Reveal } from "@/components/shared/reveal";
+import { BrandTick } from "@/components/shared/brand-tick";
+import { GhostNumeral } from "@/components/shared/ghost-numeral";
 
 /**
  * Leistungen — neue Section zwischen Beobachtung und Haltung. Bisher als
@@ -36,13 +38,17 @@ export function LeistungenSection() {
           <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Was wir fotografieren
           </p>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
         </Reveal>
 
         <ul className="mt-14 divide-y divide-charcoal/10 border-t border-charcoal/10">
           {leistungen.map((item, i) => (
-            <Reveal key={item.label} delay={i * 0.05}>
-              <li className="flex items-baseline gap-5 py-6">
+            <li key={item.label} className="relative isolate py-6">
+              <GhostNumeral
+                n={item.label}
+                className="-top-2 text-[64px] text-deep-forest/[0.06] lg:-top-3 lg:text-[88px]"
+              />
+              <Reveal delay={i * 0.05} className="relative z-10 flex items-baseline gap-5">
                 <span className="text-[13px] text-charcoal/70">{item.label}</span>
                 <span>
                   <span className="block text-[17px] font-medium text-charcoal lg:text-[19px]">
@@ -52,8 +58,8 @@ export function LeistungenSection() {
                     {item.outcome}
                   </span>
                 </span>
-              </li>
-            </Reveal>
+              </Reveal>
+            </li>
           ))}
         </ul>
       </div>

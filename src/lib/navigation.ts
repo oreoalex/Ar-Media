@@ -41,6 +41,7 @@ export const mainNav: NavItem[] = [
           { label: "Branding", href: "/unternehmen/branding" },
           { label: "Corporate Design", href: "/unternehmen/corporate-design" },
           { label: "Brandkit für Neugründungen", href: "/unternehmen/brandkit" },
+          { label: "Warum nicht einfach mit KI?", href: "/unternehmen/ki" },
         ],
       },
       {
@@ -96,20 +97,13 @@ export const mainNav: NavItem[] = [
   },
 ];
 
+// Unternehmen fehlt hier bewusst als eigener Eintrag: die Fußzeile bezieht
+// die drei Cluster-Gruppen (Grundlagen/Laufende Leistungen/Ergänzende
+// Leistungen) direkt aus mainNav[1].groups (site-footer.tsx) — eine
+// separate, flache Unternehmen-Liste hier hätte genau die Drift erzeugt,
+// die den Footer zuvor von der echten, im Mega-Menü längst etablierten
+// 3-Kategorien-Struktur abweichen ließ (Audit-Fund).
 export const footerNav: NavGroup[] = [
-  {
-    label: "Unternehmen",
-    links: [
-      { label: "Branding", href: "/unternehmen/branding" },
-      { label: "Corporate Design", href: "/unternehmen/corporate-design" },
-      { label: "Brandkit für Neugründungen", href: "/unternehmen/brandkit" },
-      { label: "Content Creation", href: "/unternehmen/content-creation" },
-      { label: "Social Media", href: "/unternehmen/social-media" },
-      { label: "Employer Branding", href: "/unternehmen/employer-branding" },
-      { label: "Kampagnen", href: "/unternehmen/kampagnen" },
-      { label: "Foto & Video", href: "/unternehmen/foto-video" },
-    ],
-  },
   {
     label: "Fotografie",
     links: [

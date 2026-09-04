@@ -1,6 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { BrandArrowUpRight } from "@/components/shared/brand-arrow-up-right";
 import { Reveal } from "@/components/shared/reveal";
+import { BrandArrow } from "@/components/shared/brand-arrow";
+import { BrandTick } from "@/components/shared/brand-tick";
+import { GhostNumeral } from "@/components/shared/ghost-numeral";
 
 /**
  * Leistungen. Identisches System wie bei Unternehmen: editoriale Liste
@@ -56,7 +59,7 @@ export function LeistungenSection() {
           <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Leistungen
           </p>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
           <h2 className="mt-6 max-w-xl text-[22px] leading-relaxed text-charcoal/80 lg:text-[24px]">
             Fünf Anlässe. Eine Haltung.
           </h2>
@@ -78,12 +81,12 @@ export function LeistungenSection() {
                   </span>
                 </span>
                 {item.external ? (
-                  <ArrowUpRight
+                  <BrandArrowUpRight
                     aria-hidden
                     className="size-4 shrink-0 text-charcoal/30 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-deep-forest"
                   />
                 ) : (
-                  <ArrowRight
+                  <BrandArrow
                     aria-hidden
                     className="size-4 shrink-0 text-charcoal/30 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-deep-forest"
                   />
@@ -92,8 +95,12 @@ export function LeistungenSection() {
             );
 
             return (
-              <Reveal key={item.href} delay={i * 0.04}>
-                <li>
+              <li key={item.href} className="relative isolate">
+                <GhostNumeral
+                  n={item.label}
+                  className="-top-2 text-[64px] text-deep-forest/[0.06] lg:-top-3 lg:text-[88px]"
+                />
+                <Reveal delay={i * 0.04} className="relative z-10">
                   {item.external ? (
                     <a
                       href={item.href}
@@ -108,8 +115,8 @@ export function LeistungenSection() {
                       {row}
                     </Link>
                   )}
-                </li>
-              </Reveal>
+                </Reveal>
+              </li>
             );
           })}
         </ul>

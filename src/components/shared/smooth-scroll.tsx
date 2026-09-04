@@ -7,10 +7,17 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 /**
- * Globales Smooth Scrolling (Lenis), synchronisiert mit GSAP ScrollTrigger,
- * damit scroll-getriggerte GSAP-Animationen exakt im Takt des weicheren
- * Scrollens laufen statt gegen den nativen Scroll zu rechnen. Einmal im
- * Root-Layout gemountet, wirkt site-weit.
+ * Globales Smooth Scrolling (Lenis). Einmal im Root-Layout gemountet,
+ * wirkt site-weit.
+ *
+ * Ab der Creative-Direction-Umsetzung (Phase A) treiben einzelne Szenen
+ * echte gsap ScrollTrigger-Pins (z.B. Hero "Die Auflösung"). Lenis
+ * virtualisiert das native Scroll-Event, ScrollTrigger braucht aber genau
+ * dieses Event, um Pins/Scrub korrekt zu berechnen — deshalb läuft der
+ * RAF-Loop jetzt über gsap.ticker (statt eines eigenen requestAnimationFrame)
+ * und Lenis meldet jeden Scroll-Tick an ScrollTrigger.update(). Das ist das
+ * dokumentierte Standard-Integrationsmuster von Lenis + gsap ScrollTrigger;
+ * ohne das desynchronisieren gepinnte Elemente sichtbar vom Scroll.
  *
  * Respektiert prefers-reduced-motion vollständig: Lenis wird dann gar
  * nicht erst initialisiert, die Seite scrollt nativ. Kein Bewegungseffekt
@@ -35,10 +42,14 @@ export function SmoothScroll() {
 
     lenis.on("scroll", ScrollTrigger.update);
 
-    const update = (time: number) => {
+    const tickerCallback = (time: number) => {
       lenis.raf(time * 1000);
     };
-    gsap.ticker.add(update);
+    gsap.ticker.add(tickerCallback);
+    // Lenis' eigenes Easing federt lange Frames bereits ab; gsap.ticker's
+    // zusätzliches "lag smoothing" würde nach Tab-Wechseln/Hängern einen
+    // künstlichen Zeitsprung einbauen, der mit Lenis' Geschwindigkeits-
+    // berechnung kollidiert (ruckartiges Nachholen). Deaktiviert.
     gsap.ticker.lagSmoothing(0);
 
     // Fängt Höhenänderungen ab, die nicht mit einem Routenwechsel
@@ -56,9 +67,9 @@ export function SmoothScroll() {
 
     return () => {
       resizeObserver.disconnect();
+      gsap.ticker.remove(tickerCallback);
       lenis.destroy();
       lenisRef.current = null;
-      gsap.ticker.remove(update);
     };
   }, []);
 
@@ -72,6 +83,16 @@ export function SmoothScroll() {
     // (er setzt die Scrollposition direkt, ohne Lenis zu fragen). Effekte
     // laufen erst nach dem Browser-Paint der neuen Route, ein zusätzlicher
     // rAF-Abstand ist nicht nötig und bliebe in Hintergrund-Tabs hängen.
+    // ScrollTrigger.refresh() räumt zusätzlich alle Pins/Trigger der
+    // vorherigen Route ab und misst die neue Seite neu ein.
+    //
+    // Der Sprung nach oben zuerst: Next.js ruft bei der Navigation zwar
+    // window.scrollTo(0, 0) auf, aber Lenis führt parallel seine eigene
+    // RAF-Schleife mit einer intern gemerkten Scrollposition — die
+    // überschreibt den nativen Sprung im nächsten Tick wieder mit der
+    // alten Position. lenis.scrollTo(0, { immediate: true }) setzt Lenis'
+    // eigenen Zustand direkt, ohne Animation.
+    lenisRef.current?.scrollTo(0, { immediate: true });
     lenisRef.current?.resize();
     ScrollTrigger.refresh();
   }, [pathname]);

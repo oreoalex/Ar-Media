@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Reveal } from "@/components/shared/reveal";
 import { siteConfig } from "@/lib/site-config";
+import { BrandTick } from "@/components/shared/brand-tick";
 
 /**
  * Wie es begann. Einzige Section mit Foto auf dieser Seite, bewusst hier
@@ -16,7 +17,7 @@ export function UrsprungSection() {
           <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Der Ursprung
           </h2>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
           <p className="mt-6 max-w-lg text-[18px] leading-relaxed text-charcoal/80 lg:text-[19px]">
             Es begann nicht mit einer Kamera. Es begann damit, dass jemand schwanger wurde.{" "}
             {siteConfig.founder.name} wollte Momente festhalten, die nicht zurückkommen, das

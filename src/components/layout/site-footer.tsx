@@ -1,8 +1,13 @@
 import Link from "next/link";
 import { Logo } from "@/components/shared/logo";
 import { CookieSettingsButton } from "@/components/shared/cookie-settings-button";
-import { footerNav, legalNav } from "@/lib/navigation";
+import { footerNav, legalNav, mainNav } from "@/lib/navigation";
 import { siteConfig } from "@/lib/site-config";
+
+// Die drei Unternehmen-Cluster kommen direkt aus dem Mega-Menü (einzige
+// Quelle der Wahrheit, siehe Kommentar bei footerNav in navigation.ts) —
+// nie als eigene, potenziell abweichende Liste hier pflegen.
+const unternehmenGroups = mainNav.find((item) => item.label === "Unternehmen")?.groups ?? [];
 
 export function SiteFooter() {
   return (
@@ -36,13 +41,52 @@ export function SiteFooter() {
               >
                 Google
               </a>
+              {/*
+                Google "Preferred Sources"-Badge (offiziell dokumentiert:
+                developers.google.com/search/docs/appearance/preferred-sources).
+                Bewusst der reine Deeplink statt des JS-Widgets
+                (news.google.com/swg/js/…): kein neues Script, keine
+                CSP-Erweiterung, kein Laden vor Consent nötig — dieselbe
+                Konsent-/Tracking-Zurückhaltung wie beim Maps-Embed und der
+                Instagram-Entscheidung. Hinweis: die Funktion setzt voraus,
+                dass Google die Domain bereits in seinem eigenen Preferences-
+                Tool gelistet hat — das kann ich nicht von hier aus steuern
+                oder garantieren.
+              */}
+              <a
+                href={`https://www.google.com/preferences/source?q=${new URL(siteConfig.url).hostname}`}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-off-white"
+              >
+                Bei Google bevorzugen
+              </a>
             </div>
           </div>
 
           <nav
             aria-label="Footer-Navigation"
-            className="grid flex-1 grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4"
+            className="grid flex-1 grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-6"
           >
+            {unternehmenGroups.map((group) => (
+              <div key={group.label}>
+                <p className="mb-4 text-[11px] font-medium tracking-[0.14em] text-off-white/60 uppercase">
+                  {group.label}
+                </p>
+                <ul className="space-y-2.5">
+                  {group.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-[14px] text-off-white/75 transition-colors hover:text-off-white"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
             {footerNav.map((group) => (
               <div key={group.label}>
                 <p className="mb-4 text-[11px] font-medium tracking-[0.14em] text-off-white/60 uppercase">

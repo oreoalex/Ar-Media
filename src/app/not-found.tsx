@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
+import { BrandArrow } from "@/components/shared/brand-arrow";
 
 export const metadata: Metadata = {
   title: "Seite nicht gefunden",
@@ -47,7 +47,7 @@ export default function NotFound() {
                 className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-100 bg-charcoal/30 transition-colors duration-300 ease-out group-hover:bg-deep-forest"
               />
             </span>
-            <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
+            <BrandArrow aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
           </Link>
 
           <ul className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-charcoal/10 pt-8">

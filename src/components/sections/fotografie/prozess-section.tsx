@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Reveal } from "@/components/shared/reveal";
+import { BrandTick } from "@/components/shared/brand-tick";
+import { GhostNumeral } from "@/components/shared/ghost-numeral";
 
 /**
  * So entstehen echte Bilder. Vier Schritte wie bei Unternehmen ("Wie wir
@@ -20,24 +22,28 @@ const schritte = [
     title: "Ankommen",
     text: "Die ersten Minuten sind nie das Shooting. Sie sind Zeit, im Ort und im Moment anzukommen, ohne dass schon fotografiert wird.",
     image: "/images/fotografie/prozess-01-ankommen.jpg",
+    imageAlt: "Jugendliche mit langen roten Haaren lächelt zurückhaltend im Abendlicht",
   },
   {
     label: "02",
     title: "Kennenlernen",
     text: "Ein kurzes Gespräch, bevor die Kamera überhaupt eine Rolle spielt. Nicht über Posen. Über dich.",
     image: "/images/fotografie/prozess-02-kennenlernen.jpg",
+    imageAlt: "Jugendliche mit gewelltem Haar lächelt herzlich im Freien",
   },
   {
     label: "03",
     title: "Vergessen, dass eine Kamera da ist",
     text: "Der Punkt, auf den alles hinausläuft. Sobald das passiert, verändert sich alles, was davor steif war.",
     image: "/images/fotografie/prozess-03-vergessen.jpg",
+    imageAlt: "Jugendlicher mit Brille im Gespräch am Tisch im Abendlicht",
   },
   {
     label: "04",
     title: "Erinnerung entsteht",
     text: "Nicht mehr geplant, nicht mehr gestellt. Einfach ein Moment, der wirklich passiert ist und der bleibt.",
     image: "/images/fotografie/prozess-04-erinnerung.jpg",
+    imageAlt: "Jugendlicher mit Zahnspange lacht ausgelassen am Tisch im Freien",
   },
 ];
 
@@ -49,7 +55,7 @@ export function ProzessSection() {
           <h2 className="text-[11px] font-medium tracking-[0.14em] text-off-white/60 uppercase">
             So entstehen echte Bilder
           </h2>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-off-white/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-off-white/20" />
         </Reveal>
 
         <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
@@ -58,15 +64,20 @@ export function ProzessSection() {
               <div className="relative aspect-3/4 w-full overflow-hidden">
                 <Image
                   src={schritt.image}
-                  alt=""
+                  alt={schritt.imageAlt}
                   fill
                   sizes="(min-width: 1024px) 25vw, 50vw"
                   className="object-cover"
                 />
               </div>
-              <p className="mt-4 text-[13px] tracking-wide text-off-white/60">{schritt.label}</p>
-              <h3 className="mt-1 text-[17px] font-medium text-off-white">{schritt.title}</h3>
-              <p className="mt-2 text-[14px] leading-relaxed text-off-white/65">{schritt.text}</p>
+              <div className="relative isolate mt-4">
+                <GhostNumeral n={schritt.label} className="text-off-white/[0.1]" />
+                <div className="relative z-10">
+                  <p className="text-[13px] tracking-wide text-off-white/60">{schritt.label}</p>
+                  <h3 className="mt-1 text-[17px] font-medium text-off-white">{schritt.title}</h3>
+                  <p className="mt-2 text-[14px] leading-relaxed text-off-white/65">{schritt.text}</p>
+                </div>
+              </div>
             </Reveal>
           ))}
         </div>

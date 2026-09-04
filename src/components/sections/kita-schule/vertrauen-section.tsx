@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ChevronDown, Star } from "lucide-react";
+import { BrandChevronDown } from "@/components/shared/brand-chevron-down";
 import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
 import { Reveal } from "@/components/shared/reveal";
 import { siteConfig } from "@/lib/site-config";
@@ -92,12 +92,7 @@ export function VertrauenSection() {
               den meisten Kitafotos gar nicht sie selbst sind. Genau das wollte er ändern.
             </p>
             <div className="mt-5 flex items-center gap-2">
-              <span className="flex items-center gap-0.5" aria-hidden>
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="size-3 fill-sand text-sand" />
-                ))}
-              </span>
-              <span className="text-[12px] tracking-wide text-off-white/60">
+              <span className="text-[12px] font-medium tracking-wide text-off-white/60">
                 {siteConfig.rating.value.toFixed(1).replace(".", ",")} · {siteConfig.rating.count}{" "}
                 Google-Bewertungen
               </span>
@@ -115,7 +110,7 @@ export function VertrauenSection() {
                 <AccordionPrimitive.Header>
                   <AccordionPrimitive.Trigger className="group flex w-full items-center justify-between gap-6 py-6 text-left outline-none rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-forest/50">
                     <span className="text-[16px] font-medium text-off-white lg:text-[17px]">{faq.q}</span>
-                    <ChevronDown
+                    <BrandChevronDown
                       aria-hidden
                       className="size-4 shrink-0 text-off-white/60 transition-transform duration-300 group-aria-expanded:rotate-180"
                     />

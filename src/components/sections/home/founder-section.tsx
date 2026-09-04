@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Star } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
 import { siteConfig } from "@/lib/site-config";
+import { BrandArrow } from "@/components/shared/brand-arrow";
+import { BrandTick } from "@/components/shared/brand-tick";
 
 /**
  * S06 · Der Mensch — Wireframe-Blueprint Kapitel 5, veredelt (Final Creative
@@ -38,7 +39,7 @@ export function FounderSection() {
           <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Warum es AR Media gibt
           </h2>
-          <span aria-hidden className="mt-3 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-3 h-4 w-2.5 text-charcoal/20" />
           <p className="mt-5 max-w-md text-[19px] leading-relaxed text-charcoal/80">
             AR Media ist nicht aus einem Businessplan entstanden, sondern aus einer
             Beobachtung: Die meisten Menschen und Marken wirken schwächer, als sie
@@ -52,20 +53,15 @@ export function FounderSection() {
             className="group mt-6 inline-flex items-center gap-2 text-[14px] font-medium tracking-wide text-charcoal/70 transition-colors hover:text-deep-forest"
           >
             Über AR Media
-            <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
+            <BrandArrow aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
           </Link>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-charcoal/10 pt-6">
-            <p className="font-serif text-[15px] text-charcoal/70 italic">
+            <p className="font-serif text-[15px] font-bold tracking-tight text-charcoal/70">
               „Let me show you how good you look.“
             </p>
             <span className="flex items-center gap-2 text-charcoal/70">
-              <span className="flex items-center gap-0.5" aria-hidden>
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="size-3 fill-sand text-sand" />
-                ))}
-              </span>
-              <span className="text-[12px] tracking-wide">
+              <span className="text-[12px] font-medium tracking-wide">
                 {siteConfig.rating.value.toFixed(1).replace(".", ",")} · {siteConfig.rating.count}{" "}
                 Google-Bewertungen
               </span>

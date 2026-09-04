@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { GoogleAnalytics } from "@/components/shared/google-analytics";
 import { ConsentBanner } from "@/components/shared/consent-banner";
+import { ContactTracking } from "@/components/shared/contact-tracking";
 import { SmoothScroll } from "@/components/shared/smooth-scroll";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     founder: {
       "@type": "Person",
       name: siteConfig.founder.name,
+      sameAs: [siteConfig.social.linkedin],
     },
     address: {
       "@type": "PostalAddress",
@@ -100,10 +102,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     },
     telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,
-    areaServed: {
-      "@type": "State",
-      name: siteConfig.location.region,
-    },
+    areaServed: [
+      {
+        "@type": "City",
+        name: siteConfig.location.city,
+      },
+      {
+        "@type": "State",
+        name: siteConfig.location.region,
+      },
+    ],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: siteConfig.rating.value,
@@ -121,6 +129,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-off-white text-charcoal">
         <SmoothScroll />
         <GoogleAnalytics />
+        <ContactTracking />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

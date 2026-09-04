@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   description:
     "Portraitfotografie in Kiel und Schleswig-Holstein, ohne Posen und ohne künstliche Inszenierung. Ab 249 €.",
   keywords: ["Portraitfotograf Kiel", "Portraitfotografie Schleswig-Holstein", "Fotograf Kiel"],
+  openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
+    title: "Portraitfotograf Kiel · AR Media",
+    description: "Portraitfotografie in Kiel und Schleswig-Holstein, ohne Posen und ohne künstliche Inszenierung. Ab 249 €.",
+  },
+  twitter: {
+    images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
+    title: "Portraitfotograf Kiel · AR Media",
+    description: "Portraitfotografie in Kiel und Schleswig-Holstein, ohne Posen und ohne künstliche Inszenierung. Ab 249 €.",
+  },
   alternates: { canonical: "/fotografie/portrait" },
 };
 
@@ -33,7 +43,7 @@ export default function Page() {
     <FotografieCategoryPage
       slug="/fotografie/portrait"
       kicker="Fotografie · Portrait"
-      title="Ein ehrliches Bild von dir."
+      title="Ein ehrliches Portrait von dir."
       intro="Für Menschen, die sich selbst lange nicht mehr wirklich gesehen haben. Ein Portraittermin in Kiel, ohne Anweisungen, wie du zu stehen oder zu lächeln hast."
       heroImage={{
         src: "/images/fotografie/arbeit-03.jpg",

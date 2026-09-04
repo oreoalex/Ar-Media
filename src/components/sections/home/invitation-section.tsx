@@ -24,10 +24,16 @@ const paths = [
  * Seite (auch nicht im Footer, siehe dort). Der Besucher soll die Seite mit
  * genau diesem Gedanken verlassen.
  *
- * Trägt die "R"-Silhouette (echte Vektordaten, siehe brand-mark-r.tsx) als
- * großes, ruhiges Signature-Element — Gegenstück zum "A" in der
- * Haltung-Section. Zwei verschiedene Buchstaben an zwei verschiedenen
- * Marken-Momenten statt derselben Form zweimal.
+ * Trägt die "R"-Silhouette (echte Vektordaten, siehe brand-mark-r.tsx) —
+ * anders als die stille 4-6%-Wasserzeichen-Variante derselben Form auf den
+ * CTA-Sections (Referenz-Review: "dominante R-Silhouette als eigenständiges
+ * Gestaltungselement"). An genau dieser einen Stelle bewusst groß und
+ * sichtbar statt nur angedeutet: der Abschluss ist der einzige Ort der
+ * Seite mit diesem Klimax-Status (siehe fork-section.tsx-Kommentar zu
+ * bg-sand/12 — "der Klimax soll einmalig bleiben"), deshalb auch die
+ * einzige Stelle, an der die Silhouette selbst zum Klimax gehört statt nur
+ * leise mitzulaufen. Gegenstück zum "A" in der Haltung-Section, das
+ * weiterhin als Wasserzeichen bleibt.
  */
 export function InvitationSection() {
   return (
@@ -35,11 +41,11 @@ export function InvitationSection() {
       aria-label="Abschluss"
       className="relative overflow-hidden bg-deep-forest px-6 py-32 lg:py-48"
     >
-      <BrandMarkR className="pointer-events-none absolute -right-[6vw] -bottom-[10%] h-[75%] w-auto text-off-white opacity-[0.06] sm:-right-[4vw]" />
+      <BrandMarkR className="pointer-events-none absolute -right-[2vw] -bottom-[12%] h-[115%] w-auto text-off-white opacity-[0.14] sm:-right-[1vw] lg:h-[130%]" />
 
       <div className="relative mx-auto max-w-3xl text-center">
         <Reveal variant="fade">
-          <p className="font-serif text-2xl text-off-white italic lg:text-3xl">
+          <p className="font-serif text-2xl font-bold tracking-tight text-off-white lg:text-3xl">
             Lass uns herausfinden, was für dich der richtige nächste Schritt ist.
           </p>
         </Reveal>
@@ -67,7 +73,7 @@ export function InvitationSection() {
         </Reveal>
 
         <Reveal delay={0.2} className="mt-24 lg:mt-32">
-          <p className="font-serif text-xl text-off-white/60 italic lg:text-2xl">
+          <p className="font-serif text-xl font-bold tracking-tight text-off-white/60 lg:text-2xl">
             „Let me show you what’s already there.“
           </p>
         </Reveal>

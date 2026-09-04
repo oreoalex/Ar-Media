@@ -45,7 +45,7 @@ export default function Page() {
     <FotografieCategoryPage
       slug="/fotografie/lifestyle"
       kicker="Fotografie · Lifestyle"
-      title="Momente, keine Inszenierung."
+      title="Lifestyle-Fotografie zeigt echte Momente, keine Inszenierung."
       intro="Für echte Augenblicke statt gestellter Szenen. Als Familienfotograf in Kiel begleiten wir Familien, Zuhause, den ganz normalen Tag, festgehalten, ohne ihn zu verändern."
       heroImage={{
         src: "/images/fotografie/arbeit-lifestyle.jpg",

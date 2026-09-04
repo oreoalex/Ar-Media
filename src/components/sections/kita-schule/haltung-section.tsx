@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/shared/reveal";
 import { BrandMarkA } from "@/components/shared/brand-mark-a";
+import { BrandTick } from "@/components/shared/brand-tick";
 
 /**
  * Unsere Haltung — Phase 3 (Vertrauen). Positionierung gegen klassische
@@ -39,7 +40,7 @@ export function HaltungSection() {
           <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Unsere Haltung
           </p>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
           <h2 className="mt-6 max-w-xl text-[22px] leading-relaxed text-charcoal/80 lg:text-[24px]">
             Wir arbeiten nicht besser. Wir arbeiten anders.
           </h2>

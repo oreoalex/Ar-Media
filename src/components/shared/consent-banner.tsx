@@ -25,6 +25,26 @@ function applyDecision(decision: ConsentDecision) {
 }
 
 /**
+ * Lint-Fund (nicht Teil des ursprünglichen Audits, beim Verifizieren
+ * entdeckt): "setState direkt im Effect" ist hier kein Stilproblem, sondern
+ * zeigt ein echtes Hydration-Risiko — die Seite ist vollständig statisch
+ * generiert (kein Cookie zur Build-Zeit bekannt), ein useState-Initializer,
+ * der das Cookie direkt läse, würde beim ersten Client-Render vom
+ * statischen Markup abweichen. useSyncExternalStore ist genau für diesen
+ * Fall gebaut: getServerSnapshot liefert "granted" (Banner startet
+ * versteckt, wie bisher), der echte Cookie-Wert übernimmt danach ohne
+ * Hydration-Fehler und ohne den zusätzlichen Effect-Render.
+ */
+function subscribeToConsentChanges(callback: () => void) {
+  window.addEventListener(CONSENT_UPDATED_EVENT, callback);
+  return () => window.removeEventListener(CONSENT_UPDATED_EVENT, callback);
+}
+
+function getConsentServerSnapshot(): ConsentDecision | null {
+  return "granted";
+}
+
+/**
  * Erscheint beim Erstbesuch (kein Consent-Cookie) und lässt sich über den
  * "Cookie-Einstellungen"-Link im Footer jederzeit erneut öffnen, um die
  * Entscheidung zu ändern (siehe cookie-settings-button.tsx). Bewusst nur
@@ -33,25 +53,24 @@ function applyDecision(decision: ConsentDecision) {
  * einfache Ja/Nein-Entscheidung.
  */
 export function ConsentBanner() {
-  const [visible, setVisible] = React.useState(false);
+  const stored = React.useSyncExternalStore(subscribeToConsentChanges, readStoredConsent, getConsentServerSnapshot);
+  const [forcedOpen, setForcedOpen] = React.useState(false);
 
   React.useEffect(() => {
-    const stored = readStoredConsent();
     if (stored === "granted") {
       window.gtag?.("consent", "update", buildConsentState("granted"));
-    } else if (stored === null) {
-      setVisible(true);
     }
-    const openHandler = () => setVisible(true);
+    const openHandler = () => setForcedOpen(true);
     window.addEventListener(OPEN_CONSENT_SETTINGS_EVENT, openHandler);
     return () => window.removeEventListener(OPEN_CONSENT_SETTINGS_EVENT, openHandler);
-  }, []);
+  }, [stored]);
 
+  const visible = forcedOpen || stored === null;
   if (!visible) return null;
 
   const handleDecision = (decision: ConsentDecision) => {
     applyDecision(decision);
-    setVisible(false);
+    setForcedOpen(false);
   };
 
   return (

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "@/components/shared/reveal";
+import { BrandTick } from "@/components/shared/brand-tick";
 
 /**
  * Ausgewählte Arbeiten. Bewusst bildgeführter als die Case Studies bei
@@ -56,7 +57,7 @@ export function ArbeitenSection() {
           <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Ausgewählte Arbeiten
           </h2>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
           <p className="mt-6 text-[20px] leading-relaxed text-charcoal/80 lg:text-[22px]">
             Nicht jedes Bild ist eine Geschichte. Diese schon.
           </p>
@@ -92,7 +93,7 @@ export function ArbeitenSection() {
                 alt={moment.alt}
                 fill
                 sizes="(min-width: 1024px) 50vw, 50vw"
-                className={`object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] ${moment.position}`}
+                className={`object-cover grayscale-[65%] saturate-[0.5] transition-[filter,transform] duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0 group-hover:saturate-100 ${moment.position}`}
               />
             </div>
           ))}

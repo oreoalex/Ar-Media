@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { BrandArrow } from "@/components/shared/brand-arrow";
 
 /**
  * Route-Error-Boundary (Next.js App Router, muss Client Component sein).
@@ -40,7 +40,7 @@ export default function Error({ reset }: { error: Error & { digest?: string }; r
                 className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-100 bg-charcoal/30 transition-colors duration-300 ease-out group-hover:bg-deep-forest"
               />
             </span>
-            <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
+            <BrandArrow aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
           </button>
 
           <Link

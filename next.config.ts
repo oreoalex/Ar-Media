@@ -18,6 +18,11 @@ import type { NextConfig } from "next";
  * analytics.google.com empfangen die Messdaten) — ohne diese Freigabe
  * würde die CSP GA4 stillschweigend blockieren, siehe Consent-Mode-
  * Implementierung in components/shared/google-analytics.tsx.
+ *
+ * frame-src um google.com erweitert (Audit-Fund, Kontakt-Feature): das neue
+ * Maps-Embed (components/shared/map-embed.tsx) lädt den iframe erst nach
+ * erteiltem Consent, aber ohne frame-src würde die CSP ihn dann trotzdem
+ * blocken, unabhängig vom Consent-Status.
  */
 const isDev = process.env.NODE_ENV === "development";
 const cspHeader = `
@@ -27,6 +32,7 @@ const cspHeader = `
   img-src 'self' data: blob: https://www.google-analytics.com;
   font-src 'self';
   connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com;
+  frame-src https://www.google.com;
   object-src 'none';
   base-uri 'self';
   form-action 'self';

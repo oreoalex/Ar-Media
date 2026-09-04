@@ -46,9 +46,22 @@ const paths: ForkPath[] = [
  * allen drei Bildern, hier ist er aber kein reines Dekor-Bild, sondern
  * zeigt echten Inhalt (u. a. das reale "Saat für den Norden"-Case-Study-Foto).
  */
+/*
+ * bg-sand/12 statt bg-off-white (Audit-Fund P1.4, Editorial-Feel): vier
+ * Startseiten-Sections in Folge (Haltung, Fork, Case Studies, Founder)
+ * liefen zuvor auf identischem bg-off-white — kein tonaler Wendepunkt
+ * zwischen "warum wir das tun" und "was wir anbieten". Deep Forest bleibt
+ * bewusst der Invitation-Section vorbehalten (siehe dortiger Kommentar,
+ * der Klimax soll einmalig bleiben). Sand als sehr sparsamer Wash (12%)
+ * markiert stattdessen leise den Übergang von Haltung zu Angebot, ohne
+ * selbst einen zweiten "großen Farbmoment" zu behaupten. 12% Deckkraft war
+ * beim Live-Test praktisch nicht wahrnehmbar (verifiziert per Screenshot),
+ * 25% ist die niedrigste Stufe, die als echter, aber weiterhin ruhiger
+ * Wendepunkt sichtbar wird.
+ */
 export function ForkSection() {
   return (
-    <section aria-label="Wähle deinen Bereich" className="bg-off-white">
+    <section aria-label="Wähle deinen Bereich" className="bg-sand/25">
       <div className="grid lg:grid-cols-3">
         {paths.map((path, i) => (
           <Reveal key={path.href} delay={i * 0.08} className="h-full">
@@ -61,7 +74,7 @@ export function ForkSection() {
                 alt={path.imageAlt}
                 fill
                 sizes="(min-width: 1024px) 34vw, 100vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                className="object-cover grayscale-[65%] saturate-[0.5] transition-[filter,transform] duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0 group-hover:saturate-100"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/10 to-transparent transition-opacity group-hover:from-charcoal/90" />
 
@@ -69,7 +82,21 @@ export function ForkSection() {
                 <p className="text-[11px] font-medium tracking-[0.16em] text-off-white/70 uppercase">
                   {String(i + 1).padStart(2, "0")}
                 </p>
-                <h2 className="mt-2 font-sans text-2xl font-medium text-off-white lg:text-3xl">
+                {/* "Laut & mutig"-Typografie (siehe philosophy-section.tsx/
+                    proof-section.tsx): kurze 1-2-Wort-Phrase, deshalb fett +
+                    Versalien statt des vorherigen mittelschweren Fließtext-
+                    Gewichts. Feedback-Fix: eine feste lg:text-5xl (48px)
+                    lief bei "Unternehmen" (11 Zeichen, längstes Label) in
+                    der schmalen Drittel-Spalte gegen den überflüssigen
+                    overflow-hidden-Rand und wurde abgeschnitten, während
+                    die kürzeren Labels dieselbe Klasse problemlos trugen —
+                    sichtbar "unterschiedliche" Größe, obwohl der Code
+                    überall identisch war. Jetzt fluid über clamp() (skaliert
+                    mit der tatsächlichen Spaltenbreite statt an einem festen
+                    Breakpoint zu kippen) plus hyphens-auto als Sicherheitsnetz:
+                    bricht im Zweifel sauber um, statt zu clippen — bei allen
+                    drei Labels weiterhin exakt dieselbe Regel/Größe. */}
+                <h2 className="mt-2 [hyphens:auto] font-serif text-3xl font-bold tracking-tight text-off-white uppercase transition-colors duration-500 group-hover:text-sand lg:text-[clamp(1.75rem,3.2vw,3.25rem)]">
                   {path.label}
                 </h2>
                 <p className="mt-3 max-w-[26ch] text-[15px] text-off-white/85">{path.line}</p>

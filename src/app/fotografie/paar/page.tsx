@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   description:
     "Paarfotografie in Kiel und Schleswig-Holstein, ruhig und ohne gestellte Romantik-Klischees. Ab 349 €.",
   keywords: ["Paarshooting Kiel", "Paarfotograf Schleswig-Holstein", "Verlobungsshooting Kiel"],
+  openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
+    title: "Paarshooting Kiel · AR Media",
+    description: "Paarfotografie in Kiel und Schleswig-Holstein, ruhig und ohne gestellte Romantik-Klischees. Ab 349 €.",
+  },
+  twitter: {
+    images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
+    title: "Paarshooting Kiel · AR Media",
+    description: "Paarfotografie in Kiel und Schleswig-Holstein, ruhig und ohne gestellte Romantik-Klischees. Ab 349 €.",
+  },
   alternates: { canonical: "/fotografie/paar" },
 };
 
@@ -33,7 +43,7 @@ export default function Page() {
     <FotografieCategoryPage
       slug="/fotografie/paar"
       kicker="Fotografie · Paar"
-      title="Eure Geschichte, echt festgehalten."
+      title="Ein Paarshooting, das eure Geschichte echt festhält."
       intro="Für zwei Menschen, die zusammen entspannter sind als einzeln. Ein Paarshooting in Kiel, das sich wie ein gemeinsamer Nachmittag anfühlt, nicht wie ein Termin."
       ablaufTitle="Wie ein Paar-Termin abläuft"
       ablauf="Wir beginnen mit einem Gespräch, nicht mit Anweisungen. Kein Posieren nach Schema, kein Kommando zum Lächeln. Stattdessen Zeit, an einem Ort, der euch etwas bedeutet, bis ihr vergesst, dass fotografiert wird, und ihr einfach miteinander seid. Genau dann entstehen die Bilder, die später zählen."

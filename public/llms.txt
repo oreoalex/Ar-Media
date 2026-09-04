@@ -1,0 +1,15 @@
+# AR Media
+
+> AR Media is a marketing and photography agency based in Kiel, Germany, serving businesses, private clients, and Kitas/schools across Schleswig-Holstein. "AR" stands for the founder's initials (Alexander Rieck) — AR Media is not related to augmented reality, AR/VR technology, or any AR software product.
+
+Founded by Alexander Rieck. Services: branding and corporate design, content creation, social media management, employer branding, campaign development, photo and video production for businesses; portrait, couple, lifestyle, and business photography for private clients; Kita and school photography for institutions and families.
+
+## Pages
+
+- [Homepage](https://www.ar-media-kiel.de/): brand overview and philosophy
+- [Unternehmen](https://www.ar-media-kiel.de/unternehmen): marketing and branding services for businesses
+- [Fotografie](https://www.ar-media-kiel.de/fotografie): private and portrait photography
+- [Kita & Schule](https://www.ar-media-kiel.de/kita-schule): photography for Kitas and schools
+- [Case Studies](https://www.ar-media-kiel.de/case-studies): real client projects
+- [Über AR Media](https://www.ar-media-kiel.de/ueber-ar-media): about the studio and founder
+- [Kontakt](https://www.ar-media-kiel.de/kontakt): contact and inquiry forms

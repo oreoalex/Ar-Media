@@ -15,21 +15,9 @@
   /* AR Media Markenfarben (verbindlich laut Lookbook) */
   --color-deep-forest: var(--deep-forest);
   --color-sand: var(--sand);
+  --color-sand-text: var(--sand-text);
   --color-off-white: var(--off-white);
   --color-charcoal: var(--charcoal);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -59,6 +47,15 @@
   /* AR Media Markenfarben — Rohwerte, verbindlich laut Lookbook */
   --deep-forest: #0d2b24;
   --sand: #dcc9b2;
+  /* Abgedunkelter Sand-Ton, ausschließlich für Text/Icons auf HELLEM
+     Grund (Off-White, Sand-Flächen): reines --sand hat dort nur 1,47:1
+     Kontrast (WCAG-Fail, verifiziert per Luminanz-Berechnung — Fund aus
+     der "Laut & Mutig"-Exploration, dort Seite 4 sichtbar betroffen).
+     --sand-text liegt bei 5,74:1 (besteht AA für Fließtext). Auf DUNKLEM
+     Grund (Deep Forest) gilt das nicht — dort bleibt reines --sand
+     (9,39:1) die richtige Wahl, --sand-text wäre dort mit nur 2,4:1
+     selbst zu kontrastarm. */
+  --sand-text: #7a5a30;
   --off-white: #f7f4ee;
   --charcoal: #2a2a2a;
 
@@ -80,59 +77,23 @@
   --border: oklch(0.88 0.01 95);
   --input: oklch(0.88 0.01 95);
   --ring: var(--deep-forest);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
   /* Aus der echten Logogeometrie: der Bogen des "R" ist ein nahezu perfekter
      Kreis (Kreisfit-Abweichung 0,64%), sein Radius liegt im Verhältnis 3:1
      zur eigenen Strichstärke des Buchstabens — großzügiger, weicher als ein
      generisches UI-Radius. 0.625rem (Standard) wirkt dagegen eng/technisch. */
   --radius: 0.75rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
+/*
+ * Kein .dark-Block: die Seite hat keinen Dark-Mode-Toggle (kein next-themes,
+ * keine UI dafür) — ein ungenutztes shadcn-Boilerplate-Farbschema wäre toter
+ * Code (Technical-Quality-Audit, P3). Der `@custom-variant dark`-Selektor
+ * oben bleibt harmlos ungenutzt stehen, falls Dark Mode später kommt.
+ *
+ * Aus demselben Grund (finaler Dead-Code-Pass) entfernt: die --sidebar-*-
+ * und --chart-*-Tokens aus dem shadcn-Scaffold — keine Sidebar-Komponente,
+ * kein Chart irgendwo im Code, kein einziger Verweis außerhalb dieser Datei.
+ */
 
 @layer base {
   * {
@@ -154,3 +115,21 @@
  * brand-mark-r.tsx) genutzt. Zwei Hintergrundmuster-Varianten (Nadelstreifen,
  * dann Flow-Lines) wurden nach Feedback wieder entfernt — zu viel Fläche.
  */
+
+/*
+ * Reduced-Motion-Audit (Phase F): die drei Hero-Scroll-Cues (fotografie/,
+ * unternehmen/, kita-schule/hero-section.tsx) nutzen Tailwinds animate-bounce
+ * — eine endlose CSS-Keyframe-Animation, die anders als jede GSAP/Framer-
+ * Motion-Szene der Seite NICHT automatisch über useReducedMotion()/matchMedia
+ * abgefangen wird (Tailwind verdrahtet @keyframes nicht selbst gegen
+ * prefers-reduced-motion). Gezielt nur diese eine Utility-Klasse abgeschaltet
+ * statt eines pauschalen "alle transition-duration auf 0" Resets — das würde
+ * auch die gewollten Hover-Übergänge (Wort-Hover-Färbung, CtaButton,
+ * entsättigte Fotos) stumm schalten, die selbst unter reduzierter Bewegung
+ * unproblematisch sind.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .animate-bounce {
+    animation: none;
+  }
+}

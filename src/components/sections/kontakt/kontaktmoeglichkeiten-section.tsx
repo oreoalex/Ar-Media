@@ -1,6 +1,10 @@
-import { Mail, Phone, MapPin } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
 import { siteConfig } from "@/lib/site-config";
+import { BrandTick } from "@/components/shared/brand-tick";
+import { MapEmbed } from "@/components/shared/map-embed";
+import { BrandMail } from "@/components/shared/brand-mail";
+import { BrandPhone } from "@/components/shared/brand-phone";
+import { BrandMapPin } from "@/components/shared/brand-map-pin";
 
 /**
  * Direkte Kontaktwege, nicht nur das Formular weiter unten. Bewusst kein
@@ -19,7 +23,7 @@ export function KontaktmoeglichkeitenSection() {
           <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Direkter Kontakt
           </h2>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
         </Reveal>
 
         <Reveal delay={0.08} className="mt-10 grid gap-x-10 gap-y-6 sm:grid-cols-2">
@@ -27,7 +31,7 @@ export function KontaktmoeglichkeitenSection() {
             href={`mailto:${siteConfig.contact.email}`}
             className="group flex items-center gap-4 text-charcoal transition-colors hover:text-deep-forest"
           >
-            <Mail aria-hidden className="size-5 shrink-0 text-charcoal/70 group-hover:text-deep-forest" />
+            <BrandMail aria-hidden className="size-5 shrink-0 text-charcoal/70 group-hover:text-deep-forest" />
             <span>
               <span className="block text-[13px] tracking-wide text-charcoal/70">E-Mail</span>
               <span className="block text-[16px] font-medium">{siteConfig.contact.email}</span>
@@ -38,7 +42,7 @@ export function KontaktmoeglichkeitenSection() {
             href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`}
             className="group flex items-center gap-4 text-charcoal transition-colors hover:text-deep-forest"
           >
-            <Phone aria-hidden className="size-5 shrink-0 text-charcoal/70 group-hover:text-deep-forest" />
+            <BrandPhone aria-hidden className="size-5 shrink-0 text-charcoal/70 group-hover:text-deep-forest" />
             <span>
               <span className="block text-[13px] tracking-wide text-charcoal/70">Telefon</span>
               <span className="block text-[16px] font-medium">{siteConfig.contact.phone}</span>
@@ -77,14 +81,12 @@ export function KontaktmoeglichkeitenSection() {
 
           {/*
             Adresse als eigener Kontaktweg: Local-SEO-Audit bemängelte, dass
-            die reale Adresse nirgends sichtbar ist. Bewusst nur ein
-            externer Link zu Google Maps, kein eingebettetes iframe: ein
-            Live-Embed würde bei jedem Seitenaufruf ungefragt Daten
-            (u. a. IP-Adresse) an Google übertragen, unabhängig vom
-            Cookie-Consent, den die Seite sonst konsequent vor jeder
-            Google-Datenübertragung einholt (siehe google-analytics.tsx).
-            Ein reiner Link löst dasselbe Problem (Adresse einsehbar,
-            direkt zur Route) ohne diesen Zielkonflikt.
+            die reale Adresse nirgends sichtbar ist. Update: das Karten-
+            Embed weiter unten (map-embed.tsx) löst den früher hier
+            dokumentierten Zielkonflikt jetzt direkt über den Consent-
+            Status, statt komplett auf ein Embed zu verzichten — dieser
+            Link bleibt als schneller, konsentfreier Direktweg zusätzlich
+            bestehen.
           */}
           <a
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -94,7 +96,7 @@ export function KontaktmoeglichkeitenSection() {
             rel="noreferrer"
             className="group flex items-center gap-4 text-charcoal transition-colors hover:text-deep-forest"
           >
-            <MapPin aria-hidden className="size-5 shrink-0 text-charcoal/70 group-hover:text-deep-forest" />
+            <BrandMapPin aria-hidden className="size-5 shrink-0 text-charcoal/70 group-hover:text-deep-forest" />
             <span>
               <span className="block text-[13px] tracking-wide text-charcoal/70">Adresse</span>
               <span className="block text-[16px] font-medium">
@@ -102,6 +104,10 @@ export function KontaktmoeglichkeitenSection() {
               </span>
             </span>
           </a>
+        </Reveal>
+
+        <Reveal delay={0.12} className="mt-10">
+          <MapEmbed className="h-64 w-full border border-charcoal/10 sm:h-80" />
         </Reveal>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { BrandChevronDown } from "@/components/shared/brand-chevron-down";
+import { HoverWords } from "@/components/shared/hover-words";
+import { CtaButton } from "@/components/shared/cta-button";
 
 /**
  * Fotografie · Hero. Gleiches Grundprinzip wie Unternehmen-Hero (großes
@@ -17,7 +18,7 @@ export function HeroSection() {
     >
       <Image
         src="/images/fotografie/hero-lachen.jpg"
-        alt=""
+        alt="Jugendlicher mit lockigem Haar lacht ausgelassen im Freien"
         fill
         priority
         sizes="100vw"
@@ -29,32 +30,24 @@ export function HeroSection() {
         <p className="text-[11px] font-medium tracking-[0.16em] text-off-white/60 uppercase">
           Fotografie
         </p>
-        <h1 className="mt-5 max-w-2xl font-serif text-[clamp(1.75rem,4.8vw,3.25rem)] leading-[1.15] text-off-white italic">
-          Nicht schöner. Nur du.
+        <h1 className="mt-5 max-w-2xl font-serif text-[clamp(1.75rem,4.8vw,3.25rem)] leading-[1.15] font-bold tracking-tight text-off-white">
+          <HoverWords text="Nicht schöner. Nur du." className="hover:text-sand" />
         </h1>
         <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-off-white/75">
           Fotografie beginnt nicht mit einer Kamera. Sie beginnt mit dem
           Moment, in dem du vergisst, dass jemand hinsieht. Als Fotograf in
           Kiel und Schleswig-Holstein.
         </p>
-        <Link
-          href="/kontakt/shooting-anfragen"
-          className="group mt-7 inline-flex items-center gap-2 text-[14px] font-medium tracking-wide text-off-white/85 transition-colors hover:text-off-white"
-        >
-          <span className="relative pb-0.5">
+        <div className="mt-7">
+          <CtaButton href="/kontakt/shooting-anfragen" variant="outline" size="sm">
             Lass uns kennenlernen
-            <span
-              aria-hidden
-              className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-off-white transition-transform duration-300 ease-out group-hover:scale-x-100"
-            />
-          </span>
-          <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-        </Link>
+          </CtaButton>
+        </div>
       </div>
 
       <div className="absolute inset-x-0 bottom-6 flex flex-col items-center gap-2 text-off-white/70 lg:bottom-8">
         <span className="text-[11px] tracking-[0.16em] uppercase">Entdecken</span>
-        <ChevronDown aria-hidden className="size-4 animate-bounce" />
+        <BrandChevronDown aria-hidden className="size-4 animate-bounce" />
       </div>
     </section>
   );

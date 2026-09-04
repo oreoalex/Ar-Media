@@ -26,7 +26,7 @@ export default function Page() {
     <UnternehmenLeistungPage
       slug="/unternehmen/foto-video"
       kicker="Unternehmen · Foto & Video"
-      title="Bildmaterial mit derselben Handschrift wie die private Fotografie."
+      title="Foto und Video mit derselben Handschrift wie die private Fotografie."
       heroText="Menschen vertrauen Gesichtern, nicht Stockfotos."
       problemTitle="Bilder, die niemand wiedererkennt."
       problemText="Stockfotos oder veraltetes Bildmaterial, weil eigene Fotografie teuer oder aufwendig wirkt. Das Ergebnis: eine Website, die aussieht wie tausend andere, und kein einziges Gesicht, das potenzielle Kunden tatsächlich wiedererkennen würden."
@@ -57,6 +57,11 @@ export default function Page() {
         { q: "Braucht ihr dafür einen Drohnenschein?", a: "Ja, für Luftaufnahmen gelten feste rechtliche Vorgaben, die wir einhalten." },
       ]}
       ctaText="Ein Gesicht, das man wiedererkennt, wirkt mehr als jedes perfekte Stockfoto."
+      relatedLink={{
+        name: "Content Creation",
+        text: "Bildmaterial wird erst zu Reichweite, wenn es regelmäßig erscheint.",
+        href: "/unternehmen/content-creation",
+      }}
     />
   );
 }

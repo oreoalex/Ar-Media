@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "@/components/shared/reveal";
+import { BrandTick } from "@/components/shared/brand-tick";
 
 /**
  * Bildbeispiele — Phase 5 (Qualität). Creative Review, Punkte 1+2: statt
@@ -38,8 +39,8 @@ export function BildbeispieleSection() {
           <p className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Bildbeispiele
           </p>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
-          <h2 className="mt-6 font-serif text-[clamp(1.5rem,3.2vw,2rem)] leading-[1.3] text-charcoal italic">
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
+          <h2 className="mt-6 font-serif text-[clamp(1.5rem,3.2vw,2rem)] leading-[1.3] font-bold tracking-tight text-charcoal">
             Nicht gestellt. Trotzdem vorzeigbar.
           </h2>
         </Reveal>
@@ -53,7 +54,7 @@ export function BildbeispieleSection() {
                   alt={moment.alt}
                   fill
                   sizes="(min-width: 1024px) 50vw, 50vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  className="object-cover grayscale-[65%] saturate-[0.5] transition-[filter,transform] duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0 group-hover:saturate-100"
                 />
               </div>
             </Reveal>
@@ -66,7 +67,7 @@ export function BildbeispieleSection() {
                 alt="Zwei Kinder im vertrauten Gespräch, echtes Lachen"
                 fill
                 sizes="100vw"
-                className="object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]"
+                className="object-cover grayscale-[65%] saturate-[0.5] transition-[filter,transform] duration-1000 ease-out group-hover:scale-[1.03] group-hover:grayscale-0 group-hover:saturate-100"
               />
             </div>
           </Reveal>
@@ -79,15 +80,15 @@ export function BildbeispieleSection() {
                   alt={moment.alt}
                   fill
                   sizes="(min-width: 1024px) 50vw, 50vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  className="object-cover grayscale-[65%] saturate-[0.5] transition-[filter,transform] duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0 group-hover:saturate-100"
                 />
               </div>
             </Reveal>
           ))}
 
           <Reveal delay={0.2} className="col-span-2 flex flex-col justify-center px-1">
-            <span aria-hidden className="block h-px w-8 bg-charcoal/20" />
-            <p className="mt-5 font-serif text-[19px] leading-relaxed text-charcoal/70 italic lg:text-[21px]">
+            <BrandTick className="h-4 w-2.5 text-charcoal/20" />
+            <p className="mt-5 font-serif text-[19px] leading-relaxed font-bold tracking-tight text-charcoal/70 lg:text-[21px]">
               Jeder Termin ist anders. Jedes Bild bleibt es auch.
             </p>
           </Reveal>

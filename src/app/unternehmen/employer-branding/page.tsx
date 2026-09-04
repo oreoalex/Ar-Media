@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   description:
     "Employer Branding und Recruiting-Content für Unternehmen in Kiel und Schleswig-Holstein: echte Einblicke statt austauschbarer Stellenanzeigen.",
   keywords: ["Employer Branding Kiel", "Recruiting Content Schleswig-Holstein", "Mitarbeiter gewinnen"],
+  openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
+    title: "Employer Branding Kiel · AR Media",
+    description:
+      "Employer Branding und Recruiting-Content für Unternehmen in Kiel und Schleswig-Holstein: echte Einblicke statt austauschbarer Stellenanzeigen.",
+  },
+  twitter: {
+    images: [{ url: "/twitter-image.jpg", width: 1200, height: 630, alt: "AR Media – Signet und Wortmarke" }],
+    title: "Employer Branding Kiel · AR Media",
+    description:
+      "Employer Branding und Recruiting-Content für Unternehmen in Kiel und Schleswig-Holstein: echte Einblicke statt austauschbarer Stellenanzeigen.",
+  },
   alternates: { canonical: "/unternehmen/employer-branding" },
 };
 
@@ -14,7 +26,7 @@ export default function Page() {
     <UnternehmenLeistungPage
       slug="/unternehmen/employer-branding"
       kicker="Unternehmen · Employer Branding"
-      title="Sichtbar werden als Arbeitgeber, nicht nur als Marke."
+      title="Employer Branding macht dich als Arbeitgeber sichtbar, nicht nur als Marke."
       heroText="Gute Mitarbeiter bewerben sich lieber, wenn sie vorher schon ein echtes Bild davon haben, wo sie arbeiten würden."
       problemTitle="Ein guter Arbeitsplatz, den niemand sieht."
       problemText="Intern ein gutes Team, echter Zusammenhalt, faire Bedingungen, aber nach außen zeigt sich davon kaum etwas. Stellenanzeigen wirken generisch, die Karriereseite unpersönlich, potenzielle Bewerber sehen nirgends, was das Unternehmen als Arbeitgeber tatsächlich ausmacht."
@@ -42,6 +54,11 @@ export default function Page() {
         { q: "Reicht Social Media allein?", a: "Als Ergänzung ja, als einziger Kanal selten, die meisten Bewerber informieren sich an mehreren Stellen." },
       ]}
       ctaText="Der beste Arbeitsplatz nützt nichts, wenn niemand davon weiß."
+      relatedLink={{
+        name: "Branding",
+        text: "Ein guter Arbeitgeber braucht dieselbe klare Position wie die Marke selbst.",
+        href: "/unternehmen/branding",
+      }}
     />
   );
 }

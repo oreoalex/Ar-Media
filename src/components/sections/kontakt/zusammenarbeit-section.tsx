@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/shared/reveal";
 import { BrandMarkA } from "@/components/shared/brand-mark-a";
+import { BrandTick } from "@/components/shared/brand-tick";
 
 /**
  * Wie eine Zusammenarbeit beginnt. Menschlich statt technisch, direkte
@@ -18,7 +19,7 @@ export function ZusammenarbeitSection() {
           <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Wie eine Zusammenarbeit beginnt
           </h2>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
           <p className="mt-6 text-[20px] leading-relaxed text-charcoal/80 lg:text-[22px] lg:leading-[1.55]">
             Die meisten Projekte beginnen nicht mit einem fertigen Briefing, sondern mit einer
             Nachricht: eine grobe Idee, eine Unsicherheit, manchmal nur ein Gefühl, dass etwas

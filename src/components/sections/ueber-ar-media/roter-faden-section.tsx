@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/shared/reveal";
 import { BrandMarkA } from "@/components/shared/brand-mark-a";
+import { BrandTick } from "@/components/shared/brand-tick";
 
 /**
  * Was alles verbindet. Kern der ganzen Seite: der gemeinsame Nenner
@@ -17,7 +18,7 @@ export function RoterFadenSection() {
           <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Der rote Faden
           </h2>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
           <p className="mt-6 text-[18px] leading-relaxed text-charcoal/80 lg:text-[19px]">
             Parallel dazu arbeitete er im Marketing. Dort fiel ihm etwas auf, das sich mit der
             Zeit als derselbe Gedanke entpuppte, der schon hinter jedem Kinderfoto steckte:

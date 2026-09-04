@@ -56,6 +56,11 @@ export default function Page() {
         { q: "Ist das dasselbe wie Social Media?", a: "Nah verwandt, aber nicht identisch: Content Creation ist die Produktion, Social Media die Strategie und Betreuung der Kanäle selbst." },
       ]}
       ctaText="Guter Content beginnt nicht bei der Kamera, sondern bei der Frage, was wirklich erzählt werden soll."
+      relatedLink={{
+        name: "Social Media",
+        text: "Guter Content wirkt erst mit der richtigen Bühne dafür.",
+        href: "/unternehmen/social-media",
+      }}
     />
   );
 }

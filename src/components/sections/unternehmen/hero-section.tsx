@@ -1,6 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { BrandChevronDown } from "@/components/shared/brand-chevron-down";
+import { HoverWords } from "@/components/shared/hover-words";
+import { CtaButton } from "@/components/shared/cta-button";
 
 /**
  * Unternehmen · Hero. Übernimmt die Bildsprache der Startseite (großes,
@@ -25,7 +26,7 @@ export function HeroSection() {
     >
       <Image
         src="/images/unternehmen/hero-kamera.jpg"
-        alt=""
+        alt="Kameraobjektiv „Sumire Prime 35“ an einer Kamera, warmes Bokeh im Hintergrund"
         fill
         priority
         sizes="100vw"
@@ -37,31 +38,23 @@ export function HeroSection() {
         <p className="text-[11px] font-medium tracking-[0.16em] text-off-white/60 uppercase">
           Unternehmen
         </p>
-        <h1 className="mt-5 max-w-3xl font-serif text-[clamp(1.75rem,4.8vw,3.25rem)] leading-[1.15] text-off-white italic">
-          Die meisten Unternehmen wirken kleiner, als sie sind.
+        <h1 className="mt-5 max-w-3xl font-serif text-[clamp(1.75rem,4.8vw,3.25rem)] leading-[1.15] font-bold tracking-tight text-off-white">
+          <HoverWords text="Die meisten Unternehmen wirken kleiner, als sie sind." className="hover:text-sand" />
         </h1>
         <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-off-white/75">
           Wir zeigen, was dein Unternehmen bereits ausmacht, bevor wir auch
           nur ein Bild gestalten.
         </p>
-        <Link
-          href="/kontakt/projekt-besprechen"
-          className="group mt-7 inline-flex items-center gap-2 text-[14px] font-medium tracking-wide text-off-white/85 transition-colors hover:text-off-white"
-        >
-          <span className="relative pb-0.5">
+        <div className="mt-7">
+          <CtaButton href="/kontakt/projekt-besprechen" variant="outline" size="sm">
             Projekt besprechen
-            <span
-              aria-hidden
-              className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-off-white transition-transform duration-300 ease-out group-hover:scale-x-100"
-            />
-          </span>
-          <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-        </Link>
+          </CtaButton>
+        </div>
       </div>
 
       <div className="absolute inset-x-0 bottom-6 flex flex-col items-center gap-2 text-off-white/70 lg:bottom-8">
         <span className="text-[11px] tracking-[0.16em] uppercase">Entdecken</span>
-        <ChevronDown aria-hidden className="size-4 animate-bounce" />
+        <BrandChevronDown aria-hidden className="size-4 animate-bounce" />
       </div>
     </section>
   );

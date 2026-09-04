@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/shared/reveal";
+import { GhostNumeral } from "@/components/shared/ghost-numeral";
 
 type Stage = {
   label: string;
@@ -79,11 +80,15 @@ export function FallCard({ index, name, domain, stages, media, reverse = false, 
       }
     >
       {stages.map((stage, i) => (
-        <Reveal key={stage.label} delay={baseDelay + i * 0.04}>
-          <dt className="text-[11px] font-medium tracking-[0.12em] text-charcoal/70 uppercase">
+        <Reveal key={stage.label} delay={baseDelay + i * 0.04} className="relative isolate">
+          <GhostNumeral
+            n={i + 1}
+            className="-top-1 text-[52px] text-deep-forest/[0.06] lg:-top-2 lg:text-[72px]"
+          />
+          <dt className="relative z-10 text-[11px] font-medium tracking-[0.12em] text-charcoal/70 uppercase">
             {stage.label}
           </dt>
-          <dd className="mt-2 text-[15px] leading-relaxed text-charcoal/75">{stage.text}</dd>
+          <dd className="relative z-10 mt-2 text-[15px] leading-relaxed text-charcoal/75">{stage.text}</dd>
         </Reveal>
       ))}
     </dl>

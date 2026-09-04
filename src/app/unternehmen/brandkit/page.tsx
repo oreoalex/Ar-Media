@@ -26,7 +26,7 @@ export default function Page() {
     <UnternehmenLeistungPage
       slug="/unternehmen/brandkit"
       kicker="Unternehmen · Brandkit für Neugründungen"
-      title="Von der Idee zur ersten sichtbaren Marke."
+      title="Ein Brandkit macht aus der Idee eine erste sichtbare Marke."
       heroText="Du musst noch keine fertige Marke haben. Du musst nur wissen, was du aufbauen willst. Ein Brandkit für Gründerinnen und Gründer in Kiel und Schleswig-Holstein, die aus einer Idee zum ersten Mal eine sichtbare Marke machen."
       problemTitle="Eine Idee, aber noch kein Gesicht."
       problemText="Der Businessplan steht, der erste Kunde ist vielleicht schon da, aber es gibt noch kein Logo, keine Farben, keine Website, nichts, worauf man zeigen kann. Jeder Tag ohne sichtbare Marke fühlt sich an wie ein Rückstand, den man eigentlich nicht hat, denn die Idee selbst ist längst da."
@@ -60,6 +60,11 @@ export default function Page() {
       ]}
       ctaText="Deine Idee ist schon da. Wir machen sie zum ersten Mal sichtbar."
       ctaSecondaryLabel="Gespräch vereinbaren"
+      relatedLink={{
+        name: "Corporate Design",
+        text: "Sobald die Idee steht, wird daraus ein vollständiges System.",
+        href: "/unternehmen/corporate-design",
+      }}
     />
   );
 }

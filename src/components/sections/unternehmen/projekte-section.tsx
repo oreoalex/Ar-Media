@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Star } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
 import { siteConfig } from "@/lib/site-config";
+import { BrandArrow } from "@/components/shared/brand-arrow";
+import { BrandTick } from "@/components/shared/brand-tick";
 
 /**
  * Ausgewählte Projekte. Bewusst ein knapper Teaser, keine volle
@@ -55,15 +56,10 @@ export function ProjekteSection() {
             <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
               Ausgewählte Projekte
             </h2>
-            <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+            <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
           </div>
           <div className="flex items-center gap-2 text-charcoal/75">
-            <span className="flex items-center gap-0.5" aria-hidden>
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="size-3 fill-sand text-sand" />
-              ))}
-            </span>
-            <span className="text-[12px] tracking-wide">
+            <span className="text-[12px] font-medium tracking-wide">
               {siteConfig.rating.value.toFixed(1).replace(".", ",")} · {siteConfig.rating.count}{" "}
               Google-Bewertungen
             </span>
@@ -91,7 +87,7 @@ export function ProjekteSection() {
                 <p className="mt-2 text-[15px] leading-relaxed text-charcoal/75">{projekt.ergebnis}</p>
                 <span className="mt-4 inline-flex items-center gap-2 text-[13px] font-medium tracking-wide text-charcoal/70 transition-colors group-hover:text-deep-forest">
                   Ganze Case Study ansehen
-                  <ArrowRight aria-hidden className="size-3.5 transition-transform group-hover:translate-x-1" />
+                  <BrandArrow aria-hidden className="size-3.5 transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>
             </Reveal>

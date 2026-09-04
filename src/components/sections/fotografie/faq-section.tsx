@@ -1,9 +1,11 @@
 "use client";
 
-import { ChevronDown, ArrowRight } from "lucide-react";
+import { BrandChevronDown } from "@/components/shared/brand-chevron-down";
 import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
 import { Reveal } from "@/components/shared/reveal";
 import { siteConfig } from "@/lib/site-config";
+import { BrandArrow } from "@/components/shared/brand-arrow";
+import { BrandTick } from "@/components/shared/brand-tick";
 
 /**
  * FAQ. Identisches Accordion-System wie bei Unternehmen, aber bewusst
@@ -66,7 +68,7 @@ export function FaqSection() {
           <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Häufige Fragen
           </h2>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
         </Reveal>
 
         <Reveal delay={0.1} className="mt-10">
@@ -76,7 +78,7 @@ export function FaqSection() {
                 <AccordionPrimitive.Header>
                   <AccordionPrimitive.Trigger className="group flex w-full items-center justify-between gap-6 py-6 text-left outline-none rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-forest/50">
                     <span className="text-[17px] font-medium text-charcoal lg:text-[18px]">{faq.q}</span>
-                    <ChevronDown
+                    <BrandChevronDown
                       aria-hidden
                       className="size-4 shrink-0 text-charcoal/70 transition-transform duration-300 group-aria-expanded:rotate-180"
                     />
@@ -108,7 +110,7 @@ export function FaqSection() {
                   className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-charcoal transition-transform duration-300 ease-out group-hover:scale-x-100"
                 />
               </span>
-              <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
+              <BrandArrow aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
         </Reveal>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { BrandArrowLeft } from "@/components/shared/brand-arrow-left";
 import { Reveal } from "@/components/shared/reveal";
 import { KontaktFormular } from "@/components/shared/kontakt-formular";
 import { siteConfig } from "@/lib/site-config";
@@ -26,13 +26,13 @@ export default function Page() {
             href="/kontakt"
             className="group inline-flex items-center gap-2 text-[13px] font-medium tracking-wide text-charcoal/70 transition-colors hover:text-deep-forest"
           >
-            <ArrowLeft aria-hidden className="size-3.5 transition-transform group-hover:-translate-x-1" />
+            <BrandArrowLeft aria-hidden className="size-3.5 transition-transform group-hover:-translate-x-1" />
             Zurück
           </Link>
           <p className="mt-8 text-[11px] font-medium tracking-[0.16em] text-charcoal/75 uppercase">
             Kontakt · Fotografie
           </p>
-          <h1 className="mt-4 font-serif text-[clamp(1.5rem,3.6vw,2.25rem)] leading-[1.25] text-charcoal italic">
+          <h1 className="mt-4 font-serif text-[clamp(1.5rem,3.6vw,2.25rem)] leading-[1.25] font-bold tracking-tight text-charcoal">
             Erzähl uns von deinem Anlass.
           </h1>
           <p className="mt-5 max-w-md text-[16px] leading-relaxed text-charcoal/70">

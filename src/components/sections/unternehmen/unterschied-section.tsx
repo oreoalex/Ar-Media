@@ -12,7 +12,7 @@ export function UnterschiedSection() {
     <section aria-label="Der Unterschied zu klassischen Agenturen" className="bg-deep-forest px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-2xl text-center">
         <Reveal variant="fade">
-          <h2 className="font-serif text-[clamp(1.375rem,3.4vw,2rem)] leading-[1.4] text-off-white italic">
+          <h2 className="font-serif text-[clamp(1.375rem,3.4vw,2rem)] leading-[1.4] font-bold tracking-tight text-off-white">
             Wir sind keine Werbeagentur. Keine Marketingagentur.
             Kein Fotograf.
           </h2>

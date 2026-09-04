@@ -6,6 +6,7 @@ import { LeistungenSection } from "@/components/sections/fotografie/leistungen-s
 import { ProzessSection } from "@/components/sections/fotografie/prozess-section";
 import { ArbeitenSection } from "@/components/sections/fotografie/arbeiten-section";
 import { StimmenSection } from "@/components/sections/fotografie/stimmen-section";
+import { ReviewBanner } from "@/components/shared/review-banner";
 import { FaqSection } from "@/components/sections/fotografie/faq-section";
 import { CtaSection } from "@/components/sections/fotografie/cta-section";
 
@@ -54,6 +55,7 @@ export default function FotografiePage() {
       <ProzessSection />
       <ArbeitenSection />
       <StimmenSection />
+      <ReviewBanner />
       <FaqSection />
       <CtaSection />
     </>

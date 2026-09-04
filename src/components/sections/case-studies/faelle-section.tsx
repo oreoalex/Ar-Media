@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Star } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
 import { FallCard } from "@/components/sections/case-studies/fall-card";
 import { siteConfig } from "@/lib/site-config";
@@ -122,14 +121,11 @@ export function FaelleSection() {
         />
 
         <Reveal variant="fade" className="mx-auto flex max-w-lg flex-col items-center gap-3 py-8 text-center">
-          <span className="flex items-center gap-0.5" aria-hidden>
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="size-3.5 fill-sand text-sand" />
-            ))}
-          </span>
           <p className="text-[14px] leading-relaxed text-charcoal/70">
-            {siteConfig.rating.value.toFixed(1).replace(".", ",")} · {siteConfig.rating.count}{" "}
-            Google-Bewertungen, dieselbe Sorgfalt auch dort, wo gerade keine Case Study entsteht.
+            <span className="font-medium">
+              {siteConfig.rating.value.toFixed(1).replace(".", ",")} · {siteConfig.rating.count} Google-Bewertungen
+            </span>
+            , dieselbe Sorgfalt auch dort, wo gerade keine Case Study entsteht.
           </p>
         </Reveal>
 

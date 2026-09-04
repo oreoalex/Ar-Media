@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { BrandChevronDown } from "@/components/shared/brand-chevron-down";
+import { CtaButton } from "@/components/shared/cta-button";
 
 type Field =
   | { type: "text"; name: string; label: string; placeholder?: string; required?: boolean }
@@ -43,6 +44,7 @@ export function KontaktFormular({ fields, toEmail, subjectPrefix, submitLabel }:
       .map((f) => `${f.label}: ${values[f.name] || "–"}`)
       .join("\n");
     const mailto = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.gtag?.("event", "contact_form_submit", { subject_prefix: subjectPrefix });
     window.location.href = mailto;
     setSent(true);
   };
@@ -87,7 +89,7 @@ export function KontaktFormular({ fields, toEmail, subjectPrefix, submitLabel }:
                   </option>
                 ))}
               </select>
-              <ChevronDown
+              <BrandChevronDown
                 aria-hidden
                 className="pointer-events-none absolute top-1/2 right-0 size-4 -translate-y-1/2 text-charcoal/70"
               />
@@ -106,19 +108,9 @@ export function KontaktFormular({ fields, toEmail, subjectPrefix, submitLabel }:
         </div>
       ))}
 
-      <button
-        type="submit"
-        className="group mt-10 inline-flex items-center gap-2 text-[15px] font-medium tracking-wide text-charcoal transition-colors hover:text-deep-forest"
-      >
-        <span className="relative pb-0.5">
-          {submitLabel}
-          <span
-            aria-hidden
-            className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-100 bg-charcoal/30 transition-colors duration-300 ease-out group-hover:bg-deep-forest"
-          />
-        </span>
-        <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
-      </button>
+      <div className="mt-10">
+        <CtaButton variant="dark">{submitLabel}</CtaButton>
+      </div>
 
       <p role="status" aria-live="polite" className="text-[14px] text-charcoal/70">
         {sent &&

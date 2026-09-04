@@ -18,7 +18,7 @@ export function HeroSection() {
         <p className="text-[11px] font-medium tracking-[0.16em] text-charcoal/75 uppercase">
           Case Studies
         </p>
-        <h1 className="mt-6 font-serif text-[clamp(1.75rem,4.4vw,3rem)] leading-[1.2] text-charcoal italic">
+        <h1 className="mt-6 font-serif text-[clamp(1.75rem,4.4vw,3rem)] leading-[1.2] font-bold tracking-tight text-charcoal">
           Warum es gemacht wurde, wie es gelöst wurde, was es verändert hat.
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-[16px] leading-relaxed text-charcoal/70">

@@ -260,14 +260,30 @@ const sections: LegalSection[] = [
     id: "eingebundene-inhalte",
     title: "9. Eingebundene Inhalte und externe Dienste",
     content: (
-      <p>
-        Über Google Analytics (siehe Abschnitt 7) hinaus bindet diese Website aktuell keine
-        externen Dienste, Inhalte oder Widgets Dritter ein — kein Kartendienst, kein
-        Video-Embed, kein externes Bestell- oder Galeriesystem. Die verwendeten Schriftarten
-        werden beim Bau der Website selbst eingebettet und beim Seitenaufruf nicht von einem
-        externen Schriftdienst nachgeladen. Sollte sich das ändern, wird dieser Abschnitt
-        entsprechend aktualisiert.
-      </p>
+      <>
+        <p>
+          Auf der Kontaktseite binden wir eine Kartenansicht von Google Maps ein, einem Dienst
+          der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Die Karte
+          lädt nicht automatisch beim Seitenaufruf, sondern erst, nachdem du der
+          Analyse-Technologie in Abschnitt 7 zugestimmt hast; ohne diese Einwilligung zeigen wir
+          stattdessen einen reinen Text-Link zu Google Maps, der außerhalb dieser Seite öffnet
+          und keine Daten an Google überträgt. Beim Laden der Karte kann Google unter anderem
+          deine IP-Adresse verarbeiten. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO.
+        </p>
+        <p className="mt-4">
+          Im Footer verlinken wir zusätzlich auf Googles „Preferred Sources“-Funktion (ein
+          gewöhnlicher, ausgehender Link, kein eingebettetes Skript). Dieser Link überträgt beim
+          bloßen Anzeigen der Seite keine Daten; erst ein Klick öffnet die entsprechende
+          Google-Seite in einem neuen Tab.
+        </p>
+        <p className="mt-4">
+          Darüber hinaus bindet diese Website aktuell keine weiteren externen Dienste, Inhalte
+          oder Widgets Dritter ein — kein Video-Embed, kein externes Bestell- oder
+          Galeriesystem. Die verwendeten Schriftarten werden beim Bau der Website selbst
+          eingebettet und beim Seitenaufruf nicht von einem externen Schriftdienst nachgeladen.
+          Sollte sich das ändern, wird dieser Abschnitt entsprechend aktualisiert.
+        </p>
+      </>
     ),
   },
   {

@@ -28,7 +28,7 @@ export function HeroSection() {
         </Reveal>
 
         <Reveal delay={0.15} className="mt-20 lg:mt-28">
-          <p className="mx-auto max-w-xl font-serif text-[clamp(1.9rem,4.6vw,3rem)] leading-[1.2] text-charcoal italic">
+          <p className="mx-auto max-w-xl font-serif text-[clamp(1.9rem,4.6vw,3rem)] leading-[1.2] font-bold tracking-tight text-charcoal">
             Manche Dinge muss man nicht verändern. Nur sichtbar machen.
           </p>
           <p className="mx-auto mt-6 max-w-lg text-[17px] leading-relaxed text-charcoal/70">

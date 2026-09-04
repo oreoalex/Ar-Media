@@ -16,7 +16,7 @@ export function BeobachtungSection() {
           </p>
         </Reveal>
         <Reveal delay={0.05}>
-          <h2 className="mt-5 font-serif text-[clamp(1.5rem,3.6vw,2.25rem)] leading-[1.3] text-charcoal italic">
+          <h2 className="mt-5 font-serif text-[clamp(1.5rem,3.6vw,2.25rem)] leading-[1.3] font-bold tracking-tight text-charcoal">
             Kita- und Schulfotografie bedeuten für die meisten Einrichtungen vor allem eins:
             Organisationsaufwand.
           </h2>

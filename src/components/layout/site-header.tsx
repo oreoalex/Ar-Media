@@ -5,7 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { BrandMenu } from "@/components/shared/brand-menu";
+import { BrandClose } from "@/components/shared/brand-close";
+import { BrandChevronDown } from "@/components/shared/brand-chevron-down";
 import { Logo } from "@/components/shared/logo";
 import {
   Sheet,
@@ -81,7 +83,7 @@ export function SiteHeader() {
                 >
                   {item.label}
                   {item.menuType && (
-                    <ChevronDown
+                    <BrandChevronDown
                       aria-hidden
                       className={cn(
                         "size-3 transition-transform duration-200",
@@ -118,7 +120,7 @@ export function SiteHeader() {
           className="flex size-11 items-center justify-center text-charcoal lg:hidden"
           aria-label="Menü öffnen"
         >
-          <Menu aria-hidden className="size-5" />
+          <BrandMenu aria-hidden className="size-5" />
         </button>
       </div>
 
@@ -136,7 +138,7 @@ export function SiteHeader() {
               className="flex size-11 items-center justify-center text-charcoal"
               aria-label="Menü schließen"
             >
-              <X aria-hidden className="size-5" />
+              <BrandClose aria-hidden className="size-5" />
             </button>
           </SheetHeader>
           <MobileNav onNavigate={() => setMobileOpen(false)} />
@@ -195,7 +197,7 @@ function DesktopPanel({
             <div className="relative aspect-3/4 w-full overflow-hidden">
               <Image
                 src="/images/home/gabelung-unternehmen.jpg"
-                alt=""
+                alt="Fahrzeugbeschriftung der Marke „Saat für den Norden“ mit Ähren-Signet"
                 fill
                 sizes="280px"
                 className="object-cover"
@@ -224,6 +226,7 @@ function DesktopPanel({
 
 function MobileNav({ onNavigate }: { onNavigate: () => void }) {
   const [expanded, setExpanded] = React.useState<string | null>(null);
+  const reduceMotion = useReducedMotion();
 
   return (
     <nav aria-label="Mobile Hauptnavigation" className="flex-1 overflow-y-auto px-6 py-4">
@@ -250,7 +253,7 @@ function MobileNav({ onNavigate }: { onNavigate: () => void }) {
                     aria-label={`Untermenü ${item.label} ${expanded === item.label ? "schließen" : "öffnen"}`}
                     className="flex h-11 w-11 shrink-0 items-center justify-center text-charcoal"
                   >
-                    <ChevronDown
+                    <BrandChevronDown
                       aria-hidden
                       className={cn(
                         "size-4 transition-transform duration-200",
@@ -262,10 +265,10 @@ function MobileNav({ onNavigate }: { onNavigate: () => void }) {
                 <AnimatePresence initial={false}>
                   {expanded === item.label && (
                     <motion.ul
-                      initial={{ height: 0, opacity: 0 }}
+                      initial={reduceMotion ? false : { height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
+                      exit={reduceMotion ? undefined : { height: 0, opacity: 0 }}
+                      transition={{ duration: reduceMotion ? 0 : 0.2 }}
                       className="overflow-hidden pl-4"
                     >
                       {(item.groups

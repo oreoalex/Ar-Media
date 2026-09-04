@@ -22,7 +22,7 @@ export function HaltungHeuteSection() {
             gezeigt, was schon da ist, bei einer Marke genauso wie bei einem Kind auf dem
             Spielplatz.
           </p>
-          <p className="mt-8 font-serif text-[clamp(1.5rem,3.2vw,2rem)] leading-[1.3] text-off-white italic">
+          <p className="mt-8 font-serif text-[clamp(1.5rem,3.2vw,2rem)] leading-[1.3] font-bold tracking-tight text-off-white">
             Drei unterschiedliche Arbeitsfelder. Eine einzige Überzeugung.
           </p>
         </Reveal>

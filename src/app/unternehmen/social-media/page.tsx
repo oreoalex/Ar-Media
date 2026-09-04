@@ -26,7 +26,7 @@ export default function Page() {
     <UnternehmenLeistungPage
       slug="/unternehmen/social-media"
       kicker="Unternehmen · Social Media"
-      title="Von planlosem Posten zu konsistenter Präsenz."
+      title="Social Media lebt von Konsistenz, nicht von planlosem Posten."
       heroText="Sichtbarkeit entsteht durch Kontinuität, nicht durch einzelne Posts. Als Social-Media-Agentur in Kiel übernehmen wir Betreuung und Management eures Kanals."
       problemTitle="Ein Kanal, der seit Monaten stillsteht."
       problemText="Ein Instagram-Profil mit dem letzten Beitrag vor drei Monaten. Eine Story-Funktion, die niemand nutzt, weil die Zeit fehlt. Dabei passiert im Unternehmen längst genug, das sich zu zeigen lohnt, es fehlt nur die Regelmäßigkeit, es auch zu tun."
@@ -56,6 +56,11 @@ export default function Page() {
         { q: "Brauchen wir schon Kanäle, oder fangen wir bei null an?", a: "Beides ist möglich. Manche Projekte bauen etwas Bestehendes aus, andere beginnen wirklich neu." },
       ]}
       ctaText="Konsistenz schlägt Viralität, jedes Mal."
+      relatedLink={{
+        name: "Kampagnen",
+        text: "Konsistenz ist die Basis. Kampagnen bündeln sie zu einem Moment.",
+        href: "/unternehmen/kampagnen",
+      }}
     />
   );
 }

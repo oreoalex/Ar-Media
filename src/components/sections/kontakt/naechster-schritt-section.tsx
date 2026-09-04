@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
+import { BrandArrow } from "@/components/shared/brand-arrow";
+import { BrandTick } from "@/components/shared/brand-tick";
 
 /**
  * Ersetzt bewusst ein einzelnes Einheitsformular: Die Seite folgt der
@@ -27,31 +28,48 @@ const wege = [
   },
 ];
 
+/**
+ * Ein Farbblock pro Weg statt einer einzelnen, editorialen Zeilen-Liste:
+ * drei gleichwertige, harte Flächen aus der Markenpalette (Deep Forest /
+ * Sand / Charcoal), keine erfundenen Zusatzfarben. "Hart" im Sinn des
+ * Referenz-Reviews heißt hier: die Fläche selbst trägt die Unterscheidung,
+ * nicht nur eine dünne Trennlinie zwischen sonst identischen Zeilen.
+ */
+const toneClass = [
+  "bg-deep-forest text-off-white hover:bg-deep-forest/95",
+  "bg-sand text-charcoal hover:bg-sand/90",
+  "bg-charcoal text-off-white hover:bg-charcoal/90",
+];
+const toneSubClass = ["text-off-white/75", "text-charcoal/70", "text-off-white/70"];
+
 export function NaechsterSchrittSection() {
   return (
     <section aria-label="Der nächste Schritt" className="bg-off-white px-6 py-24 lg:py-32">
-      <div className="mx-auto max-w-2xl">
-        <Reveal>
+      <div className="mx-auto max-w-4xl">
+        <Reveal className="max-w-xl">
           <h2 className="text-[11px] font-medium tracking-[0.14em] text-charcoal/75 uppercase">
             Womit dürfen wir dir helfen?
           </h2>
-          <span aria-hidden className="mt-4 block h-px w-8 bg-charcoal/20" />
+          <BrandTick className="mt-4 h-4 w-2.5 text-charcoal/20" />
         </Reveal>
 
-        <ul className="mt-10 divide-y divide-charcoal/10 border-t border-charcoal/10">
+        <ul className="mt-10 grid gap-px overflow-hidden rounded-sm bg-charcoal/10 sm:grid-cols-3">
           {wege.map((weg, i) => (
-            <Reveal key={weg.href} delay={i * 0.05}>
-              <li>
-                <Link href={weg.href} className="group flex items-center justify-between gap-6 py-7">
+            <Reveal key={weg.href} delay={i * 0.05} className="h-full">
+              <li className="h-full">
+                <Link
+                  href={weg.href}
+                  className={`group flex h-full flex-col justify-between gap-10 px-7 py-9 transition-colors ${toneClass[i]}`}
+                >
                   <span>
-                    <span className="block text-[18px] font-medium text-charcoal transition-colors group-hover:text-deep-forest lg:text-[20px]">
-                      {weg.label}
+                    <span className="block text-[18px] font-medium lg:text-[20px]">{weg.label}</span>
+                    <span className={`mt-2 block text-[14px] lg:text-[15px] ${toneSubClass[i]}`}>
+                      {weg.text}
                     </span>
-                    <span className="mt-1 block text-[14px] text-charcoal/70 lg:text-[15px]">{weg.text}</span>
                   </span>
-                  <ArrowRight
+                  <BrandArrow
                     aria-hidden
-                    className="size-4 shrink-0 text-charcoal/30 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-deep-forest"
+                    className="size-4 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-1"
                   />
                 </Link>
               </li>
