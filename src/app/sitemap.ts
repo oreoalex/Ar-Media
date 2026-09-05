@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site-config";
+import { getAllArticles } from "@/lib/wissen/registry";
 
 /**
  * Nur indexierbare Seiten. Übrige Platzhalter-Routen tragen weiterhin
@@ -170,5 +171,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.2,
     },
+    {
+      url: `${siteConfig.url}/wissen`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteConfig.url}/wissen/social-media`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/wissen/tools`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/wissen/datenschutz-recht`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${siteConfig.url}/wissen/ressourcen`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    // Artikel-Ebene: aus der Registry generiert statt hartcodiert, damit ein
+    // neuer Artikel automatisch erscheint. noindex-Artikel werden
+    // übersprungen (Nur indexierbare Seiten, s.o.).
+    ...getAllArticles()
+      .filter((article) => !article.noindex)
+      .map((article) => ({
+        url: `${siteConfig.url}/wissen/${article.category}/${article.slug}`,
+        lastModified: new Date(article.updatedAt),
+        changeFrequency: "monthly" as const,
+        priority: article.featured ? 0.7 : 0.6,
+      })),
   ];
 }

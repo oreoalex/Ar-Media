@@ -30,6 +30,33 @@ export function buildBreadcrumbJsonLd(items: { name: string; path: string }[]) {
   };
 }
 
+export function buildArticleJsonLd({
+  title,
+  description,
+  path,
+  publishedAt,
+  updatedAt,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  publishedAt: string;
+  updatedAt: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    url: `${siteConfig.url}${path}`,
+    datePublished: publishedAt,
+    dateModified: updatedAt,
+    author: organizationRef,
+    publisher: organizationRef,
+    inLanguage: "de-DE",
+  };
+}
+
 export function buildServiceJsonLd({
   name,
   description,

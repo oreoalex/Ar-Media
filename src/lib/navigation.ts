@@ -82,6 +82,17 @@ export const mainNav: NavItem[] = [
       { label: "Ablauf & Datenschutz", href: "/kita-schule/ablauf-datenschutz" },
     ],
   },
+  {
+    label: "Wissen",
+    href: "/wissen",
+    menuType: "simple",
+    links: [
+      { label: "Social Media", href: "/wissen/social-media" },
+      { label: "Tools", href: "/wissen/tools" },
+      { label: "Datenschutz & Recht", href: "/wissen/datenschutz-recht" },
+      { label: "Ressourcen", href: "/wissen/ressourcen" },
+    ],
+  },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Über AR Media", href: "/ueber-ar-media" },
   {
@@ -124,6 +135,7 @@ export const footerNav: NavGroup[] = [
   {
     label: "Mehr",
     links: [
+      { label: "Wissen", href: "/wissen" },
       { label: "Case Studies", href: "/case-studies" },
       { label: "Über AR Media", href: "/ueber-ar-media" },
       { label: "Kontakt", href: "/kontakt" },
