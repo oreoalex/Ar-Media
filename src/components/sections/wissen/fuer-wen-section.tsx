@@ -30,7 +30,7 @@ export function FuerWenSection() {
               <Link
                 key={zielgruppe.label}
                 href={zielgruppe.href}
-                className="group inline-flex items-center gap-2 border border-charcoal/15 bg-off-white px-4 py-2.5 text-[14px] font-medium text-charcoal/80 transition-colors hover:border-deep-forest/30 hover:text-deep-forest"
+                className="group inline-flex items-center gap-2 border border-charcoal/15 bg-off-white px-4 py-2.5 text-[14px] font-medium text-charcoal/80 transition-colors hover:border-deep-forest/30 hover:text-deep-forest focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep-forest/50"
               >
                 {zielgruppe.label}
                 <BrandArrow

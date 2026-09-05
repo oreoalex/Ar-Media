@@ -152,7 +152,7 @@ export function WissenArticleTemplate({ article }: WissenArticleTemplateProps) {
                     <li key={tool.slug}>
                       <Link
                         href={`/wissen/${tool.category}/${tool.slug}`}
-                        className="group flex items-center justify-between gap-6 py-4"
+                        className="group flex items-center justify-between gap-6 rounded-xs py-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep-forest/50"
                       >
                         <span className="text-[15px] font-medium text-charcoal transition-colors group-hover:text-deep-forest">
                           {tool.title}
@@ -194,7 +194,7 @@ export function WissenArticleTemplate({ article }: WissenArticleTemplateProps) {
                         href={resource.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="group inline-flex items-baseline gap-2 text-[15px] font-medium text-charcoal transition-colors hover:text-deep-forest"
+                        className="group inline-flex items-baseline gap-2 rounded-xs text-[15px] font-medium text-charcoal transition-colors hover:text-deep-forest focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep-forest/50"
                       >
                         {resource.name}
                         <BrandArrow aria-hidden className="size-3 -rotate-45 text-charcoal/40 transition-colors group-hover:text-deep-forest" />
@@ -212,7 +212,7 @@ export function WissenArticleTemplate({ article }: WissenArticleTemplateProps) {
           <div className="mt-10 border-t border-charcoal/10 pt-10">
             <Link
               href={`/wissen/${article.category}`}
-              className="group inline-flex items-center gap-2 text-[13px] font-medium tracking-wide text-charcoal/70 transition-colors hover:text-deep-forest"
+              className="group inline-flex items-center gap-2 rounded-xs text-[13px] font-medium tracking-wide text-charcoal/70 transition-colors hover:text-deep-forest focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep-forest/50"
             >
               <BrandArrowLeft aria-hidden className="size-3.5 transition-transform group-hover:-translate-x-1" />
               Alle Artikel in {category.label}

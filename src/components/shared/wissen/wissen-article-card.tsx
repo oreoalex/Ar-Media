@@ -31,7 +31,7 @@ export function WissenArticleCard({ href, kicker, title, description, delay = 0,
       <Link
         href={href}
         className={cn(
-          "group flex h-full flex-col justify-between border border-charcoal/10 bg-off-white transition-[border-color,transform] duration-200 ease-out hover:border-charcoal/25 active:scale-[0.98]",
+          "group flex h-full flex-col justify-between border border-charcoal/10 bg-off-white transition-[border-color,transform] duration-200 ease-out hover:border-charcoal/25 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-forest/50",
           size === "compact" ? "rounded-lg p-6" : "rounded-xl p-8 lg:p-10",
         )}
       >

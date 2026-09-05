@@ -135,6 +135,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
               alt={project.alt}
               width={1400}
               height={1833}
+              sizes="(min-width: 1024px) 33vw, 100vw"
               className="h-full w-auto object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             />
           </div>
@@ -340,6 +341,15 @@ export function ProofSection() {
                   ref={(el) => {
                     tileRefs.current[i] = el;
                   }}
+                  // Accessibility-Audit (2026-09-05): Name, Leistungen und
+                  // Zielgruppen-Satz standen bisher nur in der animierten
+                  // Caption-Box (per textContent gesetzt, kein aria-live,
+                  // keine semantische Verbindung zum Link) — wer nicht mit
+                  // reduzierter Bewegung unterwegs ist, bekam als
+                  // zugänglichen Namen nur das Bild-Alt ("Visitenkarte der
+                  // Marke..."), nie Name/Leistungen/Zielgruppe. Jetzt direkt
+                  // am Link, unabhängig vom Animationszustand.
+                  aria-label={`${project.name}: ${project.tags.join(", ")} — ${project.audience}`}
                   className="block w-[104px] shrink-0 overflow-hidden border border-charcoal/10 sm:w-[300px]"
                   style={{ aspectRatio: `${DESKTOP_TILE.w} / ${DESKTOP_TILE.h}` }}
                 >
@@ -350,6 +360,7 @@ export function ProofSection() {
                         alt={project.alt}
                         width={1400}
                         height={1833}
+                        sizes="(min-width: 640px) 300px, 104px"
                         className="h-full w-auto object-contain"
                       />
                     </div>

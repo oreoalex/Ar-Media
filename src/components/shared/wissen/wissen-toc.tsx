@@ -22,7 +22,7 @@ export function WissenToc({ sections }: WissenTocProps) {
           <li key={section.id}>
             <a
               href={`#${section.id}`}
-              className="group inline-flex items-baseline gap-2.5 text-[14px] text-charcoal/70 transition-colors hover:text-deep-forest"
+              className="group inline-flex items-baseline gap-2.5 rounded-xs text-[14px] text-charcoal/70 transition-colors hover:text-deep-forest focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep-forest/50"
             >
               <span className="text-charcoal/70">{String(i + 1).padStart(2, "0")}</span>
               <span className="underline decoration-charcoal/0 underline-offset-4 transition-colors group-hover:decoration-deep-forest/40">

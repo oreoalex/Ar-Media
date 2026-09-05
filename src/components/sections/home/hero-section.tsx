@@ -265,11 +265,25 @@ export function HeroSection() {
         </div>
       ) : (
         <div
-          ref={shardHostRef}
           role="img"
           aria-label="Porträt eines lächelnden Mädchens mit Sommersprossen im warmen Abendlicht"
           className="absolute inset-0"
-        />
+        >
+          {/* Performance-Audit (2026-09-05): vorher gab es außerhalb des
+              reduceMotion-Zweigs kein echtes <img>-Element, nur 54 per JS
+              nachträglich gebaute background-image-Divs im shardHostRef.
+              Damit hatte Chrome kein direkt malbares LCP-Element — das
+              größte gemalte Element war einer der erst nach Hydration/
+              Layout-Effect entstandenen Shard-Divs, gemessen per Lighthouse
+              (throttled) auf 7,8s LCP statt der ~0,5s bei echten Netz-
+              bedingungen. Diese Basisebene malt sofort beim Laden, unab-
+              hängig von JS/Hydration — die Shards liegen ohnehin mit
+              Lücken, Rotation und reduzierter Deckkraft darüber, das Bild
+              schimmert dadurch schon vor der Montage dezent durch, statt
+              als hartes Pop-in beim ersten Shard-Build zu erscheinen. */}
+          <Image src={HERO_IMAGE} alt="" fill priority sizes="100vw" className="object-cover" aria-hidden />
+          <div ref={shardHostRef} className="absolute inset-0" />
+        </div>
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-deep-forest/95 via-deep-forest/25 to-deep-forest/10" />
       <div aria-hidden className="brand-grain pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay" />

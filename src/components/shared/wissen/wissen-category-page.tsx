@@ -34,7 +34,7 @@ export function WissenCategoryPage({ category, articles }: WissenCategoryPagePro
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-charcoal/70">{category.description}</p>
             <Link
               href="/wissen"
-              className="group mt-8 inline-flex items-center gap-2 text-[13px] font-medium tracking-wide text-charcoal/70 transition-colors hover:text-deep-forest"
+              className="group mt-8 inline-flex items-center gap-2 rounded-xs text-[13px] font-medium tracking-wide text-charcoal/70 transition-colors hover:text-deep-forest focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep-forest/50"
             >
               <BrandArrowLeft aria-hidden className="size-3.5 transition-transform group-hover:-translate-x-1" />
               Alle Wissensbereiche

@@ -38,7 +38,7 @@ export function WissenBreadcrumb({ items }: WissenBreadcrumbProps) {
               ) : (
                 <Link
                   href={item.path}
-                  className="text-[11px] font-medium tracking-[0.1em] text-charcoal/50 uppercase transition-colors hover:text-deep-forest"
+                  className="rounded-xs text-[11px] font-medium tracking-[0.1em] text-charcoal/50 uppercase transition-colors hover:text-deep-forest focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep-forest/50"
                 >
                   {item.name}
                 </Link>
