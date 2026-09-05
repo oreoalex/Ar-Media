@@ -234,7 +234,16 @@ export function HeroSection() {
     <section
       ref={sectionRef}
       aria-label="Willkommen bei AR Media"
-      className="relative flex h-[100svh] min-h-[560px] w-full items-end overflow-hidden bg-deep-forest"
+      // Layout-Fix (Image-to-Code-Audit): der Hero war vorher h-[100svh],
+      // OBWOHL der SiteHeader ihm sticky ~4rem echten Platz im Dokumentfluss
+      // wegnimmt (kein Overlay-Header) — auf jedem kleineren Laptop-
+      // Viewport ragte dadurch genau die Header-Höhe des Heros (Schnell-
+      // zugriffs-Buttons, "Entdecken"-Indikator) unterhalb des ersten
+      // sichtbaren Bildschirms heraus, per getBoundingClientRect verifiziert
+      // (z. B. 1366×728: Hero-Ende bei 793px, Viewport endet bei 728px).
+      // --header-height (globals.css) hält den Hero jetzt exakt innerhalb
+      // des tatsächlich sichtbaren ersten Bildschirms.
+      className="relative flex h-[calc(100svh_-_var(--header-height))] min-h-[496px] w-full items-end overflow-hidden bg-deep-forest"
     >
       {reduceMotion ? (
         <div className="absolute inset-0">
@@ -305,7 +314,18 @@ export function HeroSection() {
 
         <nav aria-label="Schnellzugriff auf Hauptbereiche" className="mt-8 flex flex-wrap gap-3 sm:mt-10">
           {quickLinks.map((link) => (
-            <CtaButton key={link.href} href={link.href} variant="outline" size="sm">
+            // focus-ring-inverse (Accessibility-Audit, globals.css): der
+            // globale --ring-Token ist Deep Forest — auf diesem Deep-Forest-
+            // Hero wäre der Standard-Fokusring gegen den eigenen Hintergrund
+            // praktisch unsichtbar. Hier auf Sand umgestellt, ohne den
+            // Ring-Token sitieweit zu verändern.
+            <CtaButton
+              key={link.href}
+              href={link.href}
+              variant="outline"
+              size="sm"
+              className="focus-ring-inverse"
+            >
               {link.label}
             </CtaButton>
           ))}

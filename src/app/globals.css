@@ -82,6 +82,16 @@
      zur eigenen Strichstärke des Buchstabens — großzügiger, weicher als ein
      generisches UI-Radius. 0.625rem (Standard) wirkt dagegen eng/technisch. */
   --radius: 0.75rem;
+
+  /* Höhe der sticky SiteHeader-Zeile (h-16, siehe site-header.tsx) — nötig,
+     damit ein 100svh-Hero (hero-section.tsx) exakt in den sichtbaren
+     Viewport passt. Der Header steht sticky VOR dem Hero im Dokumentfluss
+     und beansprucht dort echten Platz (kein Overlay) — ein Hero, der selbst
+     zusätzlich 100svh hoch ist, ragt sonst um genau die Header-Höhe über
+     den ersten sichtbaren Bildschirm hinaus. Betrifft nur den Hero direkt
+     nach dem Header: spätere 100svh-Sections (proof-section.tsx) liegen
+     mitten in der scrollbaren Seite und sind davon nicht betroffen. */
+  --header-height: 4rem;
 }
 
 /*
@@ -104,6 +114,38 @@
   }
   html {
     @apply font-sans;
+  }
+
+  /* Typografie-Audit: Überschriften und Fließtext liefen bisher auf reinem
+     Browser-Zeilenumbruch — bei den langen, literarischen Sätzen der Marken-
+     stimme (siehe philosophy-section.tsx) ein echtes Risiko für ein einzelnes
+     Waisenwort in der letzten Zeile. text-wrap: balance verteilt Überschriften-
+     zeilen gleichmäßiger, text-wrap: pretty vermeidet Waisenwörter in
+     Fließtext-Absätzen — beides rein layoutseitig, ändert keinen Inhalt und
+     bricht keine bestehende Zeilenhöhen-/Tracking-Abstimmung.  */
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer utilities {
+  /* Fokusring-Fix (Accessibility-Audit, WCAG 2.4.11): --ring ist sitieweit
+     auf Deep Forest gesetzt — auf hellem Grund (Off-White/Sand) ein klarer,
+     kontrastreicher Tastatur-Fokusring, aber auf einer Deep-Forest-Fläche
+     (z. B. hero-section.tsx) wäre derselbe Ring gegen seinen eigenen
+     Hintergrund praktisch unsichtbar. .focus-ring-inverse stellt für
+     fokussierbare Elemente auf dunklem Markenfarbgrund gezielt auf den
+     hellen Sand-Ton um (9,39:1 Kontrast auf Deep Forest, siehe --sand-
+     Kommentar oben), statt den globalen Ring-Token für alle Flächen zu
+     verändern. */
+  .focus-ring-inverse:focus-visible {
+    outline-color: var(--sand);
   }
 }
 

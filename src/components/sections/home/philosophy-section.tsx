@@ -196,7 +196,13 @@ export function PhilosophySection() {
             literarische Sätze (siehe brand voice), Versalien funktionieren
             im Referenz-PDF nur für kurze 2-3-Wort-Phrasen und würden einen
             ganzen Satz weniger lesbar machen, nicht lauter wirken lassen. */}
-        <p className="mt-6 max-w-xl font-serif text-[32px] leading-[1.08] font-bold tracking-tight text-deep-forest lg:text-[46px]">
+        {/* text-balance statt der globalen p-Voreinstellung text-wrap:pretty
+            (siehe globals.css): dieser Satz funktioniert trotz <p>-Tag als
+            Display-Headline der Sektion (46px, fett, Fraunces) — für
+            Headline-Maßstab liefert eine ausbalancierte Zeilenverteilung ein
+            ruhigeres, "schwereres" Satzbild als reine Waisenwort-Vermeidung
+            (Typografie-Audit: "Headlines should feel heavy and intentional"). */}
+        <p className="mt-6 max-w-xl text-balance font-serif text-[32px] leading-[1.08] font-bold tracking-tight text-deep-forest lg:text-[46px]">
           Wir erschaffen keine künstlichen Bilder oder Markenwelten.
         </p>
         <p className="mt-4 max-w-xl text-[19px] leading-relaxed text-charcoal/80 lg:text-[21px] lg:leading-[1.6]">

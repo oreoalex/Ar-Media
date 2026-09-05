@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Fraunces } from "next/font/google";
+import { Manrope, Newsreader } from "next/font/google";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { GoogleAnalytics } from "@/components/shared/google-analytics";
@@ -18,8 +18,16 @@ const manrope = Manrope({
 });
 
 // Statement: zurückhaltende Serif für die seltenen, emotional gewichteten
-// Aussagen (Creative Direction, Kapitel 3 "Typografie" — Register 2)
-const fraunces = Fraunces({
+// Aussagen (Creative Direction, Kapitel 3 "Typografie" — Register 2).
+// Fraunces → Newsreader (sitewide, 2026-09-05 Design-Review): Fraunces gilt
+// als eines der meistverwendeten "AI-generated design"-Signale bei
+// Editorial-Serifen. Newsreader bleibt im selben Register (variabler
+// Schriftschnitt, echtes Kursiv, literarischer statt technischer
+// Charakter) und passt zur Markenstimme ("schreibt lange, literarische
+// Sätze"), ohne dieses Muster zu treffen. Nur das Statement-Register
+// (Register 2) ändert sich — Manrope/Register 1 (Fließtext, Struktur,
+// Navigation) bleibt unverändert.
+const newsreader = Newsreader({
   variable: "--font-serif",
   subsets: ["latin"],
   style: ["normal", "italic"],
@@ -123,7 +131,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="de"
-      className={`${manrope.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${manrope.variable} ${newsreader.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-off-white text-charcoal">
