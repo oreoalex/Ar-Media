@@ -58,16 +58,26 @@ const paths: ForkPath[] = [
  * beim Live-Test praktisch nicht wahrnehmbar (verifiziert per Screenshot),
  * 25% ist die niedrigste Stufe, die als echter, aber weiterhin ruhiger
  * Wendepunkt sichtbar wird.
+ *
+ * Design-Review 2026-09-05: die frühere "01/02/03"-Nummerierung ist entfernt
+ * — Unternehmen/Fotografie/Kita & Schule sind keine Schritte einer Sequenz,
+ * sondern gleichrangige, parallele Bereiche (Gleichwertigkeits-Guardrail,
+ * s.o.), eine Nummerierung würde eine Reihenfolge behaupten, die es nicht
+ * gibt. Stattdessen eine dünne Trennlinie zwischen den drei Wegen (macht
+ * das Raster explizit sichtbar statt es nur über Weißraum zu behaupten)
+ * und vier "Sucher"-Eckmarken je Karte, die erst bei Hover/Fokus erscheinen
+ * — ein photographischer Bezug zum Kerngeschäft statt eines generischen
+ * Zierrahmens.
  */
 export function ForkSection() {
   return (
     <section aria-label="Wähle deinen Bereich" className="bg-sand/25">
-      <div className="grid lg:grid-cols-3">
+      <div className="grid lg:grid-cols-3 lg:divide-x lg:divide-off-white/20">
         {paths.map((path, i) => (
           <Reveal key={path.href} delay={i * 0.08} className="h-full">
             <Link
               href={path.href}
-              className="group relative flex h-[70vh] min-h-[420px] flex-col justify-end overflow-hidden lg:h-[85vh]"
+              className="brand-viewfinder group relative flex h-[70vh] min-h-[420px] flex-col justify-end overflow-hidden text-off-white lg:h-[85vh]"
             >
               <Image
                 src={path.image}
@@ -79,9 +89,6 @@ export function ForkSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/10 to-transparent transition-opacity group-hover:from-charcoal/90" />
 
               <div className="relative p-8 lg:p-10">
-                <p className="text-[11px] font-medium tracking-[0.16em] text-off-white/70 uppercase">
-                  {String(i + 1).padStart(2, "0")}
-                </p>
                 {/* "Laut & mutig"-Typografie (siehe philosophy-section.tsx/
                     proof-section.tsx): kurze 1-2-Wort-Phrase, deshalb fett +
                     Versalien statt des vorherigen mittelschweren Fließtext-
@@ -96,7 +103,7 @@ export function ForkSection() {
                     Breakpoint zu kippen) plus hyphens-auto als Sicherheitsnetz:
                     bricht im Zweifel sauber um, statt zu clippen — bei allen
                     drei Labels weiterhin exakt dieselbe Regel/Größe. */}
-                <h2 className="mt-2 [hyphens:auto] font-serif text-3xl font-bold tracking-tight text-off-white uppercase transition-colors duration-500 group-hover:text-sand lg:text-[clamp(1.75rem,3.2vw,3.25rem)]">
+                <h2 className="[hyphens:auto] font-serif text-3xl font-bold tracking-tight text-off-white uppercase transition-colors duration-500 group-hover:text-sand lg:text-[clamp(1.75rem,3.2vw,3.25rem)]">
                   {path.label}
                 </h2>
                 <p className="mt-3 max-w-[26ch] text-[15px] text-off-white/85">{path.line}</p>

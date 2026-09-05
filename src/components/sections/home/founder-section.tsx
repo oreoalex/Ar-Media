@@ -61,6 +61,14 @@ export function FounderSection() {
               „Let me show you how good you look.“
             </p>
             <span className="flex items-center gap-2 text-charcoal/70">
+              {/* Design-Review 2026-09-05: ein sehr leiser Live-Puls neben
+                  dem echten Google-Bewertungssignal — reine Bewegungszutat
+                  auf bereits vorhandenem echten Content, keine erfundene
+                  Zahl. Ausschließlich transform/opacity. */}
+              <span className="relative flex size-1.5" aria-hidden>
+                <span className="brand-pulse absolute inset-0 rounded-full bg-sand-text" />
+                <span className="relative size-1.5 rounded-full bg-sand-text" />
+              </span>
               <span className="text-[12px] font-medium tracking-wide">
                 {siteConfig.rating.value.toFixed(1).replace(".", ",")} · {siteConfig.rating.count}{" "}
                 Google-Bewertungen

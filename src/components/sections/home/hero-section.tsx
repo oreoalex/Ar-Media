@@ -4,7 +4,6 @@ import * as React from "react";
 import { preload } from "react-dom";
 import Image from "next/image";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { BrandChevronDown } from "@/components/shared/brand-chevron-down";
 import { CtaButton } from "@/components/shared/cta-button";
 import { HoverWords } from "@/components/shared/hover-words";
 import gsap from "gsap";
@@ -70,6 +69,14 @@ const headlineWord: Variants = {
  *
  * prefers-reduced-motion: kein Pin, keine Fragmente — Bild und Panel stehen
  * sofort in ihrem Zielzustand, exakt wie vor dieser Umsetzung.
+ *
+ * Design-Review 2026-09-05: der frühere "Entdecken"-Scroll-Hinweis (Text +
+ * Chevron, unten zentriert) ist entfernt — ein generischer "Scroll to
+ * explore"-Hinweis, den eine Seite mit einer so unübersehbaren
+ * Eröffnungs-Animation (die Fragment-Montage selbst) nicht zusätzlich
+ * braucht. Dafür ein sehr leises Korn über dem gesamten Hero (.brand-grain,
+ * globals.css) für "cinematic atmosphere" statt eines weiteren Farbmoments —
+ * passt zum fotografischen Kerngeschäft, ohne selbst laut zu werden.
  */
 export function HeroSection() {
   const reduceMotion = useReducedMotion();
@@ -238,7 +245,7 @@ export function HeroSection() {
       // OBWOHL der SiteHeader ihm sticky ~4rem echten Platz im Dokumentfluss
       // wegnimmt (kein Overlay-Header) — auf jedem kleineren Laptop-
       // Viewport ragte dadurch genau die Header-Höhe des Heros (Schnell-
-      // zugriffs-Buttons, "Entdecken"-Indikator) unterhalb des ersten
+      // zugriffs-Buttons) unterhalb des ersten
       // sichtbaren Bildschirms heraus, per getBoundingClientRect verifiziert
       // (z. B. 1366×728: Hero-Ende bei 793px, Viewport endet bei 728px).
       // --header-height (globals.css) hält den Hero jetzt exakt innerhalb
@@ -265,6 +272,7 @@ export function HeroSection() {
         />
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-deep-forest/95 via-deep-forest/25 to-deep-forest/10" />
+      <div aria-hidden className="brand-grain pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay" />
 
       {/* Feedback-Fix: das Glass-Panel war als bewusst homepage-exklusives
           Signature-Element gedacht (siehe frühere Fassung dieses Kommentars
@@ -330,16 +338,6 @@ export function HeroSection() {
             </CtaButton>
           ))}
         </nav>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isRevealed ? 0 : 1 }}
-        transition={{ duration: reduceMotion ? 0 : 0.6 }}
-        className="absolute inset-x-0 bottom-6 flex flex-col items-center gap-2 text-off-white/70 lg:bottom-8"
-      >
-        <span className="text-[11px] tracking-[0.16em] uppercase">Entdecken</span>
-        <BrandChevronDown aria-hidden className="size-4" />
       </motion.div>
     </section>
   );
