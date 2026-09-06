@@ -15,6 +15,10 @@ const organizationRef = {
   "@type": "Organization",
   name: siteConfig.name,
   url: siteConfig.url,
+  // Schema-Audit (2026-09-06): Google empfiehlt publisher.logo für
+  // Article-Rich-Results — echtes, bereits in layout.tsx für dieselbe
+  // Organization genutztes Logo-Asset, keine neue Datei.
+  logo: { "@type": "ImageObject", url: `${siteConfig.url}/logo-full.png` },
 };
 
 export function buildBreadcrumbJsonLd(items: { name: string; path: string }[]) {
@@ -36,12 +40,15 @@ export function buildArticleJsonLd({
   path,
   publishedAt,
   updatedAt,
+  image,
 }: {
   title: string;
   description: string;
   path: string;
   publishedAt: string;
   updatedAt: string;
+  /** Absoluter oder site-relativer Pfad. Fällt beim Aufrufer auf ein echtes, bestehendes Asset zurück (z. B. /opengraph-image.jpg), nie erfunden. */
+  image?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -54,6 +61,7 @@ export function buildArticleJsonLd({
     author: organizationRef,
     publisher: organizationRef,
     inLanguage: "de-DE",
+    ...(image ? { image: image.startsWith("http") ? image : `${siteConfig.url}${image}` } : {}),
   };
 }
 

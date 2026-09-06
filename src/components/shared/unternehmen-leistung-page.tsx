@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { BrandArrowLeft } from "@/components/shared/brand-arrow-left";
 import { BrandChevronDown } from "@/components/shared/brand-chevron-down";
@@ -16,7 +17,19 @@ import { CtaButton } from "@/components/shared/cta-button";
 
 type ProzessSchritt = { title: string; text: string };
 type Faq = { q: string; a: string };
-type CaseStudyRef = { name: string; text: string; href: string };
+type CaseStudyRef = {
+  name: string;
+  text: string;
+  href: string;
+  /**
+   * SXO-Audit (2026-09-06): für stark visuelle Suchanfragen (z. B. "corporate
+   * design kiel") zeigen alle rankenden Wettbewerber Arbeitsproben direkt auf
+   * der Seite, AR Medias Version war reiner Fließtext. Optional, weil nicht
+   * für jede verlinkte Case Study ein passendes Bild existiert — kein
+   * erfundenes Bild, nur echte, bereits auf /case-studies genutzte Assets.
+   */
+  image?: { src: string; alt: string };
+};
 type RelatedLink = { name: string; text: string; href: string };
 type LeistungDetail = { title: string; text: string };
 
@@ -83,7 +96,11 @@ export function UnternehmenLeistungPage({
   ctaSecondaryLabel = "Unverbindlich austauschen",
   relatedLink,
 }: UnternehmenLeistungPageProps) {
-  const faqJsonLd = {
+  // Schema-Audit (2026-09-06): FAQPage wurde bisher unbedingt emittiert —
+  // bei einem künftigen Aufrufer ohne FAQs entstünde ungültiges
+  // mainEntity:[]. Alle aktuellen 7 Aufrufer übergeben bereits FAQs, das
+  // hier ist reine Absicherung für später.
+  const faqJsonLd = faqs.length > 0 && {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faqs.map((faq) => ({
@@ -103,7 +120,9 @@ export function UnternehmenLeistungPage({
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      {faqJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
@@ -207,17 +226,30 @@ export function UnternehmenLeistungPage({
               {caseStudies.map((cs, i) => (
                 <Reveal key={cs.href} delay={i * 0.05}>
                   <li>
-                    <Link href={cs.href} className="group flex items-center justify-between gap-6 py-6">
-                      <span>
-                        <span className="block text-[17px] font-medium text-charcoal transition-colors group-hover:text-deep-forest lg:text-[19px]">
-                          {cs.name}
+                    <Link href={cs.href} className="group flex items-center gap-6 py-6">
+                      {cs.image && (
+                        <span className="relative hidden h-16 w-24 shrink-0 overflow-hidden bg-[#f4f2ee] sm:block">
+                          <Image
+                            src={cs.image.src}
+                            alt={cs.image.alt}
+                            fill
+                            sizes="96px"
+                            className="object-contain p-2"
+                          />
                         </span>
-                        <span className="mt-1 block text-[14px] text-charcoal/70 lg:text-[15px]">{cs.text}</span>
+                      )}
+                      <span className="flex flex-1 items-center justify-between gap-6">
+                        <span>
+                          <span className="block text-[17px] font-medium text-charcoal transition-colors group-hover:text-deep-forest lg:text-[19px]">
+                            {cs.name}
+                          </span>
+                          <span className="mt-1 block text-[14px] text-charcoal/70 lg:text-[15px]">{cs.text}</span>
+                        </span>
+                        <BrandArrow
+                          aria-hidden
+                          className="size-4 shrink-0 text-charcoal/30 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-deep-forest"
+                        />
                       </span>
-                      <BrandArrow
-                        aria-hidden
-                        className="size-4 shrink-0 text-charcoal/30 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-deep-forest"
-                      />
                     </Link>
                   </li>
                 </Reveal>

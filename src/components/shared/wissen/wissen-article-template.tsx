@@ -48,6 +48,9 @@ export function WissenArticleTemplate({ article }: WissenArticleTemplateProps) {
     path,
     publishedAt: article.publishedAt,
     updatedAt: article.updatedAt,
+    // Deckt sich mit dem OG-Bild-Fallback in generateMetadata (page.tsx) —
+    // dasselbe echte Asset, kein neues erfunden.
+    image: article.ogImage ?? "/opengraph-image.jpg",
   });
 
   return (
@@ -69,8 +72,14 @@ export function WissenArticleTemplate({ article }: WissenArticleTemplateProps) {
               {article.title}
             </h1>
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-charcoal/70">{article.description}</p>
+            {/* GEO-Audit (2026-09-06): "AR Media" tauchte im ganzen Artikel
+                nur innerhalb der Solution-Box auf, nie sichtbar in der Nähe
+                des eigentlichen Inhalts — Autorschaft existierte nur
+                unsichtbar im JSON-LD. Diese Zeile macht sie für Leser und
+                für zitierende KI-Systeme sichtbar. */}
             <p className="mt-6 text-[13px] tracking-wide text-charcoal/55">
-              Aktualisiert am {formatDate(article.updatedAt)} · {article.readingTime} Min. Lesezeit
+              Ein Leitfaden von AR Media, Kiel · Aktualisiert am {formatDate(article.updatedAt)} ·{" "}
+              {article.readingTime} Min. Lesezeit
             </p>
           </Reveal>
         </div>

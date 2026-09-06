@@ -43,11 +43,19 @@ export default function Page() {
           name: "Saat für den Norden",
           text: "Das bestehende Zeichen wirkte zart und blieb kaum im Gedächtnis, die Idee dahinter war längst richtig, nur kaum sichtbar. Neues Signet, kräftigere Wortmarke, eine Farbwelt über Fahrzeug, Beschilderung und Print hinweg.",
           href: "/case-studies#saat",
+          image: {
+            src: "/images/unternehmen/saat-vorher-nachher.jpg",
+            alt: "Saat für den Norden: Signet vor und nach der Überarbeitung",
+          },
         },
         {
           name: "Zeltlager Adlerhorst",
           text: "Ein rund 50 Jahre altes Adler-Maskottchen, dessen Auftritt drumherum kaum mehr zeitgemäß war. Statt es zu ersetzen, in Farbe, Typografie und ein durchgängiges System überführt, von der Helfersuche bis zum Jubiläum.",
           href: "/case-studies#adlerhorst",
+          image: {
+            src: "/images/unternehmen/adlerhorst-vorher-nachher.jpg",
+            alt: "Zeltlager Adlerhorst: Logo vor und nach der Überarbeitung",
+          },
         },
       ]}
       leistungenTitle="Was zu einem Corporate Design gehört"

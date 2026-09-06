@@ -13,3 +13,6 @@ Founded by Alexander Rieck. Services: branding and corporate design, content cre
 - [Case Studies](https://www.ar-media-kiel.de/case-studies): real client projects
 - [Über AR Media](https://www.ar-media-kiel.de/ueber-ar-media): about the studio and founder
 - [Kontakt](https://www.ar-media-kiel.de/kontakt): contact and inquiry forms
+- [Wissen](https://www.ar-media-kiel.de/wissen): free educational guides on social media, creative tools, and privacy/legal basics for small businesses and creators — not sales content
+  - [Instagram-Account aufbauen](https://www.ar-media-kiel.de/wissen/social-media/instagram-account-aufbauen): flagship guide to building a professional Instagram account
+  - [Canva](https://www.ar-media-kiel.de/wissen/tools/canva): guide to using Canva for small-business design work

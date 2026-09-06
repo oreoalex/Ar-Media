@@ -54,7 +54,10 @@ export function FotografieCategoryPage({
   ctaText,
   relatedLink,
 }: FotografieCategoryPageProps) {
-  const faqJsonLd = {
+  // Schema-Audit (2026-09-06): siehe identischer Kommentar in
+  // unternehmen-leistung-page.tsx — reine Absicherung gegen ein künftiges
+  // leeres FAQPage-mainEntity, alle aktuellen Aufrufer übergeben bereits FAQs.
+  const faqJsonLd = faqs.length > 0 && {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faqs.map((faq) => ({
@@ -77,10 +80,12 @@ export function FotografieCategoryPage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <section className="bg-off-white px-6 pt-32 pb-20 lg:pt-40 lg:pb-28">
