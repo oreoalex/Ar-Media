@@ -30,6 +30,10 @@ const faqs = [
     a: "Ruhig. Erst ein Gespräch, dann Zeit zum Ankommen, dann die Kamera, meist ohne dass du merkst, wann genau sie dazukommt.",
   },
   {
+    q: "Was mache ich mit meinen Händen?",
+    a: "Darüber musst du dir vorher keine Gedanken machen. Ich schlage dir passende Haltungen vor, ohne dass es gestellt wirkt.",
+  },
+  {
     q: "Was ist bei Regen?",
     a: "Wir verschieben oder weichen auf einen überdachten Ort aus. Ein Foto unter freiem Himmel ist schön, ein entspanntes Foto ist wichtiger.",
   },
@@ -40,6 +44,10 @@ const faqs = [
   {
     q: "Bearbeitest du Haut?",
     a: "Zurückhaltend. Licht und Farbe werden abgestimmt, aber du bleibst du. Keine künstliche Version von dir.",
+  },
+  {
+    q: "Wie werden die Bilder ausgewählt?",
+    a: "Du bekommst grundsätzlich alle Bilder, die etwas geworden sind, keine künstlich verknappte Auswahl. Je nach Absprache über eine offene Online-Galerie, bei besonders datenschutzrelevanten Aufnahmen über eine passwortgeschützte, DSGVO-konforme Galerie.",
   },
 ];
 

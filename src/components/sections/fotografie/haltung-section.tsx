@@ -27,6 +27,18 @@ export function HaltungSection() {
             Shooting. Der Unterschied zeigt sich später, im Bild. Wir
             inszenieren nicht, wir warten, und drücken genau dann ab.
           </p>
+          {/* Proof-Audit (2026-09-06): der gesamte Fotografie-Bereich trug
+              bisher kein einziges Kompetenz-/Founder-Signal — ungewöhnlich für
+              ein Geschäft, das auf einer Person aufbaut. Bewusst kein
+              erfundenes "X Jahre Erfahrung", sondern der tatsächliche, vom
+              Betreiber bestätigte Werdegang: autodidaktisch, über Fehler,
+              fortlaufend. Passt inhaltlich zur bereits auf /ueber-ar-media
+              erzählten Ursprungsgeschichte, hier nur kompakter. */}
+          <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-charcoal/70">
+            Diese Haltung ist nicht angelernt. Alexander Rieck hat sich das
+            Fotografieren selbst beigebracht, aus eigenen Fehlern gelernt und
+            entwickelt sich seitdem kontinuierlich weiter.
+          </p>
         </Reveal>
         <Reveal className="lg:order-2">
           <div className="relative aspect-3/4 w-full overflow-hidden">
