@@ -41,6 +41,15 @@ export default function Page() {
             Ein paar Angaben reichen für den Anfang, alles Weitere klären wir im ersten
             Gespräch. Kein Feld hier ist eine Prüfung.
           </p>
+          {/* Timing-Audit (2026-09-06): die einzige Reaktionszeit-Angabe der
+              ganzen Seite stand bisher nur in der /kontakt-Hub-FAQ — nicht auf
+              den drei Formularseiten selbst, die von jedem CTA direkt
+              angesteuert werden, ohne den Umweg über den Hub. Genau hier
+              entsteht die Unsicherheit ("was passiert jetzt?"), also gehört
+              die Antwort hierher, wortgleich mit der Hub-FAQ. */}
+          <p className="mt-3 text-[14px] text-charcoal/55">
+            Wir antworten in der Regel innerhalb weniger Werktage.
+          </p>
         </Reveal>
 
         <Reveal delay={0.1} className="mt-14">

@@ -39,6 +39,10 @@ export default function Page() {
             Ablauf, Termin und Datenschutz besprechen wir im ersten, unverbindlichen Gespräch.
             Hier reicht ein erster Kontakt.
           </p>
+          {/* Timing-Audit (2026-09-06): siehe projekt-besprechen/page.tsx. */}
+          <p className="mt-3 text-[14px] text-charcoal/55">
+            Wir antworten in der Regel innerhalb weniger Werktage.
+          </p>
         </Reveal>
 
         <Reveal delay={0.1} className="mt-14">
