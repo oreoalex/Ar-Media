@@ -1,8 +1,4 @@
-"use client";
-
-import * as React from "react";
 import Image from "next/image";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { CtaButton } from "@/components/shared/cta-button";
 import { HoverWords } from "@/components/shared/hover-words";
 
@@ -15,32 +11,24 @@ const quickLinks = [
 ];
 
 const headline = "Manche Dinge muss man nur noch sichtbar machen.";
-const headlineWords = headline.split(" ");
-
-const headlineContainer: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.05, delayChildren: 0.05 } },
-};
-
-const headlineWord: Variants = {
-  hidden: { y: "120%", opacity: 0 },
-  visible: { y: "0%", opacity: 1, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
-};
 
 /**
  * Design-Review 2026-09-06: die frühere Fragment-Montage ("Die Auflösung",
- * ein gsap ScrollTrigger-Pin, der das Hero-Bild aus 54 verstreuten Kacheln
- * zusammensetzte) ist auf Nutzerwunsch entfernt — zurück zu einem ruhigen,
- * direkt fertigen Hero-Bild. Die Headline blendet weiterhin wortweise beim
- * Laden ein (kein Scroll-Trigger mehr, reiner Mount-Reveal), das Bild selbst
- * steht sofort in seinem Zielzustand.
+ * ein gsap ScrollTrigger-Pin) ist auf Nutzerwunsch entfernt — zurück zu
+ * einem ruhigen, direkt fertigen Hero-Bild.
  *
- * prefers-reduced-motion: auch der Wort-für-Wort-Reveal entfällt, Headline
- * steht sofort da.
+ * Performance-Audit (2026-09-06, zweiter Durchgang): der erste Ersatz
+ * (dieser Kommentar galt vorher) blendete die Headline noch per Framer
+ * Motion wortweise ein (opacity:0 im initialen SSR-HTML, sichtbar erst
+ * nach Hydration). Lighthouse maß danach 6,0s LCP mit 100% "Render Delay"
+ * auf genau diesem H1 — die Headline IST das LCP-Element der Seite, und
+ * ein bei opacity:0 startendes Element kann per Definition nicht früher
+ * gemalt werden als die Hydration erlaubt. Jetzt steht die Headline sofort
+ * da, exakt wie jede andere Hero-Section der Seite (fotografie/,
+ * unternehmen/hero-section.tsx) es ohnehin schon tut — kein Mount-Reveal
+ * mehr, kein Framer-Motion-Import in dieser Komponente nötig.
  */
 export function HeroSection() {
-  const reduceMotion = useReducedMotion();
-
   return (
     <section
       aria-label="Willkommen bei AR Media"
@@ -68,38 +56,10 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-deep-forest/95 via-deep-forest/25 to-deep-forest/10" />
       <div aria-hidden className="brand-grain pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay" />
 
-      <motion.div
-        initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: reduceMotion ? 0 : 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="relative mx-auto w-full max-w-[1400px] px-6 pb-24 lg:px-10 lg:pb-32"
-      >
-        {reduceMotion ? (
-          <h1 className="max-w-2xl font-serif text-[clamp(1.75rem,4.8vw,3.25rem)] leading-[1.15] font-bold tracking-tight text-off-white">
-            <HoverWords text={headline} className="hover:text-sand" />
-          </h1>
-        ) : (
-          <motion.h1
-            initial="hidden"
-            animate="visible"
-            variants={headlineContainer}
-            className="max-w-2xl font-serif text-[clamp(1.75rem,4.8vw,3.25rem)] leading-[1.15] font-bold tracking-tight text-off-white"
-          >
-            {headlineWords.map((word, i) => (
-              <React.Fragment key={i}>
-                {i > 0 && " "}
-                <span className="inline-block overflow-hidden">
-                  <motion.span
-                    className="inline-block transition-colors duration-300 hover:text-sand"
-                    variants={headlineWord}
-                  >
-                    {word}
-                  </motion.span>
-                </span>
-              </React.Fragment>
-            ))}
-          </motion.h1>
-        )}
+      <div className="relative mx-auto w-full max-w-[1400px] px-6 pb-24 lg:px-10 lg:pb-32">
+        <h1 className="max-w-2xl font-serif text-[clamp(1.75rem,4.8vw,3.25rem)] leading-[1.15] font-bold tracking-tight text-off-white">
+          <HoverWords text={headline} className="hover:text-sand" />
+        </h1>
 
         <nav aria-label="Schnellzugriff auf Hauptbereiche" className="mt-8 flex flex-wrap gap-3 sm:mt-10">
           {quickLinks.map((link) => (
@@ -119,7 +79,7 @@ export function HeroSection() {
             </CtaButton>
           ))}
         </nav>
-      </motion.div>
+      </div>
     </section>
   );
 }
