@@ -46,6 +46,13 @@ const sections: LegalSection[] = [
           </a>
         </dd>
 
+        <dt className="text-charcoal/75">Telefon</dt>
+        <dd>
+          <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, "")}`} className="underline decoration-charcoal/30 underline-offset-4 transition-colors hover:text-deep-forest hover:decoration-deep-forest">
+            {siteConfig.contact.phone}
+          </a>
+        </dd>
+
         <dt className="text-charcoal/75">Rechtsform</dt>
         <dd>Einzelunternehmer</dd>
       </dl>

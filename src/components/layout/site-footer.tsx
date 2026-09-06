@@ -111,7 +111,10 @@ export function SiteFooter() {
 
         <p className="mt-16 text-[12px] tracking-[0.1em] text-off-white/60 uppercase">
           {siteConfig.location.street} · {siteConfig.location.postalCode}{" "}
-          {siteConfig.location.city} · {siteConfig.location.country} · Est. {siteConfig.founded}
+          {siteConfig.location.city} · {siteConfig.location.country} · Est. {siteConfig.founded} ·{" "}
+          <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, "")}`} className="transition-colors hover:text-off-white">
+            {siteConfig.contact.phone}
+          </a>
         </p>
       </div>
 
