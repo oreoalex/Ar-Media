@@ -54,7 +54,7 @@ export function BildbeispieleSection() {
                   alt={moment.alt}
                   fill
                   sizes="(min-width: 1024px) 50vw, 50vw"
-                  className="object-cover grayscale-[65%] saturate-[0.5] transition-[filter,transform] duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0 group-hover:saturate-100"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 />
               </div>
             </Reveal>
@@ -67,7 +67,7 @@ export function BildbeispieleSection() {
                 alt="Zwei Kinder im vertrauten Gespräch, echtes Lachen"
                 fill
                 sizes="100vw"
-                className="object-cover grayscale-[65%] saturate-[0.5] transition-[filter,transform] duration-1000 ease-out group-hover:scale-[1.03] group-hover:grayscale-0 group-hover:saturate-100"
+                className="object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]"
               />
             </div>
           </Reveal>
@@ -80,7 +80,7 @@ export function BildbeispieleSection() {
                   alt={moment.alt}
                   fill
                   sizes="(min-width: 1024px) 50vw, 50vw"
-                  className="object-cover grayscale-[65%] saturate-[0.5] transition-[filter,transform] duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0 group-hover:saturate-100"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 />
               </div>
             </Reveal>

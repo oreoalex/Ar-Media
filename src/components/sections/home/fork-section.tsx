@@ -84,7 +84,7 @@ export function ForkSection() {
                 alt={path.imageAlt}
                 fill
                 sizes="(min-width: 1024px) 34vw, 100vw"
-                className="object-cover grayscale-[65%] saturate-[0.5] transition-[filter,transform] duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0 group-hover:saturate-100"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/10 to-transparent transition-opacity group-hover:from-charcoal/90" />
 

@@ -93,7 +93,7 @@ export function ArbeitenSection() {
                 alt={moment.alt}
                 fill
                 sizes="(min-width: 1024px) 50vw, 50vw"
-                className={`object-cover grayscale-[65%] saturate-[0.5] transition-[filter,transform] duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0 group-hover:saturate-100 ${moment.position}`}
+                className={`object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] ${moment.position}`}
               />
             </div>
           ))}
