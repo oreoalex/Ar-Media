@@ -44,7 +44,7 @@ export default function Page() {
       slug="/fotografie/paar"
       kicker="Fotografie · Paar"
       title="Ein Paarshooting, das eure Geschichte echt festhält."
-      intro="Für zwei Menschen, die zusammen entspannter sind als einzeln. Ein Paarshooting in Kiel, das sich wie ein gemeinsamer Nachmittag anfühlt, nicht wie ein Termin."
+      intro="Zu zweit wirkt die Kamera für die meisten weniger einschüchternd als allein. Ein Paarshooting in Kiel, das sich eher wie eine gemeinsame Auszeit anfühlt als wie ein Fototermin."
       ablaufTitle="Wie ein Paar-Termin abläuft"
       ablauf="Wir beginnen mit einem Gespräch, nicht mit Anweisungen. Kein Posieren nach Schema, kein Kommando zum Lächeln. Stattdessen Zeit, an einem Ort, der euch etwas bedeutet, bis ihr vergesst, dass fotografiert wird, und ihr einfach miteinander seid. Genau dann entstehen die Bilder, die später zählen."
       preisAb={349}

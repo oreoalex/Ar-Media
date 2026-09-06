@@ -46,7 +46,7 @@ export default function Page() {
       slug="/fotografie/business-portraits"
       kicker="Fotografie · Business-Portraits"
       title="Ein Business-Portrait, seriös und trotzdem echt."
-      intro="Für Menschen, die im Beruf mehr sind als ihr Lebenslaufbild. Ein Business-Portrait in Kiel, das nach der Person aussieht, nicht nach der Stockfoto-Version davon."
+      intro="Ein Lebenslaufbild zeigt selten, wie jemand im Beruf tatsächlich wirkt. Ein Business-Portrait in Kiel, bei dem am Ende die Person zu erkennen ist, nicht nur ihre Berufsbezeichnung."
       heroImage={{
         src: "/images/unternehmen/hero-kamera.jpg",
         alt: "Kameraausrüstung im Detail",

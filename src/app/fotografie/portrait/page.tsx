@@ -44,7 +44,7 @@ export default function Page() {
       slug="/fotografie/portrait"
       kicker="Fotografie · Portrait"
       title="Ein ehrliches Portrait von dir."
-      intro="Für Menschen, die sich selbst lange nicht mehr wirklich gesehen haben. Ein Portraittermin in Kiel, ohne Anweisungen, wie du zu stehen oder zu lächeln hast."
+      intro="Ein gutes Portrait zeigt oft genau das, was im Alltag untergeht. Ein Portraittermin in Kiel, ohne Anweisungen, wie du zu stehen oder zu lächeln hast."
       heroImage={{
         src: "/images/fotografie/arbeit-03.jpg",
         alt: "Natürliches Portrait im Tageslicht",
