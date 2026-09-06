@@ -23,13 +23,22 @@ import type { NextConfig } from "next";
  * Maps-Embed (components/shared/map-embed.tsx) lädt den iframe erst nach
  * erteiltem Consent, aber ohne frame-src würde die CSP ihn dann trotzdem
  * blocken, unabhängig vom Consent-Status.
+ *
+ * img-src um googletagmanager.com erweitert (Security-Audit 2026-09-06):
+ * GTM lädt zusätzlich zu gtag.js einen Bild-Pixel-Fallback von derselben
+ * Domain, den die CSP bisher stillschweigend blockierte (Konsolenfehler bei
+ * jedem Seitenaufruf, sichtbar in den DevTools). Funktional unauffällig
+ * (der eigentliche Messpfad läuft über den erlaubten script-/connect-src),
+ * aber die Domain ist ohnehin schon für script-src/connect-src freigegeben,
+ * eine zusätzliche Blockade an genau dieser einen Stelle bringt keinen
+ * echten Schutzgewinn, nur Rauschen in der Konsole.
  */
 const isDev = process.env.NODE_ENV === "development";
 const cspHeader = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://www.googletagmanager.com${isDev ? " 'unsafe-eval'" : ""};
   style-src 'self' 'unsafe-inline';
-  img-src 'self' data: blob: https://www.google-analytics.com;
+  img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com;
   font-src 'self';
   connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com;
   frame-src https://www.google.com;

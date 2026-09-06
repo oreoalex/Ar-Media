@@ -134,21 +134,6 @@
   }
 }
 
-@layer utilities {
-  /* Fokusring-Fix (Accessibility-Audit, WCAG 2.4.11): --ring ist sitieweit
-     auf Deep Forest gesetzt — auf hellem Grund (Off-White/Sand) ein klarer,
-     kontrastreicher Tastatur-Fokusring, aber auf einer Deep-Forest-Fläche
-     (z. B. hero-section.tsx) wäre derselbe Ring gegen seinen eigenen
-     Hintergrund praktisch unsichtbar. .focus-ring-inverse stellt für
-     fokussierbare Elemente auf dunklem Markenfarbgrund gezielt auf den
-     hellen Sand-Ton um (9,39:1 Kontrast auf Deep Forest, siehe --sand-
-     Kommentar oben), statt den globalen Ring-Token für alle Flächen zu
-     verändern. */
-  .focus-ring-inverse:focus-visible {
-    outline-color: var(--sand);
-  }
-}
-
 /*
  * Signatur-Winkel: aus der echten Vektorgeometrie des AR-Monogramms
  * verifiziert (Logo Neu.svg, offizieller Export) — die Diagonalen der

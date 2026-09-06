@@ -46,18 +46,32 @@ type CtaButtonProps = {
  * "light"/"outline-dark" liegen auf einer Off-White-Fläche (Button-Fläche
  * bzw. Sektionshintergrund) und bekommen --sand-text (5,74:1, reines Sand
  * würde dort am Kontrast scheitern — siehe globals.css).
+ *
+ * A11y-Audit (2026-09-06): derselbe Kontrast-Gedanke gilt für den
+ * Tastatur-Fokusring. `outline` wird mit Offset gezeichnet, liegt also
+ * NICHT auf der eigenen Button-Füllung, sondern auf der Sektionsfläche
+ * darum herum — entscheidend ist deshalb der Kontrast zur jeweiligen
+ * Sektion, nicht zur Button-Farbe selbst. "dark"/"outline-dark" sitzen auf
+ * hellen Sektionen (Off-White/Sand) → deep-forest-Ring. "light"/"outline"
+ * sitzen auf dunklen Sektionen (typischerweise Deep Forest) → dort wäre
+ * der globale, ebenfalls Deep-Forest-farbene --ring-Token gegen seinen
+ * eigenen Untergrund praktisch unsichtbar, deshalb hier auf Sand
+ * umgestellt (9,39:1 Kontrast, s. o.) — exakt das Problem, das einzelne
+ * Stellen bisher mit einem lokalen .focus-ring-inverse-Hack umgangen
+ * haben. Hier zentral für alle vier Varianten gelöst, damit kein Aufrufer
+ * diese Entscheidung mehr selbst treffen muss.
  */
 export function CtaButton({ href, children, variant = "dark", size = "md", className }: CtaButtonProps) {
   const isExternal = href ? /^(mailto:|tel:|https?:)/.test(href) : false;
   const classes = cn(
-    "group inline-flex items-center justify-center gap-2.5 text-[15px] font-semibold tracking-wide uppercase transition-all duration-300 ease-out hover:scale-[1.02]",
+    "group inline-flex items-center justify-center gap-2.5 text-[15px] font-semibold tracking-wide uppercase transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-2",
     size === "md" ? "px-8 py-4 sm:px-10 sm:py-[18px]" : "px-5 py-3 text-[13px] sm:px-6",
-    variant === "dark" && "bg-deep-forest text-off-white hover:text-sand",
-    variant === "light" && "bg-off-white text-deep-forest hover:text-sand-text",
+    variant === "dark" && "bg-deep-forest text-off-white hover:text-sand focus-visible:outline-deep-forest",
+    variant === "light" && "bg-off-white text-deep-forest hover:text-sand-text focus-visible:outline-sand",
     variant === "outline" &&
-      "border border-off-white/70 text-off-white hover:border-off-white hover:bg-off-white/10 hover:text-sand",
+      "border border-off-white/70 text-off-white hover:border-off-white hover:bg-off-white/10 hover:text-sand focus-visible:outline-sand",
     variant === "outline-dark" &&
-      "border border-charcoal/30 text-charcoal hover:border-charcoal hover:bg-charcoal/5 hover:text-sand-text",
+      "border border-charcoal/30 text-charcoal hover:border-charcoal hover:bg-charcoal/5 hover:text-sand-text focus-visible:outline-deep-forest",
     className,
   );
   const arrow = (

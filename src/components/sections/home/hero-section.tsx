@@ -63,18 +63,10 @@ export function HeroSection() {
 
         <nav aria-label="Schnellzugriff auf Hauptbereiche" className="mt-8 flex flex-wrap gap-3 sm:mt-10">
           {quickLinks.map((link) => (
-            // focus-ring-inverse (Accessibility-Audit, globals.css): der
-            // globale --ring-Token ist Deep Forest — auf diesem Deep-Forest-
-            // Hero wäre der Standard-Fokusring gegen den eigenen Hintergrund
-            // praktisch unsichtbar. Hier auf Sand umgestellt, ohne den
-            // Ring-Token sitieweit zu verändern.
-            <CtaButton
-              key={link.href}
-              href={link.href}
-              variant="outline"
-              size="sm"
-              className="focus-ring-inverse"
-            >
+            // A11y-Audit (2026-09-06): der Sand-Fokusring für variant="outline"
+            // sitzt jetzt zentral in cta-button.tsx, kein lokaler Override
+            // mehr nötig (siehe dortiger Kommentar).
+            <CtaButton key={link.href} href={link.href} variant="outline" size="sm">
               {link.label}
             </CtaButton>
           ))}
